@@ -2,8 +2,6 @@ using UnityEngine.EventSystems;
 
 namespace UnityEngine.UIElements
 {
-    // This code is disabled unless the UI Toolkit package or the com.unity.modules.uielements module are present.
-    // The UIElements module is always present in the Editor but it can be stripped from a project build if unused.
 #if PACKAGE_UITOOLKIT
     /// <summary>
     /// Use this class to handle input and send events to UI Toolkit runtime panels.
@@ -36,11 +34,6 @@ namespace UnityEngine.UIElements
 
         private GameObject selectableGameObject => m_Panel?.selectableGameObject;
         private EventSystem eventSystem => UIElementsRuntimeUtility.activeEventSystem as EventSystem;
-
-        private bool isCurrentFocusedPanel => m_Panel != null && eventSystem != null &&
-                                              eventSystem.currentSelectedGameObject == selectableGameObject;
-
-        private Focusable currentFocusedElement => m_Panel?.focusController.GetLeafFocusedElement();
 
         private readonly PointerEvent m_PointerEvent = new PointerEvent();
 
@@ -190,13 +183,8 @@ namespace UnityEngine.UIElements
             if (m_Panel == null)
                 return;
 
-            // Allow KeyDown/KeyUp events to be processed before navigation events.
-            var target = currentFocusedElement ?? m_Panel.visualTree;
-            ProcessImguiEvents(target);
-
-            using (var e = NavigationSubmitEvent.GetPooled(s_Modifiers))
+            using (var e = NavigationSubmitEvent.GetPooled())
             {
-                e.target = target;
                 SendEvent(e, eventData);
             }
         }
@@ -206,13 +194,8 @@ namespace UnityEngine.UIElements
             if (m_Panel == null)
                 return;
 
-            // Allow KeyDown/KeyUp events to be processed before navigation events.
-            var target = currentFocusedElement ?? m_Panel.visualTree;
-            ProcessImguiEvents(target);
-
-            using (var e = NavigationCancelEvent.GetPooled(s_Modifiers))
+            using (var e = NavigationCancelEvent.GetPooled())
             {
-                e.target = target;
                 SendEvent(e, eventData);
             }
         }
@@ -222,13 +205,8 @@ namespace UnityEngine.UIElements
             if (m_Panel == null)
                 return;
 
-            // Allow KeyDown/KeyUp events to be processed before navigation events.
-            var target = currentFocusedElement ?? m_Panel.visualTree;
-            ProcessImguiEvents(target);
-
-            using (var e = NavigationMoveEvent.GetPooled(eventData.moveVector, s_Modifiers))
+            using (var e = NavigationMoveEvent.GetPooled(eventData.moveVector))
             {
-                e.target = target;
                 SendEvent(e, eventData);
             }
 
@@ -271,23 +249,20 @@ namespace UnityEngine.UIElements
 
         void Update()
         {
-            if (isCurrentFocusedPanel)
-                ProcessImguiEvents(currentFocusedElement ?? m_Panel.visualTree);
+            if (m_Panel != null && eventSystem != null && eventSystem.currentSelectedGameObject == selectableGameObject)
+                ProcessImguiEvents(true);
         }
 
         void LateUpdate()
         {
             // Empty the Event queue, look for EventModifiers.
-            ProcessImguiEvents(null);
+            ProcessImguiEvents(false);
         }
 
         private Event m_Event = new Event();
         private static EventModifiers s_Modifiers = EventModifiers.None;
 
-        // Send IMGUI events to given focus-based target, if any, or simply flush the event queue if not.
-        // For uniformity of composite events (keyDown vs navigation), target should remain the same
-        // throughout the entire processing cycle.
-        void ProcessImguiEvents(Focusable target)
+        void ProcessImguiEvents(bool isSelected)
         {
             bool first = true;
 
@@ -300,59 +275,57 @@ namespace UnityEngine.UIElements
                 s_Modifiers = first ? m_Event.modifiers : (s_Modifiers | m_Event.modifiers);
                 first = false;
 
-                if (target != null)
+                if (isSelected)
                 {
-                    ProcessKeyboardEvent(m_Event, target);
-                    if (eventSystem.sendNavigationEvents)
-                        ProcessTabEvent(m_Event, target);
+                    ProcessKeyboardEvent(m_Event);
+
+                    if (m_Event.type != EventType.Used)
+                        ProcessTabEvent(m_Event);
                 }
             }
         }
 
-        void ProcessKeyboardEvent(Event e, Focusable target)
+        void ProcessKeyboardEvent(Event e)
         {
             if (e.type == EventType.KeyUp)
             {
-                SendKeyUpEvent(e, target);
+                SendKeyUpEvent(e);
             }
             else if (e.type == EventType.KeyDown)
             {
-                SendKeyDownEvent(e, target);
+                SendKeyDownEvent(e);
             }
         }
 
         // TODO: add an ITabHandler interface
-        void ProcessTabEvent(Event e, Focusable target)
+        void ProcessTabEvent(Event e)
         {
-            if (e.ShouldSendNavigationMoveEventRuntime())
+            if (e.type == EventType.KeyDown && e.character == '\t')
             {
-                SendTabEvent(e, e.shift ? NavigationMoveEvent.Direction.Previous : NavigationMoveEvent.Direction.Next, target);
+                SendTabEvent(e, e.shift ? -1 : 1);
             }
         }
 
-        private void SendTabEvent(Event e, NavigationMoveEvent.Direction direction, Focusable target)
+        private void SendTabEvent(Event e, int direction)
         {
-            using (var ev = NavigationMoveEvent.GetPooled(direction, s_Modifiers))
+            using (var ev = NavigationTabEvent.GetPooled(direction))
             {
-                ev.target = target;
                 SendEvent(ev, e);
             }
         }
 
-        private void SendKeyUpEvent(Event e, Focusable target)
+        private void SendKeyUpEvent(Event e)
         {
             using (var ev = KeyUpEvent.GetPooled('\0', e.keyCode, e.modifiers))
             {
-                ev.target = target;
                 SendEvent(ev, e);
             }
         }
 
-        private void SendKeyDownEvent(Event e, Focusable target)
+        private void SendKeyDownEvent(Event e)
         {
             using (var ev = KeyDownEvent.GetPooled(e.character, e.keyCode, e.modifiers))
             {
-                ev.target = target;
                 SendEvent(ev, e);
             }
         }
@@ -394,8 +367,6 @@ namespace UnityEngine.UIElements
             public float altitudeAngle { get; private set; }
             public float azimuthAngle { get; private set; }
             public float twist { get; private set; }
-            public Vector2 tilt { get; private set; }
-            public PenStatus penStatus { get; private set; }
             public Vector2 radius { get; private set; }
             public Vector2 radiusVariance { get; private set; }
             public EventModifiers modifiers { get; private set; }
@@ -424,6 +395,9 @@ namespace UnityEngine.UIElements
                 isPrimary = pointerId == PointerId.mousePointerId ||
                     pointerId == PointerId.touchPointerIdBase ||
                     pointerId == PointerId.penPointerIdBase;
+
+                button = (int)eventData.button;
+                clickCount = eventData.clickCount;
 
                 // Flip Y axis between input and UITK
                 var h = Screen.height;
@@ -455,8 +429,6 @@ namespace UnityEngine.UIElements
                 altitudeAngle = eventData.altitudeAngle;
                 azimuthAngle = eventData.azimuthAngle;
                 twist = eventData.twist;
-                tilt = eventData.tilt;
-                penStatus = eventData.penStatus;
                 radius = eventData.radius;
                 radiusVariance = eventData.radiusVariance;
 
@@ -469,22 +441,13 @@ namespace UnityEngine.UIElements
                 }
                 else
                 {
-                    button = Mathf.Max(0, (int)eventData.button);
-                    clickCount = eventData.clickCount;
+                    button = button >= 0 ? button : 0;
+                    clickCount = Mathf.Max(1, clickCount);
 
                     if (eventType == PointerEventType.Down)
-                    {
-                        // Case 1379054: UIToolkit assumes clickCount is increased before PointerDown, but UGUI does it after.
-                        clickCount++;
-
                         PointerDeviceState.PressButton(pointerId, button);
-                    }
                     else if (eventType == PointerEventType.Up)
-                    {
                         PointerDeviceState.ReleaseButton(pointerId, button);
-                    }
-
-                    clickCount = Mathf.Max(1, clickCount);
                 }
 
                 pressedButtons = PointerDeviceState.GetPressedButtons(pointerId);

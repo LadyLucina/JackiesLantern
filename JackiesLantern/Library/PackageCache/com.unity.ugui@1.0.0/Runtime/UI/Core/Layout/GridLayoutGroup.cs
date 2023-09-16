@@ -274,21 +274,13 @@ namespace UnityEngine.UI
             {
                 cellsPerMainAxis = cellCountX;
                 actualCellCountX = Mathf.Clamp(cellCountX, 1, rectChildrenCount);
-
-                if (m_Constraint == Constraint.FixedRowCount)
-                    actualCellCountY = Mathf.Min(cellCountY, rectChildrenCount);
-                else
-                    actualCellCountY = Mathf.Clamp(cellCountY, 1, Mathf.CeilToInt(rectChildrenCount / (float)cellsPerMainAxis));
+                actualCellCountY = Mathf.Clamp(cellCountY, 1, Mathf.CeilToInt(rectChildrenCount / (float)cellsPerMainAxis));
             }
             else
             {
                 cellsPerMainAxis = cellCountY;
                 actualCellCountY = Mathf.Clamp(cellCountY, 1, rectChildrenCount);
-
-                if (m_Constraint == Constraint.FixedColumnCount)
-                    actualCellCountX = Mathf.Min(cellCountX, rectChildrenCount);
-                else
-                    actualCellCountX = Mathf.Clamp(cellCountX, 1, Mathf.CeilToInt(rectChildrenCount / (float)cellsPerMainAxis));
+                actualCellCountX = Mathf.Clamp(cellCountX, 1, Mathf.CeilToInt(rectChildrenCount / (float)cellsPerMainAxis));
             }
 
             Vector2 requiredSpace = new Vector2(
@@ -300,45 +292,19 @@ namespace UnityEngine.UI
                 GetStartOffset(1, requiredSpace.y)
             );
 
-            // Fixes case 1345471 - Makes sure the constraint column / row amount is always respected
-            int childrenToMove = 0;
-            if (rectChildrenCount > m_ConstraintCount && Mathf.CeilToInt((float)rectChildrenCount / (float)cellsPerMainAxis) < m_ConstraintCount)
-            {
-                childrenToMove = m_ConstraintCount - Mathf.CeilToInt((float)rectChildrenCount / (float)cellsPerMainAxis);
-                childrenToMove += Mathf.FloorToInt((float)childrenToMove / ((float)cellsPerMainAxis - 1));
-                if (rectChildrenCount % cellsPerMainAxis == 1)
-                    childrenToMove += 1;
-            }
-
             for (int i = 0; i < rectChildrenCount; i++)
             {
                 int positionX;
                 int positionY;
                 if (startAxis == Axis.Horizontal)
                 {
-                    if (m_Constraint == Constraint.FixedRowCount && rectChildrenCount - i <= childrenToMove)
-                    {
-                        positionX = 0;
-                        positionY = m_ConstraintCount - (rectChildrenCount - i);
-                    }
-                    else
-                    {
-                        positionX = i % cellsPerMainAxis;
-                        positionY = i / cellsPerMainAxis;
-                    }
+                    positionX = i % cellsPerMainAxis;
+                    positionY = i / cellsPerMainAxis;
                 }
                 else
                 {
-                    if (m_Constraint == Constraint.FixedColumnCount && rectChildrenCount - i <= childrenToMove)
-                    {
-                        positionX = m_ConstraintCount - (rectChildrenCount - i);
-                        positionY = 0;
-                    }
-                    else
-                    {
-                        positionX = i / cellsPerMainAxis;
-                        positionY = i % cellsPerMainAxis;
-                    }
+                    positionX = i / cellsPerMainAxis;
+                    positionY = i % cellsPerMainAxis;
                 }
 
                 if (cornerX == 1)

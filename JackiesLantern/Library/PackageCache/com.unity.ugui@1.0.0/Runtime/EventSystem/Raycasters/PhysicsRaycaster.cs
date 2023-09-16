@@ -46,11 +46,7 @@ namespace UnityEngine.EventSystems
             {
                 if (m_EventCamera == null)
                     m_EventCamera = GetComponent<Camera>();
-
-                if (m_EventCamera == null)
-                    return Camera.main;
-
-                return m_EventCamera ;
+                return m_EventCamera ?? Camera.main;
             }
         }
 
