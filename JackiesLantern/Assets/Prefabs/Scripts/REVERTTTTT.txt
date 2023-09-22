@@ -1,0 +1,4 @@
+Instead of deleting, you could have
+gone to the history panel in github desktop,
+right clicked the update and clicked
+"revert changes in the commit"
