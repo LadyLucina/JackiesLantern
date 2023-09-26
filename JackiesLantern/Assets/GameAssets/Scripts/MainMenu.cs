@@ -14,16 +14,16 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Settings");
     }
 
     public void HelpButton()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Help");
     }
 
     public void ExitButton()
     {
-        SceneManager.LoadScene("Level 1");
+        Application.Quit(); 
     }
 }
