@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Help");
     }
 
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ExitButton()
     {
         Application.Quit(); 
