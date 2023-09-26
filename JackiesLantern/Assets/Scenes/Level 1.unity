@@ -440,7 +440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644786855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: 159, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -462,8 +462,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 644786858}
   cam: {fileID: 963194228}
-  speed: 50
+  speed: 100
+  crouchSpeed: 50
+  sprintSpeed: 150
   turnSmoothTime: 0.1
+  isCrouching: 0
+  isSprinting: 0
 --- !u!143 &644786858
 CharacterController:
   m_ObjectHideFlags: 0
@@ -889,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.24798383, y: -0, z: -0, w: 0.96876425}
-  m_LocalPosition: {x: 0, y: 175, z: -112}
+  m_LocalPosition: {x: 2.4, y: 272, z: -414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -909,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 644786855}
-  cameraOffset: {x: 0, y: 0, z: 0}
+  cameraOffset: {x: 2.4, y: 272, z: -414}
 --- !u!1 &977980762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,15 +1716,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c97ffdd97c25c4d4ab13169b8d9dd8bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c97ffdd97c25c4d4ab13169b8d9dd8bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c97ffdd97c25c4d4ab13169b8d9dd8bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -310
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c97ffdd97c25c4d4ab13169b8d9dd8bf, type: 3}
       propertyPath: m_LocalRotation.w
