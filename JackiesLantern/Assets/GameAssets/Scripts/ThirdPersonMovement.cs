@@ -41,7 +41,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (!isCrouchInput && isCrouching)
         {
             isCrouching = false;
-            speed = 100f;
+            speed = 10f;
         }
 
 
@@ -58,7 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
             isSprinting = false;
             if (!isCrouching)
             {
-                speed = 100f;
+                speed = 10;
             }
         }
 
