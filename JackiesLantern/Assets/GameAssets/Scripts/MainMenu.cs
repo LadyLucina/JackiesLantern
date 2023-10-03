@@ -39,6 +39,12 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadSceneWithDelay("MainMenu"));
     }
 
+    public void CreditsButton()
+    {
+        //Load Main Menu Scene
+        StartCoroutine(LoadSceneWithDelay("Credits"));
+    }
+
     public void ExitButton()
     {
         Application.Quit(); 
