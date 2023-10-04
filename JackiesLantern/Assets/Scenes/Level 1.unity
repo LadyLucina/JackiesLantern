@@ -1167,7 +1167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1147621738}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: ConfirmQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3088,7 +3088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3219510987041417724, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: sprintSpeed
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3616750517024035111, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_RootOrder
