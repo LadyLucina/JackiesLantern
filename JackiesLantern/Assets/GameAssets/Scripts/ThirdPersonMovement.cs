@@ -5,29 +5,31 @@ using UnityEngine;
 /*
  *Author: Joshua G.
  *Editor: Stephanie M.
- * Note: Added isCrouching and isSprinting to the script so that the player is able to do both.
- * Included compatibility for controller support as well.
+ * Details: This script is the main charactor controller for the players movements.
+ * It allows for controller compatibility when playing the game and includes physics
+ * to prvent player ascension. 
  */
 
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
-    //references player camera
     public Transform cam;
 
-    //Speed variable that dictates how fast the player moves
-    public float speed;
+    [Header("Movement Speed")]
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float crouchSpeed = 3f;
+    [SerializeField] private float sprintSpeed = 10f;
 
-    //Declare crouchSpeed and sprintSpeed
-    public float crouchSpeed = 3f;
-    public float sprintSpeed = 10f;
-    
     //variable that sets turn spped
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
     public bool isCrouching = false;
     public bool isSprinting = false;
+
+    [Header("Ground Check")]
+    [SerializeField] private float groundRayLength = 1.0f;
+
 
     void Update()
     {
@@ -41,7 +43,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (!isCrouchInput && isCrouching)
         {
             isCrouching = false;
-            speed = 10f;
+            speed = 50f;
         }
 
 
@@ -58,7 +60,7 @@ public class ThirdPersonMovement : MonoBehaviour
             isSprinting = false;
             if (!isCrouching)
             {
-                speed = 10;
+                speed = 50;
             }
         }
 
@@ -82,8 +84,17 @@ public class ThirdPersonMovement : MonoBehaviour
             //moves character in the direction camera is pointing
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            //this allows the player to actually move 
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            //Apply gravity
+            float gravity = Physics.gravity.y;
+            moveDir.y = gravity;
+
+            //Perform a ground check using a raycast
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength))
+            {
+                //Move the controller along the ground
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            }
         }
     }
 }
