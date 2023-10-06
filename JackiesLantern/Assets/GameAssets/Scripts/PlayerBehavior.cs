@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    [SerializeField] HealthBarScript healthbar;
   
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            PlayerHeal(10);
+            PlayerHeal(15);
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
     }
@@ -29,11 +30,13 @@ public class PlayerBehavior : MonoBehaviour
     private void PlayerHealthDamage(int damage)
     {
         GameManager.gameManager.playerHealth.damageHealth(damage);
+        healthbar.SetHealth(GameManager.gameManager.playerHealth.Health);
     }
 
     //Method that heals the player
     private void PlayerHeal(int healing)
     {
         GameManager.gameManager.playerHealth.regenHealth(healing);
+        healthbar.SetHealth(GameManager.gameManager.playerHealth.Health);
     }
 }
