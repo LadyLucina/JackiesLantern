@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Author: Stephanie M.
+ * Details: This script is designed to adjust the in game audio by working with a UI slider.
+ */
 
 public class VolumeController : MonoBehaviour
 {
