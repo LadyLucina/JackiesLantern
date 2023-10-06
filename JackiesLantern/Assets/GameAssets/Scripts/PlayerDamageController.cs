@@ -7,39 +7,50 @@ using UnityEngine;
  * It introduces a damage and stun mechanic, along with the ability to destroy the "Lurker" object upon collision.
  */
 
-
 public class PlayerDamageController : MonoBehaviour
 {
-    [Header("Damage & Stunned Stats")]
-    [SerializeField] public int damageAmount = 10;
-    [SerializeField] private float stunDuration = 1.5f;
+    public DamageIndicator damageIndicator; //Reference to the DamageIndicator script
 
-    private HealthSystem healthSystem; //Reference to the current HealthSystem Script
-    private bool isFrozen = false;
+    [Header("Damage & Stunned Stats")]
+    [SerializeField] private int damageAmount = 10;
+    [SerializeField] private float initialStunDuration = 1.5f;
+
+    private HealthSystem healthSystem;
+    public bool isStunned = false; //Flag to control player's stunned state
+    public bool isFrozen = false; //Flag to control player's frozen state
+    private float stunTimer;
+
+    private float currentStunDuration;
     private Vector3 initialPosition;
     private GameObject lastLurkerHit;
-
-    private Rigidbody playerRigidbody; //Reference to the player's Rigidbody component
+    private Rigidbody playerRigidbody;
 
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
-        playerRigidbody = GetComponent<Rigidbody>(); //Get the player's Rigidbody
+        playerRigidbody = GetComponent<Rigidbody>();
+        currentStunDuration = initialStunDuration; //Initialize the stun duration.
+        stunTimer = initialStunDuration; //Initialize the stun timer
     }
 
     private void Update()
     {
         if (isFrozen)
         {
-            stunDuration -= Time.deltaTime;
-            if (stunDuration <= 0f)
+            //Decrement the stun timer
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
             {
                 //The stun duration has passed; unfreeze the player.
                 isFrozen = false;
+                isStunned = false;
                 Debug.Log("Player is no longer stunned");
 
-                //Set the player's Rigidbody to kinematic to prevent unwanted forces.
-                playerRigidbody.isKinematic = true;
+                //Reset the stun timer
+                stunTimer = initialStunDuration;
+
+                //Reset the player's Rigidbody to allow physics to affect it.
+                playerRigidbody.isKinematic = false;
 
                 //Restore the player's initial position.
                 transform.position = initialPosition;
@@ -52,20 +63,24 @@ public class PlayerDamageController : MonoBehaviour
                 }
             }
         }
+
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Lurker") && !isFrozen)
+        if (other.gameObject.CompareTag("Lurker") && !isFrozen)
         {
             healthSystem.damageHealth(damageAmount);
             Debug.Log("Player is Stunned");
+
+            //Show the damage indicator when damage is taken
+            damageIndicator.ShowDamageIndicator();
 
             //Store the player's initial position.
             initialPosition = transform.position;
 
             //Store the recently collided "Lurker" object.
-            lastLurkerHit = collision.gameObject;
+            lastLurkerHit = other.gameObject;
 
             //Call the PlayerStun function to freeze the player.
             PlayerStun();
@@ -74,11 +89,11 @@ public class PlayerDamageController : MonoBehaviour
 
     private void PlayerStun()
     {
-        isFrozen = true;
-        stunDuration = 1.5f;
+        isStunned = true; //Set the stunned flag in PlayerDamageController
+        isFrozen = true; //Freeze the player as well
         Debug.Log("Player is Stunned");
 
-        //Set the player's Rigidbody to kinematic during the stun to avoid the player ascending once unfrozen
+        //Set the player's Rigidbody to kinematic during the stun to avoid unwanted forces.
         playerRigidbody.isKinematic = true;
     }
 }
