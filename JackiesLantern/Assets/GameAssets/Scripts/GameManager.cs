@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager { get; private set; }
     
     //setting starting health and max health
-    public HealthSystem playerHealth = new HealthSystem(100, 100);
+    public HealthSystem playerHealth = new HealthSystem();
 
     //Prevents a duplicate of GameManager from being created
     void Awake()

@@ -2,61 +2,87 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Joshua G.
+ * Details: This script is responsible for managing the health-related functionality of a game character or entity.
+ * This script serves as the central component for managing the health of a character or entity in a game, 
+ * ensuring that health values are correctly adjusted and reflected in the associated health bar.
+ * 
+ * Edited by: Stephanie M.
+ */
+
 public class HealthSystem : MonoBehaviour
 {
-  //initiate variables
-  int currentHealth;
-  int currentMaxHealth;
+    public HealthBarScript healthBar; //Reference to the Health Bar Script
 
-  //defineing and establishing propterties for health value
-  public int Health
-  {
-	get
-	{
-		return currentHealth;
-	}
-	set
-	{
-		currentHealth = value;
-	}
-  }
+    //Serialized fields for initial health and max health values
+    [SerializeField] int initialHealth = 100;
+    [SerializeField] int initialMaxHealth = 100;
 
-  public int MaxHealth
-  {
-	get
-	{
-		return currentMaxHealth;
-	}
-	set
-	{
-		currentMaxHealth = value;
-	}
-  }
+    //Initialize variables
+    int currentHealth;
+    int currentMaxHealth;
 
-  //methods of damaging health and regenerating health
-  public HealthSystem(int health, int maxHealth)
-  {
-	currentHealth = health;
-	currentMaxHealth = maxHealth;
-  }
+    //Properties for health value
+    public int Health
+    {
+        get { return currentHealth; }
+        set
+        {
+            currentHealth = value;
 
-  public void damageHealth(int damageAmount)
-  {
-		if (currentHealth > 0)
-		{
-			currentHealth -= damageAmount;
-		}
-  }
+            //Updates the health bar whenever health changes
+            healthBar.SetHealth(currentHealth);
+        }
+    }
 
-  public void regenHealth(int healAmount)
-  {
-	if (currentHealth < currentMaxHealth)
-	{
-		currentHealth += healAmount;
-	}
-	if (currentHealth > currentMaxHealth)
-	{
-		currentHealth = currentMaxHealth;
-	}
-  }
+    public int MaxHealth
+    {
+        get { return currentMaxHealth; }
+        set
+        {
+            //Ensure that the max health doesn't exceed the default value (100)
+            currentMaxHealth = Mathf.Min(value, 100);
+
+            //Update the health bar whenever max health changes
+            healthBar.SetMaxHealth(currentMaxHealth);
+        }
+    }
+
+    //Method to initialize health system
+    void Start()
+    {
+        currentHealth = initialHealth;
+        MaxHealth = initialMaxHealth;
+    }
+
+    public void damageHealth(int damageAmount)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= damageAmount;
+
+            //Log the current health value for debugging
+            Debug.Log("DAMAGED! Current Health: " + currentHealth);
+
+            //Update the health bar when taking damage
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
+    public void regenHealth(int healAmount)
+    {
+        if (currentHealth < currentMaxHealth)
+        {
+            currentHealth += healAmount;
+
+            //Ensure the health does not exceed max health
+            currentHealth = Mathf.Min(currentHealth, currentMaxHealth);
+
+            //Log the current health value for debugging
+            Debug.Log("HEALED! Current Health: " + currentHealth);
+
+            //Update the health bar when regenerating health
+            healthBar.SetHealth(currentHealth);
+        }
+    }
 }

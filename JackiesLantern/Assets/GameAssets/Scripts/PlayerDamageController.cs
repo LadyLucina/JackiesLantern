@@ -10,12 +10,12 @@ using UnityEngine;
 public class PlayerDamageController : MonoBehaviour
 {
     public DamageIndicator damageIndicator; //Reference to the DamageIndicator script
+    private HealthSystem healthSystem; // Reference to the HealthSystem script
 
     [Header("Damage & Stunned Stats")]
     [SerializeField] private int damageAmount = 10;
     [SerializeField] private float initialStunDuration = 1.5f;
 
-    private HealthSystem healthSystem;
     public bool isStunned = false; //Flag to control player's stunned state
     public bool isFrozen = false; //Flag to control player's frozen state
     private float stunTimer;
@@ -37,7 +37,7 @@ public class PlayerDamageController : MonoBehaviour
     {
         if (isFrozen)
         {
-            //Decrement the stun timer
+            // Decrement the stun timer
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0f)
             {
@@ -63,13 +63,13 @@ public class PlayerDamageController : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Lurker") && !isFrozen)
         {
+            //Damage the player's health using the HealthSystem
             healthSystem.damageHealth(damageAmount);
             Debug.Log("Player is Stunned");
 
