@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7958649909155204153}
   - component: {fileID: 7958649909155204152}
   - component: {fileID: 7958649909155204155}
+  - component: {fileID: 5939710529431219120}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -58,6 +59,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   isCrouching: 0
   isSprinting: 0
+  groundRayLength: 1
 --- !u!143 &7958649909155204159
 CharacterController:
   m_ObjectHideFlags: 0
@@ -88,8 +90,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26b1d39a8dc7064692cb9df86086d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageIndicator: {fileID: 0}
   damageAmount: 10
-  stunDuration: 1.5
+  initialStunDuration: 1.5
+  isStunned: 0
+  isFrozen: 0
 --- !u!54 &7958649909155204153
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,6 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb2db5592f96a74ba0130332faee194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  initialHealth: 100
+  initialMaxHealth: 100
 --- !u!136 &7958649909155204155
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -132,6 +140,26 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!95 &5939710529431219120
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958649909155204146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b372e09125b9b64b911f408bf81ca69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &7958649907894536663
 PrefabInstance:
   m_ObjectHideFlags: 0
