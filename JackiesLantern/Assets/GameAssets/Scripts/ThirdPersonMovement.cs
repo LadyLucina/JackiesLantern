@@ -21,7 +21,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float sprintSpeed = 10f;
 
-    [SerializeField] private Vector3 moveDirection; //Animation
+  //  [SerializeField] private Vector3 moveDirection; //Animation
 
     //variable that sets turn spped
     public float turnSmoothTime = 0.1f;
@@ -33,16 +33,13 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float groundRayLength = 1.0f;
 
-    //Animation
-    private Animator animator;
+    
 
     public void Start()
     {
         //Get a reference to the PlayerDamageController script
         damageController = GetComponent<PlayerDamageController>();
 
-        //Animation
-        animator = GetComponent<Animator>();       
 
 
     }
@@ -124,22 +121,7 @@ public class ThirdPersonMovement : MonoBehaviour
             }
         }
 
-        //Animations
-        if (moveDirection == Vector3.zero)
-        {
-            //Idle
-            animator.SetFloat("speed", 0);
-        }
-        else if(!Input.GetKey(KeyCode.LeftShift))
-        {
-            //Walk
-            animator.SetFloat("speed", 0.5f);
-        }
-        else
-        {
-            //Run
-            animator.SetFloat("speed", 1);
-        }
+
 
     }
 
