@@ -10,7 +10,8 @@ using UnityEngine;
 public class PlayerDamageController : MonoBehaviour
 {
     public DamageIndicator damageIndicator; //Reference to the DamageIndicator script
-    private HealthSystem healthSystem; // Reference to the HealthSystem script
+    private HealthSystem healthSystem; //Reference to the HealthSystem script
+    private AudioSource playerAudioSource; //Reference to the player's AudioSource
 
     [Header("Damage & Stunned Stats")]
     [SerializeField] private int damageAmount = 10;
@@ -31,13 +32,16 @@ public class PlayerDamageController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         currentStunDuration = initialStunDuration; //Initialize the stun duration.
         stunTimer = initialStunDuration; //Initialize the stun timer
+
+        //Find and store the player's AudioSource component.
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         if (isFrozen)
         {
-            // Decrement the stun timer
+            //Decrement the stun timer
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0f)
             {
@@ -84,6 +88,12 @@ public class PlayerDamageController : MonoBehaviour
 
             //Call the PlayerStun function to freeze the player.
             PlayerStun();
+
+            //Play the damage audio on the player's AudioSource.
+            if (playerAudioSource != null)
+            {
+                playerAudioSource.Play();
+            }
         }
     }
 
