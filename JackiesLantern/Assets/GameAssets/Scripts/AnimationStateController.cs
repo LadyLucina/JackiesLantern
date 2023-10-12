@@ -31,24 +31,32 @@ public class AnimationStateController : MonoBehaviour
         bool forwardPressed = Input.GetKey("w") | Input.GetKey("a") | Input.GetKey("s") | Input.GetKey("d");
         bool runPressed = Input.GetKey("left shift");
 
-        if (!isWalking && forwardPressed)
-        {
-            animator.SetBool(isWalkingHash, true);
-        }
-        if (isWalking && forwardPressed)
-        {
-            animator.SetBool(isWalkingHash, false);
-        }
 
+
+        //Player is walking(not running) then presses L shift, isRunning is set to true & running animation plays
         if (!isRunning && (forwardPressed && runPressed))
         {
             animator.SetBool(isRunningHash, true);
         }
+
+        //Player is walking/running then stops walking/running isRunning becomes false
         if (isRunning && (!forwardPressed || !runPressed))
         {
             animator.SetBool(isRunningHash, false);
         }
 
+        //if player moves (WASD), play Walk animation & isWalking is set to true
+        if (!isWalking && forwardPressed)
+        {
+            animator.SetBool(isWalkingHash, true);
+
+        }
+
+        //If player stops moving isWalking is set to false & Walk animation stops
+        if (isWalking && forwardPressed)
+        {
+            animator.SetBool(isWalkingHash, false);
+        }
 
     }
 }
