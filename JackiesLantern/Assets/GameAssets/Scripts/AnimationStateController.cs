@@ -11,6 +11,7 @@ public class AnimationStateController : MonoBehaviour
     Animator animator;
     int isWalkingHash;
     int isRunningHash;
+    int isIdleHash;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,14 @@ public class AnimationStateController : MonoBehaviour
         //increases performance
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
+        isIdleHash = Animator.StringToHash("isIdle");
 
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        bool isIdle = animator.GetBool(isIdleHash);
         bool isWalking = animator.GetBool(isWalkingHash);
         bool isRunning = animator.GetBool(isRunningHash);
         bool forwardPressed = Input.GetKey("w") | Input.GetKey("a") | Input.GetKey("s") | Input.GetKey("d");
@@ -56,6 +59,17 @@ public class AnimationStateController : MonoBehaviour
         if (isWalking && forwardPressed)
         {
             animator.SetBool(isWalkingHash, false);
+        }
+
+
+        //Sets player to Idle
+        if (!isWalking && !isRunning)
+        {
+            animator.SetBool(isIdleHash, true);
+        }
+        else
+        {
+            animator.SetBool(isIdleHash, false);
         }
 
     }
