@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+
+    //Load levels between 1-4 
     public void LoadLevel1()
     {
         //Load level 1 scene
@@ -27,5 +29,7 @@ public class LevelSelect : MonoBehaviour
     {
         //Load level 4 scene
         SceneManager.LoadScene("Level 4");
-    }
+    }   
 }
+
+

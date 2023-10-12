@@ -92,5 +92,15 @@ public class PauseManager : MonoBehaviour
         //Quit the application
         Application.Quit();
     }
+
+    //This function will reload the players current scene
+    public void RestartCurrentScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceneName);
+
+    }
 }
+
 

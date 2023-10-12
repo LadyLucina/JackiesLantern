@@ -12,7 +12,7 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    private PlayerDamageController damageController; // Reference to the PlayerDamageController script
+    private PlayerDamageController damageController; //Reference to the PlayerDamageController script
     public CharacterController controller;
     public Transform cam;
 
@@ -21,9 +21,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float sprintSpeed = 10f;
 
-  //  [SerializeField] private Vector3 moveDirection; //Animation
-
-    //variable that sets turn spped
+    //variable that sets turn speed
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
@@ -33,21 +31,15 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float groundRayLength = 1.0f;
 
-    
-
     public void Start()
     {
         //Get a reference to the PlayerDamageController script
         damageController = GetComponent<PlayerDamageController>();
-
-
-
     }
 
     void Update()
     {
-
-        if (!damageController.isStunned) // Check if the player is not stunned
+        if (!damageController.isStunned) //Check if the player is not stunned
         {
             //Detect crouch input (keyboard: Left Control, controller: B button on controller)
             bool isCrouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Crouch");
@@ -79,17 +71,17 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
             }
 
-            //sets horizontal movement using "A" and "D" and arrow keys
-            float horizontal = Input.GetAxisRaw("Horizontal");
+            //Sets horizontal movement using "A" and "D" and arrow keys
+            float horizontal = Input.GetAxis("Horizontal");
 
-            //sets vertical movement using "W" "S" and arrow keys
-            float vertical = Input.GetAxisRaw("Vertical");
+            //Sets vertical movement using "W" "S" and arrow keys
+            float vertical = Input.GetAxis("Vertical");
 
-            //this line prevents player from moving up and down on the Y axis and ensures that in only travels on X and Z axis
+            //This line prevents the player from moving up and down on the Y-axis and ensures movement only on the X and Z axes
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-            // Handle movement
-            if (!damageController.isFrozen) // Check if the player is not frozen
+            //Handle movement
+            if (!damageController.isFrozen) //Check if the player is not frozen
             {
                 if (!isCrouching && !isSprinting)
                 {
@@ -98,12 +90,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
                 if (direction.magnitude >= 0.1f)
                 {
-                    //rotates character with camera
+                    //Rotates the character with the camera
                     float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
                     float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                     transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-                    //moves character in the direction camera is pointing
+                    //Moves the character in the direction the camera is pointing
                     Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
                     //Apply gravity
@@ -120,9 +112,6 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
             }
         }
-
-
-
     }
 
     //Reference to PlayerStun function in PlayerDamageController

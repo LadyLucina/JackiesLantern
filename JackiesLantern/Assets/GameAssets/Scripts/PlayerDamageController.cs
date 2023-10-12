@@ -11,30 +11,28 @@ public class PlayerDamageController : MonoBehaviour
 {
     public DamageIndicator damageIndicator; //Reference to the DamageIndicator script
     private HealthSystem healthSystem; //Reference to the HealthSystem script
-    private AudioSource playerAudioSource; //Reference to the player's AudioSource
 
-    [Header("Damage & Stunned Stats")]
-    [SerializeField] private int damageAmount = 10;
+  [Header("Damage & Stunned Stats")]
+    [SerializeField] private int lurkerDamage = 10;
+    [SerializeField] private int trapperDamage = 15;
+    [SerializeField] private int farmerDamage = 20;
+    [SerializeField] private int bossDamage = 25;
     [SerializeField] private float initialStunDuration = 1.5f;
 
     public bool isStunned = false; //Flag to control player's stunned state
     public bool isFrozen = false; //Flag to control player's frozen state
     private float stunTimer;
 
-    private float currentStunDuration;
     private Vector3 initialPosition;
-    private GameObject lastLurkerHit;
-    private Rigidbody playerRigidbody;
+    private GameObject lastEnemyHit;
+    private CharacterController characterController; //Reference to the CharacterController
 
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
-        playerRigidbody = GetComponent<Rigidbody>();
-        currentStunDuration = initialStunDuration; //Initialize the stun duration.
         stunTimer = initialStunDuration; //Initialize the stun timer
 
-        //Find and store the player's AudioSource component.
-        playerAudioSource = GetComponent<AudioSource>();
+        characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -45,65 +43,75 @@ public class PlayerDamageController : MonoBehaviour
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0f)
             {
-                //The stun duration has passed; unfreeze the player.
+                //The stun duration has passed; unfreeze the player
                 isFrozen = false;
                 isStunned = false;
-                Debug.Log("Player is no longer stunned");
 
                 //Reset the stun timer
                 stunTimer = initialStunDuration;
 
-                //Reset the player's Rigidbody to allow physics to affect it.
-                playerRigidbody.isKinematic = false;
-
-                //Restore the player's initial position.
+                //Restore the player's initial position
                 transform.position = initialPosition;
 
-                //Destroy the recently collided "Lurker" object.
-                if (lastLurkerHit != null)
+                //Destroy the recently collided enemy object
+                if (lastEnemyHit != null)
                 {
-                    Destroy(lastLurkerHit);
-                    Debug.Log("Lurker destroyed");
+                    Destroy(lastEnemyHit);
                 }
+
+                //Re-enable the CharacterController
+                characterController.enabled = true;
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Lurker") && !isFrozen)
+        if (!isFrozen)
         {
-            //Damage the player's health using the HealthSystem
-            healthSystem.damageHealth(damageAmount);
-            Debug.Log("Player is Stunned");
-
-            //Show the damage indicator when damage is taken
-            damageIndicator.ShowDamageIndicator();
-
-            //Store the player's initial position.
-            initialPosition = transform.position;
-
-            //Store the recently collided "Lurker" object.
-            lastLurkerHit = other.gameObject;
-
-            //Call the PlayerStun function to freeze the player.
-            PlayerStun();
-
-            //Play the damage audio on the player's AudioSource.
-            if (playerAudioSource != null)
+            if (other.gameObject.CompareTag("Lurker"))
             {
-                playerAudioSource.Play();
+                DamageEnemy(lurkerDamage, other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("Trapper"))
+            {
+                DamageEnemy(trapperDamage, other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("Farmer"))
+            {
+                DamageEnemy(farmerDamage, other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("Boss"))
+            {
+                DamageEnemy(bossDamage, other.gameObject);
             }
         }
+    }
+
+    private void DamageEnemy(int damage, GameObject enemy)
+    {
+        //Damage the player's health using the HealthSystem
+        healthSystem.damageHealth(damage);
+
+        //Show the damage indicator when damage is taken
+        damageIndicator.ShowDamageIndicator();
+
+        //Store the player's initial position
+        initialPosition = transform.position;
+
+        //Store the recently collided enemy object
+        lastEnemyHit = enemy;
+
+        //Call the PlayerStun function to freeze the player
+        PlayerStun();
     }
 
     private void PlayerStun()
     {
         isStunned = true; //Set the stunned flag in PlayerDamageController
         isFrozen = true; //Freeze the player as well
-        Debug.Log("Player is Stunned");
 
-        //Set the player's Rigidbody to kinematic during the stun to avoid unwanted forces.
-        playerRigidbody.isKinematic = true;
+        //Disable character controller to avoid player movement during the stun
+        characterController.enabled = false;
     }
 }
