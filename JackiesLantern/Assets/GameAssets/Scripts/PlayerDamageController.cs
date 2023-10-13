@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* Author: Stephanie M.
  * Details: This script  is designed to handle player interactions with a "Lurker" object in a Unity game. 
- * It introduces a damage and stun mechanic, along with the ability to destroy the "Lurker" object upon collision.
+ * It introduces a damage and stun mechanic, along with the ability to destroy the enemy objects on collision. 
  */
 
 public class PlayerDamageController : MonoBehaviour
