@@ -28,8 +28,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isCrouching = false;
     public bool isSprinting = false;
 
-    [Header("Ground Check")]
-    [SerializeField] private float groundRayLength = 1.0f;
+    //[Header("Ground Check")]
+    //[SerializeField] private float groundRayLength = 1.0f;
 
     public void Start()
     {
@@ -102,13 +102,18 @@ public class ThirdPersonMovement : MonoBehaviour
                     float gravity = Physics.gravity.y;
                     moveDir.y = gravity;
 
+                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
+
                     //Perform a ground check using a raycast
-                    RaycastHit hit;
+                    /* Commented out the below code due to the character collision on the sidewalk resulting
+                     * in the character getting stuck. 
+                     */
+                    /* RaycastHit hit;
                     if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength))
                     {
                         //Move the controller along the ground
-                        controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                    }
+   
+                    } */
                 }
             }
         }
