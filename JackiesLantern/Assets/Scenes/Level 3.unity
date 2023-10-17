@@ -11795,7 +11795,7 @@ PrefabInstance:
     - target: {fileID: 746043364671871107, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9d74466d797f3f942a12d99d4c1e0c1b, type: 2}
+      objectReference: {fileID: 2100000, guid: 2e7bf0f0d8fcd5145b8424cc352c4459, type: 2}
     - target: {fileID: 3219510986588663328, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: cameraOffset.y
       value: 1.93

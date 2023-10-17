@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22051641, y: 0.1825073}
   m_AnchorMax: {x: 0.77951646, y: 0.82100004}
-  m_AnchoredPosition: {x: 0.000030517578, y: -1}
+  m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: -0.36071777, y: -0.8413086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &106166505
@@ -1512,6 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1596,6 +1597,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &771572497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2940,6 +2961,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746043364671871107, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e7bf0f0d8fcd5145b8424cc352c4459, type: 2}
     - target: {fileID: 3219510987041417724, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: speed
       value: 50
@@ -4324,7 +4349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.298, y: 0.19857728}
   m_AnchorMax: {x: 0.70525825, y: 0.31366178}
-  m_AnchoredPosition: {x: -2.577896, y: 1.5}
+  m_AnchoredPosition: {x: -2.5778809, y: 1.5}
   m_SizeDelta: {x: 10.844208, y: 2.9219055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993193741
