@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class PlayerHealingController : MonoBehaviour
 {
+    public DamageIndicator healIndicator; //Reference to the DamageIndicator script 
+
     [Header("Healing Stats")]
     [SerializeField] public int healAmount = 15;
 
@@ -34,6 +36,7 @@ public class PlayerHealingController : MonoBehaviour
             //Check if healing is needed (currentHealth < currentMaxHealth)
             if (healthSystem.Health < healthSystem.MaxHealth)
             {
+                healIndicator.ShowHealIndicator();
                 //Regenerates player's health when the object is collided with
                 healthSystem.regenHealth(healAmount);
                 Debug.Log("Player is healing");
