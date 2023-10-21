@@ -24,6 +24,7 @@ public class DamageIndicator : MonoBehaviour
     {
         //Hides damage indicator UI when the game plays
         damageImage.enabled = false;
+        //Hides heal indicator UI when the game plays
         healImage.enabled = false;
     }
 

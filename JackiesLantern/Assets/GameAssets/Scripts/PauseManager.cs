@@ -30,7 +30,7 @@ public class PauseManager : MonoBehaviour
     void Update()
     {
         //Checks for the ESC key to toggle game pause
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
                 ResumeGame();
@@ -71,7 +71,7 @@ public class PauseManager : MonoBehaviour
         //Loads Main Menu scene
         SceneManager.LoadScene("MainMenu");
     }
-    
+
     //This function will be called when the user decides to cancel the quit request
     public void QuitCancelled()
     {
@@ -101,6 +101,7 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneName);
 
     }
+
 }
 
 

@@ -104,16 +104,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
-                    //Perform a ground check using a raycast
-                    /* Commented out the below code due to the character collision on the sidewalk resulting
-                     * in the character getting stuck. 
-                     */
-                    /* RaycastHit hit;
-                    if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength))
-                    {
-                        //Move the controller along the ground
-   
-                    } */
                 }
             }
         }
