@@ -496,7 +496,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ec5c887836e834cba8a6ed334ae6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healIndicator: {fileID: 0}
   healAmount: 15
+--- !u!114 &1254916946338114322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219510987041417714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3989688f293846a4bb780b32102b7d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointSystem: {fileID: 0}
 --- !u!4 &3219510987041417725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958649909155204157, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
