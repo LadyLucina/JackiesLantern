@@ -7,10 +7,17 @@ using UnityEngine;
  */
 public class AudioInRange : MonoBehaviour
 {
+    [Header("Audio Settings")]
     public AudioSource audioSource;
+    public AudioClip audioClip;
+    public float volume;
+
+    [Header("Player Specific Settings")]
     public Transform player;
     public float maxRange = 10.0f;
+
     private bool isInRange = false;
+
 
     void Update()
     {
@@ -23,7 +30,7 @@ public class AudioInRange : MonoBehaviour
             //If not already playing, start playing the audio.
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(audioClip, volume);
                 isInRange = true;
             }
         }
@@ -32,7 +39,6 @@ public class AudioInRange : MonoBehaviour
             //If the player is out of range and audio is playing, stop it.
             if (isInRange && audioSource.isPlaying)
             {
-                audioSource.Stop();
                 isInRange = false;
             }
         }
