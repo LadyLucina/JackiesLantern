@@ -72,5 +72,9 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isIdleHash, false);
         }
 
+        //When shift is held before player starts moving, the walking nor running animatoin plays...
+
+
+
     }
 }
