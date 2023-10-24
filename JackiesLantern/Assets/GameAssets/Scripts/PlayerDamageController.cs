@@ -27,6 +27,8 @@ public class PlayerDamageController : MonoBehaviour
     private GameObject lastEnemyHit;
     private CharacterController characterController; //Reference to the CharacterController
 
+  // public float destroyTime = 0.5f; //Delays time before enemy is destroyed so animation can play. Not in use right now. -Mya
+
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
