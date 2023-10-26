@@ -4,40 +4,25 @@ using UnityEngine;
 
 public class FootStepsAudio : MonoBehaviour
 {
-    //private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip[] clips;
 
-    private AudioSource footStep;
+    AudioSource audioSource;
 
     private void Awake()
     {
-        footStep = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    private void Step()
+    public void Step()
     {
-        footStep.Play();
+        AudioClip clip = GetRandomClip();
+        audioSource.PlayOneShot(clip);
     }
 
-    //public void playFootStepSound()
-    //{
-
-    //footStep.Play();
-
-    //}
-}
-
-   
-
-
-/*
-public AudioSource footStep;
-
-public void playFootStepSound()
-{
-
-footStep.Play();
-}
-
+    private AudioClip GetRandomClip()
+    {
+        return clips[UnityEngine.Random.Range(0, clips.Length)];    
+    }
 
 }
-  */

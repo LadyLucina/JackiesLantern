@@ -64,7 +64,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.43194494
+      - time: 0
         functionName: Step
         data: 
         objectReferenceParameter: {instanceID: 0}
