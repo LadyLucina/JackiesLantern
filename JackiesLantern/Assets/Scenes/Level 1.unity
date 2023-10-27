@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.032799963, g: 0.04215526, b: 0.08525541, a: 1}
+  m_IndirectSpecularColor: {r: 0.032844845, g: 0.04219521, b: 0.08542261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -35699,7 +35699,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.45
+  m_fontSize: 62.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -85907,7 +85907,15 @@ PrefabInstance:
       objectReference: {fileID: 968746364}
     - target: {fileID: 4613280893330221713, guid: 9f91616f6e3bfe04c8dd1788c3a0d1e3, type: 3}
       propertyPath: MaxDistance
-      value: 5
+      value: 3.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613280893330221713, guid: 9f91616f6e3bfe04c8dd1788c3a0d1e3, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613280893330221713, guid: 9f91616f6e3bfe04c8dd1788c3a0d1e3, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.25217646
       objectReference: {fileID: 0}
     - target: {fileID: 4613280893330221719, guid: 9f91616f6e3bfe04c8dd1788c3a0d1e3, type: 3}
       propertyPath: m_RootOrder
