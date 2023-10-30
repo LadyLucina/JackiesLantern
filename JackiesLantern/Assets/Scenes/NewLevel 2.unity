@@ -12698,6 +12698,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9d74466d797f3f942a12d99d4c1e0c1b, type: 2}
+    - target: {fileID: 2231230231794844331, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3219510986588663328, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: cameraOffset.y
       value: 1.93
@@ -15426,7 +15430,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.507
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
