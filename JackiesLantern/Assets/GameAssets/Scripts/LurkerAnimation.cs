@@ -12,12 +12,12 @@ public class LurkerAnimation : MonoBehaviour
     private Animator lurkerAnim;
     public Material Material1;
     public Renderer Object;
+    private Animator anim;
 
     private void Start()
     {
         lurkerAnim = this.GetComponent<Animator>();
-        
-
+        anim = GetComponent<Animator>();
     }
 
     //When player is in range, animation plays
@@ -25,6 +25,11 @@ public class LurkerAnimation : MonoBehaviour
     {
         lurkerAnim.SetBool("inRange", true);
         Object.material = Material1;  //Changes material of hand when player is in range
-        
+
+        //Plays specific animation from the Animator
+        anim.Play("Grab_1");
+
     }
+
+
 }
