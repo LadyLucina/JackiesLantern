@@ -116,7 +116,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: d2702aa275ad3cf4d8a601db606809b6, type: 3}
   volume: 0.5
   player: {fileID: 0}
-  maxRange: 3
+  maxRange: 3.5
 --- !u!82 &4613280893330221713
 AudioSource:
   m_ObjectHideFlags: 0
