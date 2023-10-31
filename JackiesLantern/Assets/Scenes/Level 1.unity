@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.4643555, y: -0.34051514}
+  m_AnchoredPosition: {x: 1.4643555, y: -0.3405304}
   m_SizeDelta: {x: 16.2236, y: 15.2609}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515906
@@ -14321,6 +14321,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81e4d60336a0eb648ac536387dd16073, type: 3}
   m_PrefabInstance: {fileID: 1188281132}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &345606063 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 9079487680545614120, guid: f46ffff1787ca34458f557594481945a, type: 3}
+  m_PrefabInstance: {fileID: 548347420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &347448048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81e4d60336a0eb648ac536387dd16073, type: 3}
@@ -21354,7 +21359,7 @@ PrefabInstance:
     - target: {fileID: 1254916946338114322, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: checkpointSystem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1100056602}
     - target: {fileID: 2231230231794844331, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -21527,6 +21532,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: maxDistance
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: objectLight
+      value: 
+      objectReference: {fileID: 345606063}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: detectionRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: enemyInRangeColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: enemyInRangeColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309012845122337941, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: enemyInRangeColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6066762927020459064, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: cameraOffset.y
       value: 2.99
@@ -21544,8 +21573,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8547959764021796966, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547959764021796966, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: near clip plane
-      value: 0.3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079487680545614120, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: m_Range
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3219510987041417721, guid: f46ffff1787ca34458f557594481945a, type: 3}
@@ -91394,7 +91431,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 63.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

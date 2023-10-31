@@ -7,62 +7,64 @@ using UnityEngine;
  * "Lurker", "Trapper", "Farmer" and/or "Boss", the lanterns light will switch to the color
  *  red, immediately alerting the player to the threat. When the player moves out of range, 
  *  the light will revert back to its original color. 
- * 
  */
 
 public class EnemyDetection : MonoBehaviour
 {
-    public GameObject player; //Reference to the player object
-    public Light objectLight; //Reference to the light component of the object to be controlled
-    public float detectionRange = 10.0f; //Detection range for the enemies
-    public Color originalLightColor = Color.white; //Original light color
-    public Color enemyInRangeColor = Color.red; //Enemy alert color
+    [Header("Lantern Light Settings")]
+    public GameObject player; //Reference to player object
+    public Light objectLight; //Reference to light component
+    public float detectionRange = 10.0f; //Range within the enemys presence is detected
+    public Color originalLightColor; //The original color of the light
+    public Color enemyInRangeColor; //The color the light should be when the enemy is in range
 
     private void Start()
     {
-        //Checks to verify the player object is assigned
+        //Check if the player object is assigned. If not, display an error message and disable the script.
         if (player == null)
         {
             Debug.LogError("Player object not assigned to the script.");
             enabled = false;
         }
 
-        //Checks to verify the light component is assigned
+        //Check if the light component is assigned. If not, display an error message and disable the script.
         if (objectLight == null)
         {
             Debug.LogError("Light component not assigned to the script.");
             enabled = false;
         }
 
-        //Initialize the light color to the original color
+        //Set the initial color of the light to originalLightColor.
         objectLight.color = originalLightColor;
     }
 
     private void Update()
     {
-        bool playerInRange = false;
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
+        float closestEnemyDistance = Mathf.Infinity;
 
-        foreach (Collider collider in colliders)
+        //Iterate through a list of enemy tags and find the closest enemy from each tag.
+        foreach (string enemyTag in new string[] { "Lurker", "Trapper", "Farmer", "Boss" })
         {
-            //Check if the collider has one of the specified enemy tags
-            if (collider.CompareTag("Lurker") || collider.CompareTag("Trapper") || collider.CompareTag("Farmer") || collider.CompareTag("Boss"))
+            //Find all game objects with the specified enemy tag.
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+
+            foreach (GameObject enemy in enemies)
             {
-                playerInRange = true;
-                break;
+                //Check the distance to each enemy and find the closest one.
+                float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+
+                //Update the closestEnemyDistance if a closer enemy is found.
+                if (distance < closestEnemyDistance)
+                {
+                    closestEnemyDistance = distance;
+                }
             }
         }
 
-        //If an enemy is in range, change the light color to enemyInRangeColor
-        if (playerInRange)
-        {
-            objectLight.color = enemyInRangeColor;
-        }
-        //If no enemies are in range, revert to the original light color
-        else
-        {
-            objectLight.color = originalLightColor;
-        }
-    }
+        //Calculate the lerp factor based on the distance to the closest enemy
+        float lerpFactor = Mathf.InverseLerp(0, detectionRange, closestEnemyDistance);
 
+        //Interpolate between the original color and enemyInRangeColor
+        objectLight.color = Color.Lerp(enemyInRangeColor, originalLightColor, lerpFactor);
+    }
 }
