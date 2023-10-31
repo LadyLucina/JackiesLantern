@@ -9,7 +9,12 @@ public class ButtonSoundEffect : MonoBehaviour
 {
 
     public AudioSource soundPlayer;
+    public AudioClip hover;
 
+    public void hoverSound()
+    {
+        soundPlayer.PlayOneShot(hover);
+    }
     public void playClickSound()
     {
 
