@@ -56,7 +56,7 @@ Material:
     - _tiling: {r: 8, g: 4, b: 0, a: 0}
     - _topColor: {r: 0.3579269, g: 0.03551085, b: 0.3962264, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5677667571469035528
+--- !u!114 &4460696415157364427
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
