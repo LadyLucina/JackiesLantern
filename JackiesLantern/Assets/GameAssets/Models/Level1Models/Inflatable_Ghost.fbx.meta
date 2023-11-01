@@ -3,7 +3,12 @@ guid: 67c2604029cda554faf79bab815145e2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inflatable ghost
+    second: {fileID: 2100000, guid: ed4691c281beb804496ad6d67d634629, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

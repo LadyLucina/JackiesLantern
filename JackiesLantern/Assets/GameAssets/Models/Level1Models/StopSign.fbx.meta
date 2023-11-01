@@ -3,7 +3,12 @@ guid: ac48167e7921a024298dd74a39062b80
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StopSign_Base_color_1001
+    second: {fileID: 2100000, guid: 34b45e8003ee31545a7dfb958f48d2be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
