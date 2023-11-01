@@ -376,11 +376,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7958649909155204159, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
       propertyPath: m_SkinWidth
-      value: 0.06
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958649909155204159, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7958649909155204159, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
       propertyPath: m_StepOffset
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7958649909155204159, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
       propertyPath: m_MinMoveDistance

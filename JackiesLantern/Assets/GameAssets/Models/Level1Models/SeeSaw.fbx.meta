@@ -3,7 +3,22 @@ guid: 8fcdbe1dcf2437f418775bc1ccb740c6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grips2
+    second: {fileID: 2100000, guid: 776c2ec09077d2d4792428826f275c8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seats2
+    second: {fileID: 2100000, guid: e2f9c7ab1d8535d478bea5993c102801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SeeSaw2
+    second: {fileID: 2100000, guid: f2c4ea8cee2473c45bd86f883271c5ac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
