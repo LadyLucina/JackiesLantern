@@ -3,7 +3,27 @@ guid: 4d17a23cc89c38447a44f853e6cb798f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Power_Pole
+    second: {fileID: 2100000, guid: e61c5314d0227cc4cbc862a158735733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Power_Pole_ 2 x 4
+    second: {fileID: 2100000, guid: 460746e3807cffd4aa665bb2b1590d84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Power_Pole_Metal
+    second: {fileID: 2100000, guid: 861c259656c3f2948b997276faa2c09e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: insulator
+    second: {fileID: 2100000, guid: 36ce29275707d4f42a4428040f0df8fd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

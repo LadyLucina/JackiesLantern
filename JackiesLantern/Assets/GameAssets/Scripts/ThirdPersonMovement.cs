@@ -72,10 +72,10 @@ public class ThirdPersonMovement : MonoBehaviour
             }
 
             //Sets horizontal movement using "A" and "D" and arrow keys
-            float horizontal = Input.GetAxis("Horizontal");
+            float horizontal = Input.GetAxisRaw("Horizontal");
 
             //Sets vertical movement using "W" "S" and arrow keys
-            float vertical = Input.GetAxis("Vertical");
+            float vertical = Input.GetAxisRaw("Vertical");
 
             //This line prevents the player from moving up and down on the Y-axis and ensures movement only on the X and Z axes
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
