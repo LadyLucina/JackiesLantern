@@ -3,7 +3,12 @@ guid: 1b5478c1eedd2f74989d5bc93b67a3b8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DirtMound.002
+    second: {fileID: 2100000, guid: de4528e2fa4a7ea4b9daadd7e1b24b6c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
