@@ -3,7 +3,12 @@ guid: 063a79e7472ddf84588e7a91ba9c3c61
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mausoleum
+    second: {fileID: 2100000, guid: 266f9006fb3770c46a9e4cbc67bc78a3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

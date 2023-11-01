@@ -3,7 +3,12 @@ guid: 5fd622fbecd60544a88694938f63f8a8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gravestone9
+    second: {fileID: 2100000, guid: 7d7f5bceff8a37943af50a548e4082ed, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
