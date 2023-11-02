@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author:  iHeartGameDev and Mya
-//https://youtu.be/FF6kezDQZ7s
+
+/*Author:  iHeartGameDev and Mya
+ * https://youtu.be/FF6kezDQZ7s
+ * 
+ * The script to play Jackie's Idle, Walking, & Running animations.
+ * 
+*/
 
 
 public class AnimationStateController : MonoBehaviour
