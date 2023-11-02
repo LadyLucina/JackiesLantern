@@ -15,7 +15,7 @@ public class JackieAnimationStates : MonoBehaviour
     void Update()
     {
         //if sprinting
-        if (Input.GetButton("Sprint"))
+        if (Input.GetButton("Sprint") && (Input.GetAxisRaw("Horizontal") > .01f || Input.GetAxisRaw("Horizontal") < -.01f || Input.GetAxisRaw("Vertical") > .01f || Input.GetAxisRaw("Vertical") < -.01f))
         {
             myAnim.SetBool("isRunning", true);
             myAnim.SetBool("isIdle", false);
