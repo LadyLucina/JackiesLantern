@@ -12,7 +12,6 @@ using UnityEngine.SceneManagement;
  *  Edited by: Stephanie M.
  *  Updated HealthBarScript Details: The new script now operates off of a sprite cycler that will change
  *  the sprite depending on the health percentage range the player falls into. 
- *  It will initially display the fullHealthSprite with a Health of 100 until damage occurs.
  *  
  *  Steps on how to use this script:
  *  --------------------------------
@@ -31,29 +30,29 @@ using UnityEngine.SceneManagement;
 public class HealthBarScript : MonoBehaviour
 {
     public GameObject gameOverUI; //Reference to the GAME OVER UI GameObject
-    public Sprite fullHealthSprite;
-    public Sprite mediumHealthSprite;
-    public Sprite lowHealthSprite;
+    public Sprite[] healthSprites; //Array of sprite images for different health levels
     public Image healthImage; //Reference to the UI image to display health
     public Text healthText; //Reference to the UI Text component to display health value
 
     private float maxHealth; //Store the maximum health
+    private float currentHealth; //Store the current health
 
     private void Start()
     {
-        gameOverUI.SetActive(false); //Ensure the GAME OVER UI is initially hidden
+        gameOverUI.SetActive(false); // Ensure the GAME OVER UI is initially hidden
         maxHealth = 100;
+        currentHealth = maxHealth;
 
-        //Set the initial sprite to fullHealthSprite
-        if (healthImage != null)
+        //Set the initial sprite to full health
+        if (healthImage != null && healthSprites.Length > 0)
         {
-            healthImage.sprite = fullHealthSprite;
+            healthImage.sprite = healthSprites[healthSprites.Length - 1];
         }
 
         //Set the initial health text to 100
         if (healthText != null)
         {
-            healthText.text = "Health: 100";
+            healthText.text = "Health: " + currentHealth;
         }
     }
 
@@ -64,41 +63,38 @@ public class HealthBarScript : MonoBehaviour
 
     public void SetHealth(float health)
     {
-        //Calculate health percentage
-        float healthPercentage = health / maxHealth;
+        //Ensure health is within the valid range
+        currentHealth = Mathf.Clamp(health, 0, maxHealth);
 
-        //Change the sprite based on health percentage
-        if (healthImage != null)
+        //Calculate health percentage
+        float healthPercentage = currentHealth / maxHealth;
+
+        //Determine the sprite index based on health percentage
+        if (healthImage != null && healthSprites.Length > 0)
         {
-            if (healthPercentage >= 0.7f)
-            {
-                healthImage.sprite = fullHealthSprite;
-            }
-            else if (healthPercentage >= 0.5f)
-            {
-                healthImage.sprite = mediumHealthSprite;
-            }
-            else
-            {
-                healthImage.sprite = lowHealthSprite;
-            }
+            int spriteIndex = Mathf.FloorToInt(healthPercentage * (healthSprites.Length - 1));
+            healthImage.sprite = healthSprites[spriteIndex];
         }
 
         //Update the health text
         if (healthText != null)
         {
-            healthText.text = "Health: " + health.ToString();
+            healthText.text = "Health: " + currentHealth.ToString("F0");
         }
 
         //Check if health reaches 0 or below
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
-            //Pause the game
+            // Pause the game
             Time.timeScale = 0;
 
-            //Display the GAME OVER UI
+            // Display the GAME OVER UI
             gameOverUI.SetActive(true);
         }
     }
-}
 
+    public void DecreaseHealth(float amount)
+    {
+        SetHealth(currentHealth - amount);
+    }
+}
