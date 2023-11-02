@@ -11,6 +11,8 @@ TagManager:
   - Farmer
   - Boss
   - Checkpoint
+  - Unlockable
+  - Key
   layers:
   - Default
   - TransparentFX

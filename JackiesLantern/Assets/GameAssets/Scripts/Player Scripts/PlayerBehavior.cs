@@ -5,11 +5,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] HealthBarScript healthbar;
-  
-    void Start()
-    {
-        
-    }
+
 
   
     void Update()
