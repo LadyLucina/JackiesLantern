@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06388211, g: 0.17484552, b: 0.2088986, a: 1}
+  m_IndirectSpecularColor: {r: 0.15251136, g: 0.11025228, b: 0.33928418, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22521,13 +22521,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1100056602}
     - target: {fileID: 2231230231794844331, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: m_Volume
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231230231794844331, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2231230231794844331, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7c786dd041118e446aa72261b9909bf8, type: 3}
+      objectReference: {fileID: 8300000, guid: 6fa16046533a7ff4aa5fa8fa826a53cd, type: 3}
     - target: {fileID: 2969263571801266546, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -22668,6 +22672,10 @@ PrefabInstance:
       propertyPath: m_MinMoveDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3447512811782150486, guid: f46ffff1787ca34458f557594481945a, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6fa16046533a7ff4aa5fa8fa826a53cd, type: 3}
     - target: {fileID: 3616750517024035111, guid: f46ffff1787ca34458f557594481945a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -86107,7 +86115,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.6
+  m_fontSize: 62.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
