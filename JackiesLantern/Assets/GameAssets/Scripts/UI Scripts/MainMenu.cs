@@ -21,18 +21,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadSceneWithDelay("Level 1"));
     }
 
-    public void SettingsButton()
-    {
-        //Load Settings scene
-        StartCoroutine(LoadSceneWithDelay("Settings"));
-    }
-
-    public void HelpButton()
-    {
-        //Load Help Scene
-        StartCoroutine(LoadSceneWithDelay("Help"));
-    }
-
     public void MainMenuButton()
     {
         //Load Main Menu Scene
@@ -41,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void CreditsButton()
     {
-        //Load Main Menu Scene
+        //Load Credits Scene
         StartCoroutine(LoadSceneWithDelay("Credits"));
     }
 
