@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  *Author: Joshua G.
@@ -25,23 +26,32 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+
     public bool isCrouching = false;
     public bool isSprinting = false;
 
-    //[Header("Ground Check")]
-    //[SerializeField] private float groundRayLength = 1.0f;
+    // Toggles
+    private bool superSpeedEnabled = false;
+    private bool isInvincible = false; 
+
+
+    // Store checkpoint position
+    private Vector3 respawnPoint;
 
     public void Start()
     {
         //Get a reference to the PlayerDamageController script
         damageController = GetComponent<PlayerDamageController>();
+
+        // Set initial respawn point
+        respawnPoint = transform.position;
     }
 
     void Update()
     {
         if (!damageController.isStunned) //Check if the player is not stunned
         {
-            //Detect crouch input (keyboard: Left Control, controller: B button on controller)
+            // Detect crouch input (keyboard: Left Control, controller: B button on controller)
             bool isCrouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Crouch");
             if (isCrouchInput && !isCrouching)
             {
@@ -53,6 +63,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 isCrouching = false;
                 speed = 50f;
             }
+
 
             //Detect sprint input (keyboard: Left Shift, controller: Right Trigger)
             bool isSprintInput = Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Sprint");
@@ -71,6 +82,50 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
             }
 
+            /*  -----------------
+             *   CHEAT KEY BINDS
+             *  -----------------
+             */
+
+            //Toggle Invinciblity
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                isInvincible = !isInvincible;
+            }
+
+            // Toggle super speed
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                superSpeedEnabled = !superSpeedEnabled;
+            }
+
+            // Toggle respawn
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Respawn();
+            }
+
+            // Level loading
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                LoadLevel("Level 1");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                LoadLevel("Level 2");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                LoadLevel("Level 3");
+            }
+
+           /*  ----------------
+            *   END OF TOGGLES
+            *  ----------------
+            */
+
             //Sets horizontal movement using "A" and "D" and arrow keys
             float horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -83,9 +138,13 @@ public class ThirdPersonMovement : MonoBehaviour
             //Handle movement
             if (!damageController.isFrozen) //Check if the player is not frozen
             {
-                if (!isCrouching && !isSprinting)
+                if (!isCrouching && !isSprinting && !superSpeedEnabled)
                 {
                     speed = 50;
+                }
+                else if (superSpeedEnabled)
+                {
+                    speed = 50 * 2; // Adjust as needed
                 }
 
                 if (direction.magnitude >= 0.1f)
@@ -103,7 +162,6 @@ public class ThirdPersonMovement : MonoBehaviour
                     moveDir.y = gravity;
 
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
-
                 }
             }
         }
@@ -113,5 +171,20 @@ public class ThirdPersonMovement : MonoBehaviour
     public void PlayerStun()
     {
         damageController.isStunned = true;
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+    }
+
+    private void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
+
+    public bool IsInvincible()
+    {
+        return isInvincible;
     }
 }
