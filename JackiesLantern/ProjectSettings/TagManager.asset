@@ -13,6 +13,7 @@ TagManager:
   - Checkpoint
   - Unlockable
   - Key
+  - Collectable
   layers:
   - Default
   - TransparentFX

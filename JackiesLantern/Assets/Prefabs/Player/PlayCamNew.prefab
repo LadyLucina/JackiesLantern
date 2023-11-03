@@ -702,7 +702,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healIndicator: {fileID: 0}
+  audioSource: {fileID: 0}
+  eatingCandy: {fileID: 0}
   healAmount: 15
+--- !u!114 &4024164176828235165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533902359595938983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37511997178476340a50944eb299c039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectablesFound: 0
 --- !u!4 &6533902359595938984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958649909155204157, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
