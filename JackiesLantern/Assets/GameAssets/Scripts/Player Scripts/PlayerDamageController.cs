@@ -11,6 +11,8 @@ public class PlayerDamageController : MonoBehaviour
 {
     public DamageIndicator damageIndicator; //Reference to the DamageIndicator script
     private HealthSystem healthSystem; //Reference to the HealthSystem script
+    public AudioSource audioSource; //Audio Source
+    public AudioClip takenDamage; // AudioClip to play
 
   [Header("Damage & Stunned Stats")]
     [SerializeField] private int lurkerDamage = 10;
@@ -92,6 +94,7 @@ public class PlayerDamageController : MonoBehaviour
 
     private void DamageEnemy(int damage, GameObject enemy)
     {
+        audioSource.PlayOneShot(takenDamage);
         //Damage the player's health using the HealthSystem
         healthSystem.damageHealth(damage);
 

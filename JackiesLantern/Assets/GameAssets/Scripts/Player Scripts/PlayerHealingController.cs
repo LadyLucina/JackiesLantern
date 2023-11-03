@@ -10,6 +10,8 @@ using UnityEngine;
 public class PlayerHealingController : MonoBehaviour
 {
     public DamageIndicator healIndicator; //Reference to the DamageIndicator script 
+    public AudioSource audioSource;
+    public AudioClip eatingCandy; //Audio Source
 
     [Header("Healing Stats")]
     [SerializeField] public int healAmount = 15;
@@ -39,6 +41,7 @@ public class PlayerHealingController : MonoBehaviour
                 healIndicator.ShowHealIndicator();
                 //Regenerates player's health when the object is collided with
                 healthSystem.regenHealth(healAmount);
+                audioSource.PlayOneShot(eatingCandy);
                 Debug.Log("Player is healing");
             }
             else
