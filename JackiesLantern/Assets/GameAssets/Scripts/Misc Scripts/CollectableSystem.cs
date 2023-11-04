@@ -17,7 +17,7 @@ public class CollectableSystem : MonoBehaviour
             //Stores Collectable object
             absorbCollectable = other.gameObject;
 
-            //Adds +1 to total amounf of candy bars found
+            //Adds +1 to total amount of candy bars found
             collectablesFound = (collectablesFound + 1);
 
             //Object destroys once passed through
