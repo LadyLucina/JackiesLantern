@@ -14,6 +14,7 @@ TagManager:
   - Unlockable
   - Key
   - Collectable
+  - ObjectsToHide
   layers:
   - Default
   - TransparentFX
