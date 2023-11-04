@@ -39,7 +39,7 @@ public class LurkerAnimation : MonoBehaviour
         //Plays specific animation from the Animator
         anim.Play("Grab_1");
 
-        Object.material = Material2;
+       
         
     }
 
