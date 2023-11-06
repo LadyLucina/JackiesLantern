@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 919132149155446097, guid: 53a960ef3ad758448abbfe8ec753864f, type: 3}
     settings:
-      m_Strength: 43.719177
+      m_Strength: 79.3185
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 330, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -31,7 +31,7 @@ MonoBehaviour:
     name: Live_Tree1
   - gameObject: {fileID: 919132149155446097, guid: 641d370044b62cc45857c394912f7a22, type: 3}
     settings:
-      m_Strength: 77.53783
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 330, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
