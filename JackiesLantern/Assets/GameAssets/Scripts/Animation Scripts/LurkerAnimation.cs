@@ -39,9 +39,12 @@ public class LurkerAnimation : MonoBehaviour
         //Plays specific animation from the Animator
         anim.Play("Grab_1");
 
-       
-        
+
+
     }
 
-
+    public void Dissapear()
+    {
+        Destroy(gameObject);
+    }
 }
