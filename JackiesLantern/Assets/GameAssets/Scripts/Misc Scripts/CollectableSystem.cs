@@ -6,22 +6,28 @@ public class CollectableSystem : MonoBehaviour
 {
     [Header("Choco Loco Bars Found")]
     public int collectablesFound = 0;
+    public int totalCollectables = 3;  //Specify the total number of collectables in the level.
 
+    public bool AreAllCollectablesCollected()
+    {
+        return collectablesFound >= totalCollectables;
+    }
 
-    private GameObject absorbCollectable;
     private void OnTriggerEnter(Collider other)
     {
-        //Checks if the gameobject has the "Collectable" tag
+        //Checks if the game object has the "Collectable" tag
         if (other.gameObject.CompareTag("Collectable"))
         {
-            //Stores Collectable object
-            absorbCollectable = other.gameObject;
+            //Increment the total amount of candy bars found
+            collectablesFound += 1;
 
-            //Adds +1 to total amount of candy bars found
-            collectablesFound = (collectablesFound + 1);
+            //Object is destroyed once passed through
+            Destroy(other.gameObject);
 
-            //Object destroys once passed through
-            Destroy(absorbCollectable);
+            if (AreAllCollectablesCollected())
+            {
+                collectablesFound = totalCollectables;
+            }
         }
     }
 }

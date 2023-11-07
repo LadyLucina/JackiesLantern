@@ -11,11 +11,9 @@ using UnityEngine.UI;
 
 public class LevelUnlocker : MonoBehaviour
 {
-    public int requiredObjectID = 1;  //Unique Object ID for this Unlockable area.
     public string nextSceneName = "";  //Specify the next scene in the Unity inspector.
-
     public Text messageText;  //Reference to the UI Text component.
-    public GameObject playerObject;  //Reference to the player GameObject.
+    public CollectableSystem collectableSystem;  //Reference to the CollectableSystem script.
 
     private bool isUnlocked = false;  //Show if the area is unlocked.
 
@@ -23,11 +21,12 @@ public class LevelUnlocker : MonoBehaviour
     {
         if (messageText)
         {
-            messageText.text = "You need to find the key to unlock this area!";
+            messageText.text = "You need to find all collectibles to unlock this area!";
             messageText.gameObject.SetActive(false);
         }
 
-        if (InventoryManager.HasKey(requiredObjectID))
+        //Check if all collectables have been collected.
+        if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
         {
             isUnlocked = true;
         }
@@ -37,8 +36,8 @@ public class LevelUnlocker : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isUnlocked)
         {
-            // Check if the player has the required key.
-            if (InventoryManager.HasKey(requiredObjectID))
+            //Check if all collectables have been collected.
+            if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
             {
                 isUnlocked = true;
                 SceneManager.LoadScene(nextSceneName);
