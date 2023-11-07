@@ -11,11 +11,10 @@ public class LurkerAnimation : MonoBehaviour
 {
     private Animator lurkerAnim;
     public Material Material1;
-    //public Material Material2;
     public Renderer Object;
     private Animator anim;
 
-    //public Material[] materialList;
+   // public ParticleSystem LurkerPortal;
 
     private void Start()
     {
@@ -26,12 +25,6 @@ public class LurkerAnimation : MonoBehaviour
     //When player is in range, animation plays
     private void OnTriggerEnter(Collider oher)
     {
-        /*
-        foreach (Material material in materialList)
-        {
-            materialList[0].SetActive(false);
-        }
-        */
 
         lurkerAnim.SetBool("inRange", true);
         Object.material = Material1;  //Changes material of hand when player is in range
@@ -39,12 +32,13 @@ public class LurkerAnimation : MonoBehaviour
         //Plays specific animation from the Animator
         anim.Play("Grab_1");
 
-
+        //LurkerPortal.Play();
 
     }
 
     public void Dissapear()
     {
         Destroy(gameObject);
+        //LurkerPortal.Pause();
     }
 }
