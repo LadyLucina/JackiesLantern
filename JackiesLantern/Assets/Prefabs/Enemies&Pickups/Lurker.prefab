@@ -265,6 +265,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: simulationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: SizeModule.curve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: SizeModule.curve.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: SizeModule.curve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 386745644550581945, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 386745644550581947, guid: 239063ee3e46a06478067b0d404f9dd6, type: 3}
       propertyPath: m_Name
       value: LurkerPortal_VFX
@@ -321,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.88
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
       propertyPath: m_LocalRotation.w
