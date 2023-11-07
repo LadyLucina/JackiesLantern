@@ -5,12 +5,15 @@ using UnityEngine;
 public class LurkerPortal : MonoBehaviour
 {
     
+    public Material Material1;
+    public Material Material2;
     public Renderer Object;
 
     public ParticleSystem Portal;
 
     private void OnTriggerEnter(Collider oher)
     {
+        //Object.material = Material1;  //Makes VFX visible
         Portal.Play();
 
     }
@@ -24,10 +27,18 @@ public class LurkerPortal : MonoBehaviour
         Portal.Pause();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+
+
+    }
+
 
     public void Dissapear()
     {
-        Destroy(Portal);
+        //Destroy(LurkerPortal);
         Portal.Pause();
     }
 
