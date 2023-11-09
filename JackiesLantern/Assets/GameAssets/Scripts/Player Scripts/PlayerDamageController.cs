@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,30 +23,41 @@ public class PlayerDamageController : MonoBehaviour
     [SerializeField] private int bossDamage = 25;
     [SerializeField] private float initialStunDuration = 1.5f;
 
-    public bool isStunned = false; //Flag to control player's stunned state
-    public bool isFrozen = false; //Flag to control player's frozen state
+    public bool isStunned = false; //Flag to control the player's stunned state
+    public bool isFrozen = false; //Flag to control the player's frozen state
     private float stunTimer;
 
     private Vector3 initialPosition;
     private GameObject lastEnemyHit;
-    private CharacterController characterController; //Reference to the CharacterController
+    private CharacterController characterController; // Reference to the CharacterController
 
-    //public float destroyTime = 0.5f;
-    //Note: Delays time before enemy is destroyed so animation can play. Not in use right now. -Mya
+    [Header("Respawn Settings")]
+    public float respawnDelay = 3.0f; // Delay before the enemy respawns
+    private bool isRespawning = false; // Flag to control the respawn state
 
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
         stunTimer = initialStunDuration; //Initialize the stun timer
-
-        characterController = GetComponent<CharacterController>();
-
+        characterController = GetComponent <CharacterController>();
         thirdPersonMovement = GetComponent<ThirdPersonMovement>();
     }
 
     private void Update()
     {
-        if (isFrozen)
+        if (isRespawning)
+        {
+            // Check if it's time to respawn
+            if (Time.time - lastEnemyHitTime >= respawnDelay)
+            {
+                isRespawning = false;
+                //Reactivate the enemy object
+                lastEnemyHit.SetActive(true);
+                //Reset the timer
+                lastEnemyHitTime = 0f;
+            }
+        }
+        else if (isFrozen)
         {
             //Decrement the stun timer
             stunTimer -= Time.deltaTime;
@@ -58,13 +70,15 @@ public class PlayerDamageController : MonoBehaviour
                 //Reset the stun timer
                 stunTimer = initialStunDuration;
 
-                //Restore the player's initial position
+                // Restore the player's initial position
                 transform.position = initialPosition;
 
-                //Destroy the recently collided enemy object
+                //Deactivate the collided enemy object
                 if (lastEnemyHit != null)
                 {
-                    Destroy(lastEnemyHit);
+                    lastEnemyHit.SetActive(false);
+                    lastEnemyHitTime = Time.time;
+                    isRespawning = true;
                 }
 
                 //Re-enable the CharacterController
@@ -72,6 +86,8 @@ public class PlayerDamageController : MonoBehaviour
             }
         }
     }
+
+    private float lastEnemyHitTime;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -124,7 +140,7 @@ public class PlayerDamageController : MonoBehaviour
         isStunned = true; //Set the stunned flag in PlayerDamageController
         isFrozen = true; //Freeze the player as well
 
-        //Disable character controller to avoid player movement during the stun
+        //Disable the character controller to avoid player movement during the stun
         characterController.enabled = false;
     }
 }

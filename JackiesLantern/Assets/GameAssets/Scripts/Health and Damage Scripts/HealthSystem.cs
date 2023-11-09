@@ -61,9 +61,6 @@ public class HealthSystem : MonoBehaviour
         {
             currentHealth -= damageAmount;
 
-            //Log the current health value for debugging
-           // Debug.Log("DAMAGED! Current Health: " + currentHealth);
-
             //Update the health bar when taking damage
             healthBar.SetHealth(currentHealth);
         }
@@ -77,9 +74,6 @@ public class HealthSystem : MonoBehaviour
 
             //Ensure the health does not exceed max health
             currentHealth = Mathf.Min(currentHealth, currentMaxHealth);
-
-            //Log the current health value for debugging
-          //  Debug.Log("HEALED! Current Health: " + currentHealth);
 
             //Update the health bar when regenerating health
             healthBar.SetHealth(currentHealth);
