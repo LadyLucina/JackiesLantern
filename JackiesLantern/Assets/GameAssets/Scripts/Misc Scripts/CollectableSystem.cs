@@ -7,6 +7,9 @@ public class CollectableSystem : MonoBehaviour
     [Header("Choco Loco Bars Found")]
     public int collectablesFound = 0;
     public int totalCollectables = 3;  //Specify the total number of collectables in the level.
+    public AudioSource AudioSource;
+    public AudioClip chocoAquired;
+    public float volume;
 
     public bool AreAllCollectablesCollected()
     {
@@ -20,6 +23,8 @@ public class CollectableSystem : MonoBehaviour
         {
             //Increment the total amount of candy bars found
             collectablesFound += 1;
+
+            AudioSource.PlayOneShot(chocoAquired, volume);
 
             //Object is destroyed once passed through
             Destroy(other.gameObject);
