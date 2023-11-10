@@ -15,6 +15,7 @@ public class CollectableSystem : MonoBehaviour
     public int totalCollectables = 3;  //Specify the total number of collectables in the level.
     public AudioSource AudioSource;
     public AudioClip chocoAquired;
+    public AudioClip allChocoAquired;
     public float volume;
 
     public CollectablesUI collectablesUIScript; //Reference to CollectablesUI script
@@ -41,6 +42,7 @@ public class CollectableSystem : MonoBehaviour
             {
                 collectablesFound = totalCollectables;
                 collectablesUIScript.UpdateCollectablesUI(collectablesFound, totalCollectables);
+                AudioSource.PlayOneShot(allChocoAquired, volume);
             }
             else
             {
