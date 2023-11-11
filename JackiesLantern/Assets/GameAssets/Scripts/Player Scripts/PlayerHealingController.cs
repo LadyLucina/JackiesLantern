@@ -14,7 +14,7 @@ public class PlayerHealingController : MonoBehaviour
     public AudioClip eatingCandy; //Audio Source
 
     [Header("Healing Stats")]
-    [SerializeField] public int healAmount = 15;
+    [SerializeField] public int healAmount = 1;
 
     HealthSystem healthSystem;
     private GameObject absorbCandyCorn;
@@ -43,14 +43,14 @@ public class PlayerHealingController : MonoBehaviour
                 healthSystem.regenHealth(healAmount);
                 audioSource.PlayOneShot(eatingCandy);
                 Debug.Log("Player is healing");
+                //Object destroys once passed through
+                Destroy(absorbCandyCorn);
             }
             else
             {
                 Debug.Log("Cannot add. Max health exceeded!");
             }
 
-            //Object destroys once passed through
-            Destroy(absorbCandyCorn);
         }
     }
 }
