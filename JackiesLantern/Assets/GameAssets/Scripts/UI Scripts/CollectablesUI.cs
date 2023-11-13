@@ -31,14 +31,17 @@ public class CollectablesUI : MonoBehaviour
 
     public void UpdateCollectablesUI(int collectablesFound, int totalCollectables)
     {
-        if (isDisplaying) return;
-
         //Update UI based on collectables found
-        collectablesImage.sprite = collectablesSprites[Mathf.Clamp(collectablesFound, 0, totalCollectables - 1)];
-
-        if (collectablesFound == totalCollectables)
+        if (collectablesFound == totalCollectables && !isDisplaying)
         {
+            //All collectables found, set sprite to Element 3
+            collectablesImage.sprite = collectablesSprites[3];
             ShowNotification("All Choco Loco bars have been found!");
+        }
+        else
+        {
+            //Not all collectables found, update sprite based on the count
+            collectablesImage.sprite = collectablesSprites[Mathf.Clamp(collectablesFound, 0, totalCollectables - 1)];
         }
     }
 
