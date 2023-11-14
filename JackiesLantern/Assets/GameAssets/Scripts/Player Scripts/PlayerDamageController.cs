@@ -29,11 +29,16 @@ public class PlayerDamageController : MonoBehaviour
 
     private Vector3 initialPosition;
     private GameObject lastEnemyHit;
-    private CharacterController characterController; // Reference to the CharacterController
+    private CharacterController characterController; //Reference to the CharacterController
 
     [Header("Respawn Settings")]
-    public float respawnDelay = 3.0f; // Delay before the enemy respawns
-    private bool isRespawning = false; // Flag to control the respawn state
+    public float respawnDelay = 3.0f; //Delay before the enemy respawns
+    private bool isRespawning = false; //Flag to control the respawn state
+
+    [Header("Damage Cooldown Setting")]
+    [SerializeField] private float damageCooldown = 3.0f; //Damage cooldown timer
+    private float lastDamageTime;
+
 
     private void Start()
     {
@@ -91,7 +96,7 @@ public class PlayerDamageController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isFrozen)
+        if (!isFrozen && Time.time - lastDamageTime >= damageCooldown)
         {
             if (other.gameObject.CompareTag("Lurker"))
             {
@@ -114,10 +119,10 @@ public class PlayerDamageController : MonoBehaviour
 
     private void DamageEnemy(int damage, GameObject enemy)
     {
-        //Checks if the player is invincible
         if (!thirdPersonMovement.IsInvincible())
         {
             audioSource.PlayOneShot(takenDamage);
+            
             //Damage the player's health using the HealthSystem
             healthSystem.damageHealth(damage);
 
@@ -132,6 +137,9 @@ public class PlayerDamageController : MonoBehaviour
 
             //Call the PlayerStun function to freeze the player
             PlayerStun();
+
+            //Update the last damage time
+            lastDamageTime = Time.time;
         }
     }
 
