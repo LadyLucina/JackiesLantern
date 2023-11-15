@@ -34,7 +34,7 @@ public class Level3Unlocker : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Update() //Destroys Game Object after all collectables have been collected
     {
         if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
         {
