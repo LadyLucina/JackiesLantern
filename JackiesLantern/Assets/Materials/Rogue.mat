@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rogue
+  m_Shader: {fileID: -6465566751694194690, guid: c2d701d4966cedc4ca2aa1b7c231ddfa,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _bodyTexture:
+        m_Texture: {fileID: 2800000, guid: dce5f92c8b57d1249afa4c12a617bda9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _clothesLinesTexture:
+        m_Texture: {fileID: 2800000, guid: c66757adf0643e440801bd7e631b1051, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _clothesMetalTexture:
+        m_Texture: {fileID: 2800000, guid: 82fb56381c9dc2c469ccfc7d78f9ad06, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _clothesRandomTexture:
+        m_Texture: {fileID: 2800000, guid: 1f72446ef73b3f6489e803c23a313455, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _clothesStaticTexture:
+        m_Texture: {fileID: 2800000, guid: bac6f87e0c5a4e640b625472dfe94046, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _eyeTexture:
+        m_Texture: {fileID: 2800000, guid: 6de11d7b4c3413b46b6d60344b2d71a0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _weaponLines:
+        m_Texture: {fileID: 2800000, guid: 5cc4a22eab405e54f8b633b74160aa43, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _weaponMetalTexture:
+        m_Texture: {fileID: 2800000, guid: c9715011967746146b1c138da8fb1ba3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _weaponRandTexture:
+        m_Texture: {fileID: 2800000, guid: b446003e008a988419e2f6b045721c1d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors:
+    - _clothesMetalColor: {r: 0.8705882, g: 0.588425, b: 0.16862747, a: 1}
+    - _clothesRandomColor: {r: 0.6320754, g: 0, b: 0.47622, a: 1}
+    - _eyeColor: {r: 1, g: 0.46849027, b: 0, a: 1}
+    - _weaponMetal: {r: 0.6509434, g: 0.502285, b: 0.095185064, a: 1}
+    - _weaponRandColor: {r: 0.5934051, g: 0.99056596, b: 0.9395745, a: 1}
+  m_BuildTextureStacks: []
+--- !u!114 &641674433577125638
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
