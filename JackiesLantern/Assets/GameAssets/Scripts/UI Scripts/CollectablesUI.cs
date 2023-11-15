@@ -21,7 +21,7 @@ public class CollectablesUI : MonoBehaviour
     public void Start()
     {
         //Initialize UI elements
-        notificationText.text = "Find all the Choco Loco bars!";
+        notificationText.text = "Find all 3 Choco Loco bars!";
         collectablesImage.sprite = collectablesSprites[0];
         isDisplaying = true;
 
@@ -36,7 +36,7 @@ public class CollectablesUI : MonoBehaviour
         {
             //All collectables found, set sprite to Element 3
             collectablesImage.sprite = collectablesSprites[3];
-            ShowNotification("All Choco Loco bars have been found!");
+            ShowNotification("All Choco Loco bars have been found!" + " Find the exit!");
         }
         else
         {
