@@ -32,7 +32,7 @@ public class FootStepsAudio : MonoBehaviour
             case 0:
                 return grassClips[UnityEngine.Random.Range(0, grassClips.Length)];
             case 1:
-                return grassClips[UnityEngine.Random.Range(0, pavementClips.Length)];
+                return pavementClips[UnityEngine.Random.Range(0, pavementClips.Length)];
             default:
                 return pavementClips[UnityEngine.Random.Range(0, pavementClips.Length)];
         }
