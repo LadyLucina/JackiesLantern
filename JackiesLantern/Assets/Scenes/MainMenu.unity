@@ -1168,8 +1168,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1833,7 +1833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.895, y: -1312}
+  m_AnchoredPosition: {x: -8, y: -1828}
   m_SizeDelta: {x: 986.4275, y: 345.1377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &397277685
@@ -1856,24 +1856,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level Design Lead:
+  m_text: 'Lead:
 
     Mya Mosely
 
 
-    Level Design Team:
+    Team:
 
-    Jonathon
-    Trivino
+    Jonathon Trivino
 
     Donald Davis
 
-    Mykeliah Lewis
+    Mykeliah
+    Lewis
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2132,7 +2132,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ade1ddea4ce0d3439a2b18f3061c539, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2196,7 +2196,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &459346899
@@ -3033,7 +3033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &591234264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3136,8 +3136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.895, y: -895}
-  m_SizeDelta: {x: 986.4275, y: 345.1377}
+  m_AnchoredPosition: {x: 0.000026226, y: -1184}
+  m_SizeDelta: {x: 986.4275, y: 322.0165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617751925
 MonoBehaviour:
@@ -3159,12 +3159,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Audio Lead:
+  m_text: 'Lead:
 
     Donald Davis
 
 
-    Sound Team:
+    Team:
 
     Jonathon Trivino
 
@@ -3175,8 +3175,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3207,7 +3207,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3617,7 +3617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.057000004, y: 0.074}
   m_AnchorMax: {x: 0.19600001, y: 0.36400002}
-  m_AnchoredPosition: {x: -54.887, y: 73.787}
+  m_AnchoredPosition: {x: -54.887054, y: 73.787}
   m_SizeDelta: {x: -136.8529, y: -184.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &801957147
@@ -5140,7 +5140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.895, y: -2204}
+  m_AnchoredPosition: {x: -7.99998, y: -3115}
   m_SizeDelta: {x: 986.4275, y: 345.1377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188300719
@@ -5163,14 +5163,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Professors:
+  m_text: 'Patricia Sipes
 
-    Patricia Sipes
+    Richard Rincon
 
-    Richard Rincon'
+
+    and.....
+
+
+    You!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5201,7 +5205,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5984,7 +5988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.895, y: -1792}
+  m_AnchoredPosition: {x: -11.895, y: -2520}
   m_SizeDelta: {x: 986.4275, y: 345.1377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392002154
@@ -6007,18 +6011,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Programming Lead:
-
-    Stephanie Montanez
-
-
-    Programming Team:
-
-    Joshua
-    Guerrero'
+  m_text: "Lead \nStephanie Montanez\n\nTeam:\nJoshua Guerrero"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6049,7 +6045,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7692,7 +7688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1718670809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8305,15 +8301,15 @@ MonoBehaviour:
     Special
     Thanks'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289977855
-  m_fontColor: {r: 1, g: 0.86830944, b: 0.7018868, a: 1}
+    rgba: 4278218715
+  m_fontColor: {r: 0.8584906, g: 0.43540514, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8330,8 +8326,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 61
+  m_fontSizeBase: 61
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8415,7 +8411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.894897, y: -213.69}
+  m_AnchoredPosition: {x: 0.000039101, y: -269}
   m_SizeDelta: {x: 986.4275, y: 345.1377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936779344
@@ -8438,12 +8434,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Art Lead:
+  m_text: 'Lead:
 
     Abigail Brown
 
 
-    Art Team:
+    Team:
 
     Arianna Garcia
 
@@ -8467,8 +8463,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
+  m_sharedMaterial: {fileID: 5906809542340159520, guid: ec2326818f308164ea65ce11cf7c2710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8499,7 +8495,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
