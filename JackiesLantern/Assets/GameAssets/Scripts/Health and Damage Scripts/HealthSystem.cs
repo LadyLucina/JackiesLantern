@@ -19,7 +19,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] int initialMaxHealth = 100;
 
     //Initialize variables
-    int currentHealth;
+    public int currentHealth;
     int currentMaxHealth;
 
     //Properties for health value
