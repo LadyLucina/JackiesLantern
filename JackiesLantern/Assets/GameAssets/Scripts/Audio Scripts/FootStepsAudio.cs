@@ -8,6 +8,8 @@ public class FootStepsAudio : MonoBehaviour
     private AudioClip[] pavementClips;
     [SerializeField]
     private AudioClip[] grassClips;
+    [SerializeField]
+    private AudioClip[] groundClips;
 
     private AudioSource audioSource;
     private TerrainDetector terrainDetector;
@@ -32,7 +34,7 @@ public class FootStepsAudio : MonoBehaviour
             case 0:
                 return grassClips[UnityEngine.Random.Range(0, grassClips.Length)];
             case 1:
-                return pavementClips[UnityEngine.Random.Range(0, pavementClips.Length)];
+                return groundClips[UnityEngine.Random.Range(0, groundClips.Length)];
             default:
                 return pavementClips[UnityEngine.Random.Range(0, pavementClips.Length)];
         }
