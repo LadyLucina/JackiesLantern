@@ -27071,6 +27071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayCamNew
       objectReference: {fileID: 0}
+    - target: {fileID: 1946050914664095470, guid: d01460a0112fbe94aab9c260b25b3717, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4914081207353003122, guid: d01460a0112fbe94aab9c260b25b3717, type: 3}
       propertyPath: m_RootOrder
       value: 2
