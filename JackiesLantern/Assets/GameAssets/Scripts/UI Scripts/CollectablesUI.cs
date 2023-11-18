@@ -21,7 +21,7 @@ public class CollectablesUI : MonoBehaviour
     public void Start()
     {
         //Initialize UI elements
-        notificationText.text = "Find all the Choco Loco bars!";
+        notificationText.text = "Find all 3 Choco Loco bars!";
         collectablesImage.sprite = collectablesSprites[0];
         isDisplaying = true;
 
@@ -31,14 +31,17 @@ public class CollectablesUI : MonoBehaviour
 
     public void UpdateCollectablesUI(int collectablesFound, int totalCollectables)
     {
-        if (isDisplaying) return;
-
         //Update UI based on collectables found
-        collectablesImage.sprite = collectablesSprites[Mathf.Clamp(collectablesFound, 0, totalCollectables - 1)];
-
-        if (collectablesFound == totalCollectables)
+        if (collectablesFound == totalCollectables && !isDisplaying)
         {
-            ShowNotification("All Choco Loco bars have been found!");
+            //All collectables found, set sprite to Element 3
+            collectablesImage.sprite = collectablesSprites[3];
+            ShowNotification("All Choco Loco bars have been found!" + " Find the exit!");
+        }
+        else
+        {
+            //Not all collectables found, update sprite based on the count
+            collectablesImage.sprite = collectablesSprites[Mathf.Clamp(collectablesFound, 0, totalCollectables - 1)];
         }
     }
 

@@ -8,7 +8,7 @@ public class PlayerBehavior : MonoBehaviour
 
 
   
-    void Update()
+   /* void Update()
     {//This is to varify that the player is actually losing and regening health
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -20,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
             PlayerHeal(15);
             Debug.Log(GameManager.gameManager.playerHealth.Health);
         }
-    }
+     }*/
 
     //Method that has the player take damage
     private void PlayerHealthDamage(int damage)

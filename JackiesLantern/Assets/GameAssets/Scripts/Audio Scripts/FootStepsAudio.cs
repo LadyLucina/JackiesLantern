@@ -5,13 +5,19 @@ using UnityEngine;
 public class FootStepsAudio : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] clips;
+    private AudioClip[] pavementClips;
+    [SerializeField]
+    private AudioClip[] grassClips;
+    [SerializeField]
+    private AudioClip[] groundClips;
 
-    AudioSource audioSource;
+    private AudioSource audioSource;
+    private TerrainDetector terrainDetector;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        terrainDetector = new TerrainDetector();
     }
 
     public void Step()
@@ -22,7 +28,16 @@ public class FootStepsAudio : MonoBehaviour
 
     private AudioClip GetRandomClip()
     {
-        return clips[UnityEngine.Random.Range(0, clips.Length)];    
-    }
+        int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position); //Changes footstep audio depending on terrain
+        switch (terrainTextureIndex)
+        {
+            case 0:
+                return grassClips[UnityEngine.Random.Range(0, grassClips.Length)];
+            case 1:
+                return groundClips[UnityEngine.Random.Range(0, groundClips.Length)];
+            default:
+                return pavementClips[UnityEngine.Random.Range(0, pavementClips.Length)];
+        }
 
+    }
 }
