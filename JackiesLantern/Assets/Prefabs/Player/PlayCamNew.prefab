@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453630925297127591}
-  m_LocalRotation: {x: 0.2713409, y: -0, z: -0, w: 0.96248335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.99, z: -3.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4914081207353003122}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 31.488, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &45987766949297459
 Camera:
   m_ObjectHideFlags: 0
@@ -98,8 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcfb2a7b6165494283e6a3a61ad6f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6533902359595938983}
-  cameraOffset: {x: 0, y: 2.99, z: -3.21}
+  player: {fileID: 6533902359595938984}
+  distance: 3
+  height: 1.75
+  pitchLimit: 15
+  smoothSpeed: 3
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &3940046842375655473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +680,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4024164176828235165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533902359595938983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37511997178476340a50944eb299c039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectablesFound: 0
+  totalCollectables: 3
+  AudioSource: {fileID: 0}
+  chocoAquired: {fileID: 0}
+  allChocoAquired: {fileID: 0}
+  volume: 0
+  collectablesUIScript: {fileID: 0}
 --- !u!114 &7451568340461860423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,19 +728,6 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   eatingCandy: {fileID: 0}
   healAmount: 15
---- !u!114 &4024164176828235165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6533902359595938983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37511997178476340a50944eb299c039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectablesFound: 0
 --- !u!4 &6533902359595938984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958649909155204157, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
@@ -836,8 +846,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eac3134f673acd4c9c048740be99c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 7c786dd041118e446aa72261b9909bf8, type: 3}
+  pavementClips: []
+  grassClips: []
+  groundClips: []
 --- !u!114 &8503664421453651286
 MonoBehaviour:
   m_ObjectHideFlags: 0
