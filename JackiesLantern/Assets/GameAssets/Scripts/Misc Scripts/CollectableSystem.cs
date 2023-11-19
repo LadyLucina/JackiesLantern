@@ -19,6 +19,7 @@ public class CollectableSystem : MonoBehaviour
     public float volume;
 
     public CollectablesUI collectablesUIScript; //Reference to CollectablesUI script
+    public GameObject pic;
 
     public bool AreAllCollectablesCollected()
     {
@@ -43,6 +44,7 @@ public class CollectableSystem : MonoBehaviour
                 collectablesFound = totalCollectables;
                 collectablesUIScript.UpdateCollectablesUI(collectablesFound, totalCollectables);
                 AudioSource.PlayOneShot(allChocoAquired, volume);
+                pic.SetActive(true);
             }
             else
             {

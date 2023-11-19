@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 /* Author: Stephanie M.
  * Details: This script causes an area to be "locked" until the condition is met that the "Key" has been obtained by the Player.
@@ -11,6 +12,8 @@ using UnityEngine.UI;
 
 public class Level3Unlocker : MonoBehaviour
 {
+    
+    //------------------------------------------------------------------------------------------------------------------------------
     public string nextSceneName = "";  //Specify the next scene in the Unity inspector.
     public Text messageText;  //Reference to the UI Text component.
     public CollectableSystem collectableSystem;  //Reference to the CollectableSystem script.
@@ -51,7 +54,7 @@ public class Level3Unlocker : MonoBehaviour
             if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
             {
                 isUnlocked = true;
-                Destroy(gameObject);
+                
             }
             else
             {
