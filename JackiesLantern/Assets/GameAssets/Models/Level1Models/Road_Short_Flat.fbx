@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2023
 		Month: 11
-		Day: 14
-		Hour: 19
-		Minute: 41
-		Second: 58
-		Millisecond: 418
+		Day: 18
+		Hour: 22
+		Minute: 35
+		Second: 8
+		Millisecond: 76
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.1.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -34,14 +34,14 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2022"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "15/11/2023 01:41:58.417"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "19/11/2023 04:35:08.075"
 			P: "Original|FileName", "KString", "", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\export\Road_Short_Flat.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2022"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "15/11/2023 01:41:58.417"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\FinalBoss_Rig"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "19/11/2023 04:35:08.075"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\scenes\Game_Assets.max"
 		}
 	}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2121512611184, "", "Scene" {
+	Document: 1914582447952, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -313,12 +313,12 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 2122263736848, "Geometry::", "Mesh" {
+	Geometry: 1911697662288, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.337254901960784,0.337254901960784,0.337254901960784
 		}
 		Vertices: *84 {
-			a: -351.103454589844,157.148773193359,6.86919111103634e-06,351.103454589844,157.148773193359,6.86919111103634e-06,-351.103454589844,282.296173095703,0.110570900142193,351.103454589844,282.296173095703,0.110570900142193,351.103454589844,165.564025878906,0.0837768092751503,351.103454589844,157.297454833984,0.00340948603115976,351.103454589844,160.53466796875,0.0502903759479523,351.103454589844,180.99919128418,0.110566474497318,351.103454589844,172.385528564453,0.10386884957552,-351.103454589844,165.564025878906,0.0837768092751503,-351.103454589844,180.99919128418,0.110566474497318,-351.103454589844,172.385528564453,0.10386884957552,-351.103454589844,157.297454833984,0.00340948603115976,-351.103454589844,160.53466796875,0.0502903759479523,-351.103454589844,-157.148773193359,-6.86919111103634e-06,351.103454589844,-157.148773193359,-6.86919111103634e-06,351.103454589844,-157.297454833984,0.00339573458768427,-351.103454589844,-157.297454833984,0.00339573458768427,-351.103454589844,-180.99919128418,0.11055064946413,351.103454589844,-180.99919128418,0.11055064946413,351.103454589844,-282.296173095703,0.110546223819256,-351.103454589844,-282.296173095703,0.110546223819256,351.103454589844,-160.53466796875,0.0502763390541077,-351.103454589844,-160.53466796875,0.0502763390541077,351.103454589844,-165.564025878906,0.0837623402476311,-351.103454589844,-165.564025878906,0.0837623402476311,-351.103454589844,-172.385528564453,0.103853784501553,351.103454589844,-172.385528564453,0.103853784501553
+			a: -351.103454589844,157.148773193359,1.37383822220727e-05,351.103454589844,157.148773193359,1.37383822220727e-05,-351.103454589844,282.296173095703,0.110583238303661,351.103454589844,282.296173095703,0.110583238303661,351.103454589844,165.564025878906,0.0837840437889099,351.103454589844,157.297454833984,0.0034163617528975,351.103454589844,160.53466796875,0.0502973943948746,351.103454589844,180.99919128418,0.110574387013912,351.103454589844,172.385528564453,0.103876382112503,-351.103454589844,165.564025878906,0.0837840437889099,-351.103454589844,180.99919128418,0.110574387013912,-351.103454589844,172.385528564453,0.103876382112503,-351.103454589844,157.297454833984,0.0034163617528975,-351.103454589844,160.53466796875,0.0502973943948746,-351.103454589844,-157.148773193359,-1.37383822220727e-05,351.103454589844,-157.148773193359,-1.37383822220727e-05,351.103454589844,-157.297454833984,0.00338885886594653,-351.103454589844,-157.297454833984,0.00338885886594653,-351.103454589844,-180.99919128418,0.110542736947536,351.103454589844,-180.99919128418,0.110542736947536,351.103454589844,-282.296173095703,0.110533885657787,-351.103454589844,-282.296173095703,0.110533885657787,351.103454589844,-160.53466796875,0.0502693206071854,-351.103454589844,-160.53466796875,0.0502693206071854,351.103454589844,-165.564025878906,0.0837551057338715,-351.103454589844,-165.564025878906,0.0837551057338715,-351.103454589844,-172.385528564453,0.103846251964569,351.103454589844,-172.385528564453,0.103846251964569
 		} 
 		PolygonVertexIndex: *78 {
 			a: 0,5,-13,5,0,-2,2,7,-4,7,2,-11,6,13,-13,6,12,-6,4,9,-14,4,13,-7,7,10,-12,7,11,-9,8,11,-10,8,9,-5,1,0,-15,1,14,-16,17,16,-15,15,14,-17,19,18,-22,19,21,-21,23,22,-18,16,17,-23,25,24,-24,22,23,-25,26,19,-28,19,26,-19,25,27,-25,27,25,-27
@@ -333,8 +333,8 @@ Objects:  {
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
 			Normals: *234 {
-				a: 0,-0.0228792615234852,0.999738216400146,0,-0.0186799690127373,0.999825537204742,0,-0.0186799690127373,0.999825537204742,0,-0.0186799690127373,0.999825537204742,0,-0.0228792615234852,0.999738216400146,0,-0.0228792615234852,0.999738216400146,0,-4.36898019984255e-08,1,0,-0.000388800952350721,0.999999940395355,0,-4.36898019984255e-08,1,0,-0.000388800952350721,0.999999940395355,0,-4.36898019984255e-08,1,0,-0.000388800952350721,0.999999940395355,0,-0.0105692790821195,0.999944150447845,0,-0.0105692790821195,0.999944150447845,0,-0.0186799690127373,0.999825537204742,0,-0.0105692790821195,0.999944150447845,0,-0.0186799690127373,0.999825537204742,0,-0.0186799690127373,0.999825537204742,0,-0.0048017231747508,0.999988496303558,0,-0.0048017231747508,0.999988496303558,0,-0.0105692790821195,0.999944150447845,0,-0.0048017231747508,0.999988496303558,0,-0.0105692790821195,0.999944150447845,0,-0.0105692790821195,0.999944150447845,0,-0.000388800952350721,0.999999940395355,0,-0.000388800952350721,0.999999940395355,0,-0.00186147273052484,0.999998271465302,0,-0.000388800952350721,0.999999940395355,0,-0.00186147273052484,0.999998271465302,0,-0.00186147273052484,0.999998271465302,0,-0.00186147273052484,0.999998271465302,0,-0.00186147273052484,0.999998271465302,0,-0.0048017231747508,0.999988496303558,0,-0.00186147273052484,0.999998271465302,0,-0.0048017231747508,0.999988496303558,0,-0.0048017231747508,0.999988496303558,0,-4.37113882867379e-08,1,0,-4.37113882867379e-08,1,0,-4.37113882867379e-08,1,0,-4.37113882867379e-08,1,0,-4.37113882867379e-08,1,0,-4.37113882867379e-08,1,0,0.0186798814684153,0.999825537204742,0,0.0186798814684153,0.999825537204742,0,0.0228791739791632,0.999738216400146,0,0.0228791739791632,0.999738216400146,0,0.0228791739791632,0.999738216400146,0,0.0186798814684153,0.999825537204742,0,0.000388713087886572,0.999999940395355,0,0.000388713087886572,0.999999940395355,0,-4.36898019984255e-08,1,0,0.000388713087886572,0.999999940395355,0,-4.36898019984255e-08,1,0,-4.36898019984255e-08,1,0,0.0105691915377975,0.999944150447845,
-0,0.0105691915377975,0.999944150447845,0,0.0186798814684153,0.999825537204742,0,0.0186798814684153,0.999825537204742,0,0.0186798814684153,0.999825537204742,0,0.0105691915377975,0.999944150447845,0,0.00480163656175137,0.999988496303558,0,0.00480163656175137,0.999988496303558,0,0.0105691915377975,0.999944150447845,0,0.0105691915377975,0.999944150447845,0,0.0105691915377975,0.999944150447845,0,0.00480163656175137,0.999988496303558,0,0.00186138483695686,0.999998271465302,0,0.000388713087886572,0.999999940395355,0,0.00186138483695686,0.999998271465302,0,0.000388713087886572,0.999999940395355,0,0.00186138483695686,0.999998271465302,0,0.000388713087886572,0.999999940395355,0,0.00480163656175137,0.999988496303558,0,0.00186138483695686,0.999998271465302,0,0.00480163656175137,0.999988496303558,0,0.00186138483695686,0.999998271465302,0,0.00480163656175137,0.999988496303558,0,0.00186138483695686,0.999998271465302
+				a: 0,-0.0228793062269688,0.999738216400146,0,-0.018680015578866,0.999825537204742,0,-0.018680015578866,0.999825537204742,0,-0.018680015578866,0.999825537204742,0,-0.0228793062269688,0.999738216400146,0,-0.0228793062269688,0.999738216400146,0,-8.73796039968511e-08,1,0,-0.000388844811823219,0.999999940395355,0,-8.73796039968511e-08,1,0,-0.000388844811823219,0.999999940395355,0,-8.73796039968511e-08,1,0,-0.000388844811823219,0.999999940395355,0,-0.0105693219229579,0.999944150447845,0,-0.0105693219229579,0.999944150447845,0,-0.018680015578866,0.999825537204742,0,-0.0105693219229579,0.999944150447845,0,-0.018680015578866,0.999825537204742,0,-0.018680015578866,0.999825537204742,0,-0.00480176648125052,0.999988496303558,0,-0.00480176648125052,0.999988496303558,0,-0.0105693219229579,0.999944150447845,0,-0.00480176648125052,0.999988496303558,0,-0.0105693219229579,0.999944150447845,0,-0.0105693219229579,0.999944150447845,0,-0.000388844811823219,0.999999940395355,0,-0.000388844811823219,0.999999940395355,0,-0.00186151661910117,0.999998271465302,0,-0.000388844811823219,0.999999940395355,0,-0.00186151661910117,0.999998271465302,0,-0.00186151661910117,0.999998271465302,0,-0.00186151661910117,0.999998271465302,0,-0.00186151661910117,0.999998271465302,0,-0.00480176648125052,0.999988496303558,0,-0.00186151661910117,0.999998271465302,0,-0.00480176648125052,0.999988496303558,0,-0.00480176648125052,0.999988496303558,0,-8.74227765734759e-08,1,0,-8.74227765734759e-08,1,0,-8.74227765734759e-08,1,0,-8.74227765734759e-08,1,0,-8.74227765734759e-08,1,0,-8.74227765734759e-08,1,0,0.0186798386275768,0.999825537204742,0,0.0186798386275768,0.999825537204742,0,0.0228791311383247,0.999738216400146,0,0.0228791311383247,0.999738216400146,0,0.0228791311383247,0.999738216400146,0,0.0186798386275768,0.999825537204742,0,0.000388669199310243,0.999999940395355,0,0.000388669199310243,0.999999940395355,0,-8.73796039968511e-08,1,0,0.000388669199310243,0.999999940395355,0,-8.73796039968511e-08,1,0,-8.73796039968511e-08,1,0,0.0105691477656364,0.999944150447845,
+0,0.0105691477656364,0.999944150447845,0,0.0186798386275768,0.999825537204742,0,0.0186798386275768,0.999825537204742,0,0.0186798386275768,0.999825537204742,0,0.0105691477656364,0.999944150447845,0,0.00480159325525165,0.999988496303558,0,0.00480159325525165,0.999988496303558,0,0.0105691477656364,0.999944150447845,0,0.0105691477656364,0.999944150447845,0,0.0105691477656364,0.999944150447845,0,0.00480159325525165,0.999988496303558,0,0.00186134106479585,0.999998271465302,0,0.000388669199310243,0.999999940395355,0,0.00186134106479585,0.999998271465302,0,0.000388669199310243,0.999999940395355,0,0.00186134106479585,0.999998271465302,0,0.000388669199310243,0.999999940395355,0,0.00480159325525165,0.999988496303558,0,0.00186134106479585,0.999998271465302,0,0.00480159325525165,0.999988496303558,0,0.00186134106479585,0.999998271465302,0,0.00480159325525165,0.999988496303558,0,0.00186134106479585,0.999998271465302
 			} 
 		}
 		LayerElementUV: 0 {
@@ -364,7 +364,7 @@ Objects:  {
 			MappingInformationType: "ByPolygon"
 			ReferenceInformationType: "IndexToDirect"
 			Materials: *26 {
-				a: 0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1
+				a: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 			} 
 		}
 		Layer: 0 {
@@ -387,21 +387,20 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2122376389536, "Model::Road_Short001", "Mesh" {
+	Model: 1917812972368, "Model::Road_Short001", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "GeometricRotation", "Vector3D", "Vector", "",-90,-0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
-			P: "Lcl Translation", "Lcl Translation", "", "A",-1315.33447265625,3008.05786132813,9.45445537567139
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",90.0000025044781,-0,0
 			P: "MaxHandle", "int", "Integer", "UH",16700
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2120378990176, "Material::Road_Short", "" {
+	Material: 1914098112256, "Material::Road_Short", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -512,7 +511,7 @@ Objects:  {
 			P: "3dsMax|Parameters|displacement_map_amt", "Float", "", "A",1
 		}
 	}
-	Material: 2120378991936, "Material::SideWalk_Road_Short", "" {
+	Material: 1914098116576, "Material::SideWalk_Road_Short", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -623,7 +622,7 @@ Objects:  {
 			P: "3dsMax|Parameters|displacement_map_amt", "Float", "", "A",1
 		}
 	}
-	Material: 2120404951040, "Material::Material #378 Slot #3", "" {
+	Material: 1914985530960, "Material::Material #378 Slot #3", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -638,7 +637,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404951520, "Material::Material #378 Slot #4", "" {
+	Material: 1914985552080, "Material::Material #378 Slot #4", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -653,7 +652,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404952000, "Material::Material #378 Slot #5", "" {
+	Material: 1914985539120, "Material::Material #378 Slot #5", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -668,7 +667,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404958720, "Material::Material #378 Slot #6", "" {
+	Material: 1914985541520, "Material::Material #378 Slot #6", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -683,7 +682,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404953440, "Material::Material #378 Slot #7", "" {
+	Material: 1914985530480, "Material::Material #378 Slot #7", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -698,7 +697,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404955840, "Material::Material #378 Slot #8", "" {
+	Material: 1914985532880, "Material::Material #378 Slot #8", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -713,7 +712,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404955360, "Material::Material #378 Slot #9", "" {
+	Material: 1914985551600, "Material::Material #378 Slot #9", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -728,7 +727,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Material: 2120404956800, "Material::Material #378 Slot #10", "" {
+	Material: 1914985554960, "Material::Material #378 Slot #10", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -743,7 +742,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Video: 2120404960640, "Video::Map #150", "Clip" {
+	Video: 1914985536240, "Video::Map #150", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Base_color.png"
@@ -753,7 +752,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Base_color.png"
 		RelativeFilename: "..\sceneassets\images\Road_Short_Base_color.png"
 	}
-	Video: 2120404959200, "Video::Map #149", "Clip" {
+	Video: 1914985545360, "Video::Map #149", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Roughness.png"
@@ -763,7 +762,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Roughness.png"
 		RelativeFilename: "..\sceneassets\images\Road_Short_Roughness.png"
 	}
-	Video: 2120404961600, "Video::Map #156", "Clip" {
+	Video: 1914985534320, "Video::Map #156", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Normal_DirectX.png"
@@ -773,7 +772,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Normal_DirectX.png"
 		RelativeFilename: "..\sceneassets\images\Road_Short_Normal_DirectX.png"
 	}
-	Video: 2120404962560, "Video::Map #151", "Clip" {
+	Video: 1914985531440, "Video::Map #151", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Mixed_AO.png"
@@ -783,7 +782,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\Road_Short_Mixed_AO.png"
 		RelativeFilename: "..\sceneassets\images\Road_Short_Mixed_AO.png"
 	}
-	Video: 2120404963040, "Video::Map #152", "Clip" {
+	Video: 1914985556400, "Video::Map #152", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Base_color.png"
@@ -793,7 +792,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Base_color.png"
 		RelativeFilename: "..\sceneassets\images\SideWalk_Road_Short_Base_color.png"
 	}
-	Video: 2120404964480, "Video::Map #155", "Clip" {
+	Video: 1914985533360, "Video::Map #155", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Roughness.png"
@@ -803,7 +802,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Roughness.png"
 		RelativeFilename: "..\sceneassets\images\SideWalk_Road_Short_Roughness.png"
 	}
-	Video: 2120404964960, "Video::Map #157", "Clip" {
+	Video: 1914985555440, "Video::Map #157", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Normal_DirectX.png"
@@ -813,7 +812,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Normal_DirectX.png"
 		RelativeFilename: "..\sceneassets\images\SideWalk_Road_Short_Normal_DirectX.png"
 	}
-	Video: 2120404965920, "Video::Map #154", "Clip" {
+	Video: 1914985540560, "Video::Map #154", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Mixed_AO.png"
@@ -823,7 +822,7 @@ Objects:  {
 		Filename: "C:\Users\soulr\3D Objects\2023_Fall\Game_Sim\Class project Models\House\sceneassets\images\SideWalk_Road_Short_Mixed_AO.png"
 		RelativeFilename: "..\sceneassets\images\SideWalk_Road_Short_Mixed_AO.png"
 	}
-	Texture: 2120404945760, "Texture::Map #150", "" {
+	Texture: 1914985529520, "Texture::Map #150", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #150"
@@ -839,7 +838,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404947200, "Texture::Map #149", "" {
+	Texture: 1914985533840, "Texture::Map #149", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #149"
@@ -855,7 +854,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404948640, "Texture::Map #156", "" {
+	Texture: 1914985531920, "Texture::Map #156", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #156"
@@ -871,7 +870,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404949600, "Texture::Map #151", "" {
+	Texture: 1914985537680, "Texture::Map #151", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #151"
@@ -887,7 +886,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404966880, "Texture::Map #156", "" {
+	Texture: 1914985554480, "Texture::Map #156", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #156"
@@ -925,7 +924,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404963520, "Texture::Map #152", "" {
+	Texture: 1914985537200, "Texture::Map #152", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #152"
@@ -941,7 +940,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404950080, "Texture::Map #155", "" {
+	Texture: 1914985540080, "Texture::Map #155", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #155"
@@ -957,7 +956,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404960160, "Texture::Map #157", "" {
+	Texture: 1914985530000, "Texture::Map #157", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #157"
@@ -973,7 +972,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404962080, "Texture::Map #154", "" {
+	Texture: 1914985544880, "Texture::Map #154", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #154"
@@ -989,7 +988,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 2120404950560, "Texture::Map #157", "" {
+	Texture: 1914985542480, "Texture::Map #157", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #157"
@@ -1027,7 +1026,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Implementation: 2121504979152, "Implementation::Road_Short_Implementation", "" {
+	Implementation: 1916126126800, "Implementation::Road_Short_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "AiOSL"
@@ -1035,7 +1034,7 @@ Objects:  {
 			P: "RootBindingName", "KString", "", "", "root"
 		}
 	}
-	Implementation: 2121504981840, "Implementation::SideWalk_Road_Short_Implementation", "" {
+	Implementation: 1916126127472, "Implementation::SideWalk_Road_Short_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "AiOSL"
@@ -1043,7 +1042,7 @@ Objects:  {
 			P: "RootBindingName", "KString", "", "", "root"
 		}
 	}
-	BindingTable: 2121579382912, "BindingTable::root 17", "" {
+	BindingTable: 1915111390160, "BindingTable::root 40", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -1139,7 +1138,7 @@ Objects:  {
 		Entry: "3dsMax|Parameters|cutout_map_on", "FbxPropertyEntry", "cutout_map_on", "FbxSemanticEntry"
 		Entry: "3dsMax|Parameters|displacement_map_amt", "FbxPropertyEntry", "displacement_map_amt", "FbxSemanticEntry"
 	}
-	BindingTable: 2121579383488, "BindingTable::root 18", "" {
+	BindingTable: 1915111387280, "BindingTable::root 41", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -1235,13 +1234,13 @@ Objects:  {
 		Entry: "3dsMax|Parameters|cutout_map_on", "FbxPropertyEntry", "cutout_map_on", "FbxSemanticEntry"
 		Entry: "3dsMax|Parameters|displacement_map_amt", "FbxPropertyEntry", "displacement_map_amt", "FbxSemanticEntry"
 	}
-	AnimationStack: 2120384893424, "AnimStack::Take 001", "" {
+	AnimationStack: 1915296332192, "AnimStack::Take 001", "" {
 		Properties70:  {
 			P: "LocalStop", "KTime", "Time", "",153953860000
 			P: "ReferenceStop", "KTime", "Time", "",153953860000
 		}
 	}
-	AnimationLayer: 2121589852064, "AnimLayer::BaseLayer", "" {
+	AnimationLayer: 1916126797168, "AnimLayer::BaseLayer", "" {
 	}
 }
 
@@ -1251,121 +1250,121 @@ Objects:  {
 Connections:  {
 	
 	;Model::Road_Short001, Model::RootNode
-	C: "OO",2122376389536,0
+	C: "OO",1917812972368,0
 	
 	;AnimLayer::BaseLayer, AnimStack::Take 001
-	C: "OO",2121589852064,2120384893424
+	C: "OO",1916126797168,1915296332192
 	
 	;Material::Road_Short, Model::Road_Short001
-	C: "OO",2120378990176,2122376389536
+	C: "OO",1914098112256,1917812972368
 	
 	;Material::SideWalk_Road_Short, Model::Road_Short001
-	C: "OO",2120378991936,2122376389536
+	C: "OO",1914098116576,1917812972368
 	
 	;Material::Material #378 Slot #3, Model::Road_Short001
-	C: "OO",2120404951040,2122376389536
+	C: "OO",1914985530960,1917812972368
 	
 	;Material::Material #378 Slot #4, Model::Road_Short001
-	C: "OO",2120404951520,2122376389536
+	C: "OO",1914985552080,1917812972368
 	
 	;Material::Material #378 Slot #5, Model::Road_Short001
-	C: "OO",2120404952000,2122376389536
+	C: "OO",1914985539120,1917812972368
 	
 	;Material::Material #378 Slot #6, Model::Road_Short001
-	C: "OO",2120404958720,2122376389536
+	C: "OO",1914985541520,1917812972368
 	
 	;Material::Material #378 Slot #7, Model::Road_Short001
-	C: "OO",2120404953440,2122376389536
+	C: "OO",1914985530480,1917812972368
 	
 	;Material::Material #378 Slot #8, Model::Road_Short001
-	C: "OO",2120404955840,2122376389536
+	C: "OO",1914985532880,1917812972368
 	
 	;Material::Material #378 Slot #9, Model::Road_Short001
-	C: "OO",2120404955360,2122376389536
+	C: "OO",1914985551600,1917812972368
 	
 	;Material::Material #378 Slot #10, Model::Road_Short001
-	C: "OO",2120404956800,2122376389536
+	C: "OO",1914985554960,1917812972368
 	
 	;Geometry::, Model::Road_Short001
-	C: "OO",2122263736848,2122376389536
+	C: "OO",1911697662288,1917812972368
 	
 	;Texture::Map #150, Material::Road_Short
-	C: "OP",2120404945760,2120378990176, "DiffuseColor"
+	C: "OP",1914985529520,1914098112256, "DiffuseColor"
 	
 	;Texture::Map #149, Material::Road_Short
-	C: "OP",2120404947200,2120378990176, "ShininessExponent"
+	C: "OP",1914985533840,1914098112256, "ShininessExponent"
 	
 	;Texture::Map #151, Material::Road_Short
-	C: "OP",2120404949600,2120378990176, "3dsMax|Parameters|base_weight_map"
+	C: "OP",1914985537680,1914098112256, "3dsMax|Parameters|base_weight_map"
 	
 	;Texture::Map #150, Material::Road_Short
-	C: "OP",2120404945760,2120378990176, "3dsMax|Parameters|base_color_map"
+	C: "OP",1914985529520,1914098112256, "3dsMax|Parameters|base_color_map"
 	
 	;Texture::Map #149, Material::Road_Short
-	C: "OP",2120404947200,2120378990176, "3dsMax|Parameters|roughness_map"
+	C: "OP",1914985533840,1914098112256, "3dsMax|Parameters|roughness_map"
 	
 	;Texture::Map #156, Material::Road_Short
-	C: "OP",2120404966880,2120378990176, "3dsMax|Parameters|bump_map"
+	C: "OP",1914985554480,1914098112256, "3dsMax|Parameters|bump_map"
 	
 	;Video::Map #150, Texture::Map #150
-	C: "OO",2120404960640,2120404945760
+	C: "OO",1914985536240,1914985529520
 	
 	;Video::Map #149, Texture::Map #149
-	C: "OO",2120404959200,2120404947200
+	C: "OO",1914985545360,1914985533840
 	
 	;Video::Map #156, Texture::Map #156
-	C: "OO",2120404961600,2120404948640
+	C: "OO",1914985534320,1914985531920
 	
 	;Video::Map #151, Texture::Map #151
-	C: "OO",2120404962560,2120404949600
+	C: "OO",1914985531440,1914985537680
 	
 	;Texture::Map #156, Texture::Map #156
-	C: "OP",2120404948640,2120404966880, "3dsMax|ai_normal_map Parameters/Connections|input.shader"
+	C: "OP",1914985531920,1914985554480, "3dsMax|ai_normal_map Parameters/Connections|input.shader"
 	
 	;Material::Road_Short, Implementation::Road_Short_Implementation
-	C: "OO",2120378990176,2121504979152
+	C: "OO",1914098112256,1916126126800
 	
-	;BindingTable::root 17, Implementation::Road_Short_Implementation
-	C: "OO",2121579382912,2121504979152
+	;BindingTable::root 40, Implementation::Road_Short_Implementation
+	C: "OO",1915111390160,1916126126800
 	
 	;Texture::Map #152, Material::SideWalk_Road_Short
-	C: "OP",2120404963520,2120378991936, "DiffuseColor"
+	C: "OP",1914985537200,1914098116576, "DiffuseColor"
 	
 	;Texture::Map #155, Material::SideWalk_Road_Short
-	C: "OP",2120404950080,2120378991936, "ShininessExponent"
+	C: "OP",1914985540080,1914098116576, "ShininessExponent"
 	
 	;Texture::Map #154, Material::SideWalk_Road_Short
-	C: "OP",2120404962080,2120378991936, "3dsMax|Parameters|base_weight_map"
+	C: "OP",1914985544880,1914098116576, "3dsMax|Parameters|base_weight_map"
 	
 	;Texture::Map #152, Material::SideWalk_Road_Short
-	C: "OP",2120404963520,2120378991936, "3dsMax|Parameters|base_color_map"
+	C: "OP",1914985537200,1914098116576, "3dsMax|Parameters|base_color_map"
 	
 	;Texture::Map #155, Material::SideWalk_Road_Short
-	C: "OP",2120404950080,2120378991936, "3dsMax|Parameters|roughness_map"
+	C: "OP",1914985540080,1914098116576, "3dsMax|Parameters|roughness_map"
 	
 	;Texture::Map #157, Material::SideWalk_Road_Short
-	C: "OP",2120404950560,2120378991936, "3dsMax|Parameters|bump_map"
+	C: "OP",1914985542480,1914098116576, "3dsMax|Parameters|bump_map"
 	
 	;Video::Map #152, Texture::Map #152
-	C: "OO",2120404963040,2120404963520
+	C: "OO",1914985556400,1914985537200
 	
 	;Video::Map #155, Texture::Map #155
-	C: "OO",2120404964480,2120404950080
+	C: "OO",1914985533360,1914985540080
 	
 	;Video::Map #157, Texture::Map #157
-	C: "OO",2120404964960,2120404960160
+	C: "OO",1914985555440,1914985530000
 	
 	;Video::Map #154, Texture::Map #154
-	C: "OO",2120404965920,2120404962080
+	C: "OO",1914985540560,1914985544880
 	
 	;Texture::Map #157, Texture::Map #157
-	C: "OP",2120404960160,2120404950560, "3dsMax|ai_normal_map Parameters/Connections|input.shader"
+	C: "OP",1914985530000,1914985542480, "3dsMax|ai_normal_map Parameters/Connections|input.shader"
 	
 	;Material::SideWalk_Road_Short, Implementation::SideWalk_Road_Short_Implementation
-	C: "OO",2120378991936,2121504981840
+	C: "OO",1914098116576,1916126127472
 	
-	;BindingTable::root 18, Implementation::SideWalk_Road_Short_Implementation
-	C: "OO",2121579383488,2121504981840
+	;BindingTable::root 41, Implementation::SideWalk_Road_Short_Implementation
+	C: "OO",1915111387280,1916126127472
 }
 ;Takes section
 ;----------------------------------------------------

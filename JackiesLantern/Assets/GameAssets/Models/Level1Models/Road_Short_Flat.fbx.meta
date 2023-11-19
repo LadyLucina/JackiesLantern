@@ -3,17 +3,7 @@ guid: 5ad39777c4775d746bf09c7c0cf536f7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road_Short
-    second: {fileID: 2100000, guid: 6dfccb44900fbc7468d0c9c73491103d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SideWalk_Road_Short
-    second: {fileID: 2100000, guid: e8726c5565d173644b6be5361a7e9644, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
