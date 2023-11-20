@@ -57,7 +57,7 @@ public class LineRendererTest : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"Unable to calculate a path");
+                Debug.Log($"Unable to calculate a path");
             }
             yield return Wait;
         }
