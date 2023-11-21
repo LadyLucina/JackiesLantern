@@ -32,7 +32,6 @@ public class HealthBarScript : MonoBehaviour
     public GameObject gameOverUI; //Reference to the GAME OVER UI GameObject
     public Sprite[] healthSprites; //Array of sprite images for different health levels
     public Image healthImage; //Reference to the UI image to display health
-    public Text healthText; //Reference to the UI Text component to display health value
 
     private float maxHealth; //Store the maximum health
     private float currentHealth; //Store the current health
@@ -49,12 +48,6 @@ public class HealthBarScript : MonoBehaviour
         if (healthImage != null && healthSprites.Length > 0)
         {
             healthImage.sprite = healthSprites[healthSprites.Length - 1];
-        }
-
-        // Set the initial health text to 100
-        if (healthText != null)
-        {
-            healthText.text = "Health: " + currentHealth;
         }
     }
 
@@ -83,12 +76,6 @@ public class HealthBarScript : MonoBehaviour
                 // Update the displayed sprite
                 healthImage.sprite = healthSprites[spriteIndex];
             }
-        }
-
-        // Update the health text
-        if (healthText != null)
-        {
-            healthText.text = "Health: " + currentHealth.ToString("F0");
         }
 
         // Check if health reaches 0 or below
