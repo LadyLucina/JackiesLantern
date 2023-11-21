@@ -74,7 +74,7 @@ PrefabInstance:
     - target: {fileID: -2587163824491698580, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+      objectReference: {fileID: 2100000, guid: 3930732681bd84d4faf057bc4f6f16ca, type: 2}
     - target: {fileID: -2267582287337300289, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: -1627804313608398558, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+      objectReference: {fileID: 2100000, guid: 3930732681bd84d4faf057bc4f6f16ca, type: 2}
     - target: {fileID: 919132149155446097, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_Name
       value: House 1
@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 2082992947766074233, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+      objectReference: {fileID: 2100000, guid: 3930732681bd84d4faf057bc4f6f16ca, type: 2}
     - target: {fileID: 3137148948620141345, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -118,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 6316776510594116809, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+      objectReference: {fileID: 2100000, guid: 69f049d980573db45a7eb27f3421ada2, type: 2}
     - target: {fileID: 6938229211159199290, guid: c15d7979b3695cb4891fe873273a0268, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
