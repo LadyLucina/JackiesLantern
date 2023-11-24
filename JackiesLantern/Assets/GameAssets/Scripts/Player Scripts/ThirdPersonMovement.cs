@@ -187,4 +187,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         return isInvincible;
     }
+
+    public bool IsCrouching()
+    {
+        return isCrouching;
+    }
 }

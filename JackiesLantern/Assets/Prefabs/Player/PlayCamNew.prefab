@@ -102,8 +102,11 @@ MonoBehaviour:
   distance: 3
   height: 1.75
   pitchLimit: 15
-  smoothSpeed: 3
+  smoothSpeed: 2
   offset: {x: 0, y: 0, z: 0}
+  walkTowardsSpeed: 20
+  walkTowardsKey: 115
+  walkTowardsKeyAlt: 274
 --- !u!114 &3940046842375655473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +702,7 @@ MonoBehaviour:
   allChocoAquired: {fileID: 0}
   volume: 0
   collectablesUIScript: {fileID: 0}
+  pic: {fileID: 0}
 --- !u!114 &7451568340461860423
 MonoBehaviour:
   m_ObjectHideFlags: 0
