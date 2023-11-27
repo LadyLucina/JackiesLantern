@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Author: Joshua G
+Purpose: This script is a toggle for the minimap
+Press M to toggle it on and off
+*/
+
 public class MiniMapToggle : MonoBehaviour
 {
      public GameObject minimap; // Reference to the minimap GameObject
-
-    void Start()
-    {
-        // Ensure that minimap is assigned in the Unity Editor
-        if (minimap == null)
-        {
-            Debug.LogError("Minimap GameObject not assigned in the inspector!");
-        }
-    }
 
     void Update()
     {
