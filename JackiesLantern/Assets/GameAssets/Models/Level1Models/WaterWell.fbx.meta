@@ -3,7 +3,12 @@ guid: 162bcc0d93347744983f44669ee29a3a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WaterWell
+    second: {fileID: 2100000, guid: 6a9781caeb3c13045a6731628ebf746f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
