@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7239875057997338053}
   m_LocalRotation: {x: -0.50000006, y: -0.5000001, z: -0.49999982, w: 0.50000006}
-  m_LocalPosition: {x: 458.9067, y: -2252.9302, z: 137.24988}
+  m_LocalPosition: {x: 418, y: 470, z: 137}
   m_LocalScale: {x: 4015.001, y: 4015.0017, z: 4015.0007}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -254,7 +254,7 @@ Light:
   m_Cookie: {fileID: 8900000, guid: 1cd61437627ad754386ce7b6389d89e3, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
