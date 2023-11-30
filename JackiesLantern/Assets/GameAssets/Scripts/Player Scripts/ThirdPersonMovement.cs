@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 /*
  *Author: Joshua G.
  *Editor: Stephanie M.
@@ -13,6 +14,7 @@ using UnityEngine.SceneManagement;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    #region Variables and Declarations
     private PlayerDamageController damageController; //Reference to the PlayerDamageController script
     public CharacterController controller;
     public Transform cam;
@@ -29,26 +31,33 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public bool isCrouching = false;
     public bool isSprinting = false;
+    private bool isWalkingBackward = false;
 
-    // Toggles
+    //Toggles
     private bool superSpeedEnabled = false;
-    private bool isInvincible = false; 
+    private bool isInvincible = false;
 
 
-    // Store checkpoint position
+    //Store checkpoint position
     private Vector3 respawnPoint;
 
+    #endregion
+
+    #region Start Function 
     public void Start()
     {
         //Get a reference to the PlayerDamageController script
         damageController = GetComponent<PlayerDamageController>();
 
-        // Set initial respawn point
+        //Set initial respawn point
         respawnPoint = transform.position;
     }
+    #endregion
 
+    #region Update Function
     void Update()
     {
+        #region Checking is player is crouching or sprinting
         if (!damageController.isStunned) //Check if the player is not stunned
         {
             // Detect crouch input (keyboard: Left Control, controller: B button on controller)
@@ -81,7 +90,9 @@ public class ThirdPersonMovement : MonoBehaviour
                     speed = 50;
                 }
             }
+            #endregion
 
+            #region Cheat Key Toggles
             /*  -----------------
              *   CHEAT KEY BINDS
              *  -----------------
@@ -121,10 +132,13 @@ public class ThirdPersonMovement : MonoBehaviour
                 LoadLevel("Level 3");
             }
 
-           /*  ----------------
-            *   END OF TOGGLES
-            *  ----------------
-            */
+            /*  ----------------
+             *   END OF TOGGLES
+             *  ----------------
+             */
+            #endregion
+
+            #region Player Movement Functions and Methods 
 
             //Sets horizontal movement using "A" and "D" and arrow keys
             float horizontal = Input.GetAxisRaw("Horizontal");
@@ -132,41 +146,40 @@ public class ThirdPersonMovement : MonoBehaviour
             //Sets vertical movement using "W" "S" and arrow keys
             float vertical = Input.GetAxisRaw("Vertical");
 
-            //This line prevents the player from moving up and down on the Y-axis and ensures movement only on the X and Z axes
-            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+            //Get input direction
+            Vector3 inputDirection = new Vector3(horizontal, 0f, vertical);
 
-            //Handle movement
-            if (!damageController.isFrozen) //Check if the player is not frozen
+            //Check if the player is walking backward
+            isWalkingBackward = vertical < 0;
+
+            if (inputDirection.magnitude >= 0.1f)
             {
-                if (!isCrouching && !isSprinting && !superSpeedEnabled)
-                {
-                    speed = 50;
-                }
-                else if (superSpeedEnabled)
-                {
-                    speed = 50 * 2; // Adjust as needed
-                }
+                //Calculate the target angle based on the camera direction
+                float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
 
-                if (direction.magnitude >= 0.1f)
+                //Conditionally apply rotation only if not walking backward
+                if (!isWalkingBackward)
                 {
-                    //Rotates the character with the camera
-                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
                     float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                     transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-                    //Moves the character in the direction the camera is pointing
-                    Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
-                    //Apply gravity
-                    float gravity = Physics.gravity.y;
-                    moveDir.y = gravity;
-
-                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
                 }
+
+                //Calculate the movement direction based on the rotated angle
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+                //Apply gravity
+                float gravity = Physics.gravity.y;
+                moveDir.y = gravity;
+
+                //Move the character in the calculated direction
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
             }
         }
+        #endregion
     }
+    #endregion
 
+    #region Stun, Respawn, Load Level, Invincible, and Crouching Functions
     //Reference to PlayerStun function in PlayerDamageController
     public void PlayerStun()
     {
@@ -192,4 +205,5 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         return isCrouching;
     }
+    #endregion
 }
