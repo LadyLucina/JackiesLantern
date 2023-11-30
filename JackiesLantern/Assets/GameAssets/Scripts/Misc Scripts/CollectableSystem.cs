@@ -19,7 +19,10 @@ public class CollectableSystem : MonoBehaviour
     public float volume;
 
     public CollectablesUI collectablesUIScript; //Reference to CollectablesUI script
-    public GameObject pic;
+
+    public GameObject TurnOn; //Can set Object to Active/Inactive
+    public GameObject TurnOn2;
+    public GameObject TurnOff;
 
     public bool AreAllCollectablesCollected()
     {
@@ -44,7 +47,11 @@ public class CollectableSystem : MonoBehaviour
                 collectablesFound = totalCollectables;
                 collectablesUIScript.UpdateCollectablesUI(collectablesFound, totalCollectables);
                 AudioSource.PlayOneShot(allChocoAquired, volume);
-                pic.SetActive(true);
+
+                //Objects On/Off
+                TurnOn.SetActive(true);
+                TurnOn2.SetActive(true);
+                TurnOff.SetActive(false);
             }
             else
             {
