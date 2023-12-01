@@ -83,12 +83,6 @@ public class PauseManager : MonoBehaviour
     {
         //Show the exit confirmation popup for quitting
         ShowQuitConfirm();
-
-        //Open Survey 
-        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeF2SJ41Yn9FNxXzIqnOEkkS9N3vo4Ikow5ijKuD3o6UsgtbA/viewform");
-
-        //Quit the application
-        Application.Quit();
     }
 
     //This function will be called when the user confirms they wish to quit the game entirely
