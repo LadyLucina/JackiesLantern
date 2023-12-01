@@ -11,6 +11,12 @@ public class MiniMapToggle : MonoBehaviour
 {
      public GameObject minimap; // Reference to the minimap GameObject
 
+    private void Start()
+    {
+        //Start with the minimap disabled so the load into level text shows properly on screen
+        minimap.SetActive(!minimap.activeSelf);
+    }
+
     void Update()
     {
         // Check for 'M' key press
