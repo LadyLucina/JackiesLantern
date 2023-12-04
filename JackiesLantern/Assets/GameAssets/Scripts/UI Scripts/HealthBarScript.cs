@@ -36,11 +36,12 @@ public class HealthBarScript : MonoBehaviour
     private float maxHealth; //Store the maximum health
     private float currentHealth; //Store the current health
     private int spriteIndex = 0; //Index to track the current sprite
-    private bool shouldCycle = true; // Flag to control sprite cycling
+    private bool shouldCycle = true; //Flag to control sprite cycling
+    private int previousSpriteIndex = 0; //Index to track the previous sprite
 
     private void Start()
     {
-        gameOverUI.SetActive(false); // Ensure the GAME OVER UI is initially hidden
+        gameOverUI.SetActive(false); //Ensure the GAME OVER UI is initially hidden
         maxHealth = 5;
         currentHealth = maxHealth;
 
@@ -71,9 +72,12 @@ public class HealthBarScript : MonoBehaviour
 
             if (shouldCycle && (currentHealth <= 80 || newSpriteIndex != spriteIndex))
             {
+                // Store the previous sprite index
+                previousSpriteIndex = spriteIndex;
+
                 spriteIndex = newSpriteIndex;
 
-                //Update the displayed sprite
+                // Update the displayed sprite
                 healthImage.sprite = healthSprites[spriteIndex];
             }
         }
@@ -107,6 +111,23 @@ public class HealthBarScript : MonoBehaviour
             if (healthImage != null && healthSprites.Length > 0)
             {
                 spriteIndex = (spriteIndex + 1) % healthSprites.Length;
+                healthImage.sprite = healthSprites[spriteIndex];
+            }
+        }
+    }
+
+    public void IncreaseHealth(float amount)
+    {
+        float previousHealth = currentHealth;
+        SetHealth(currentHealth + amount);
+
+        //Check if the health increase crossed a multiple of 2
+        if (shouldCycle && Mathf.FloorToInt(previousHealth / 2) > Mathf.FloorToInt(currentHealth / 2) && currentHealth < maxHealth)
+        {
+            //Change to the previous sprite when healing
+            if (healthImage != null && healthSprites.Length > 0)
+            {
+                spriteIndex = previousSpriteIndex;
                 healthImage.sprite = healthSprites[spriteIndex];
             }
         }
