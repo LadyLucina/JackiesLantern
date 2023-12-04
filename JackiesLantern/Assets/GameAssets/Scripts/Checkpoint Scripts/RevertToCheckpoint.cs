@@ -20,7 +20,7 @@ public class RevertToCheckpoint : MonoBehaviour
 
     private void Update()
     {
-        if (healthSystem.currentHealth <= 10)
+        if (healthSystem.currentHealth <= 1)
         {
             checkpoint.RespawnPlayer();
         }

@@ -14,7 +14,7 @@ public class PlayerHealingController : MonoBehaviour
     public AudioClip eatingCandy; //Audio Source
 
     [Header("Healing Stats")]
-    [SerializeField] public int healAmount = 1;
+    public int healAmount = 1;
 
     HealthSystem healthSystem;
     private GameObject absorbCandyCorn;

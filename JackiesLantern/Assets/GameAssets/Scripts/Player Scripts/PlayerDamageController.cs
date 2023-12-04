@@ -16,12 +16,14 @@ public class PlayerDamageController : MonoBehaviour
     public AudioClip takenDamage; //AudioClip to play
     private ThirdPersonMovement thirdPersonMovement; //Reference to the ThirdPersonMovement script
 
-    [Header("Damage & Stunned Stats")]
-    [SerializeField] private int lurkerDamage = 10;
-    [SerializeField] private int trapperDamage = 15;
-    [SerializeField] private int farmerDamage = 20;
-    [SerializeField] private int bossDamage = 25;
-    [SerializeField] private float initialStunDuration = 1.5f;
+    #region Enemy Damage Values
+    private int lurkerDamage = 1;
+    private int trapperDamage = 1;
+    private int skullyDamage = 1;
+    private int farmerDamage = 2;
+    private int bossDamage = 3;
+    private float initialStunDuration = 1.5f;
+    #endregion  
 
     public bool isStunned = false; //Flag to control the player's stunned state
     public bool isFrozen = false; //Flag to control the player's frozen state
@@ -44,7 +46,7 @@ public class PlayerDamageController : MonoBehaviour
     {
         healthSystem = GetComponent<HealthSystem>();
         stunTimer = initialStunDuration; //Initialize the stun timer
-        characterController = GetComponent <CharacterController>();
+        characterController = GetComponent<CharacterController>();
         thirdPersonMovement = GetComponent<ThirdPersonMovement>();
     }
 
@@ -52,7 +54,7 @@ public class PlayerDamageController : MonoBehaviour
     {
         if (isRespawning)
         {
-            // Check if it's time to respawn
+            //Check if it's time to respawn
             if (Time.time - lastEnemyHitTime >= respawnDelay)
             {
                 isRespawning = false;
@@ -82,8 +84,8 @@ public class PlayerDamageController : MonoBehaviour
                 if (lastEnemyHit != null)
                 {
                     lastEnemyHit.SetActive(false);
-                    lastEnemyHitTime = Time.time;
-                    isRespawning = true;
+                     lastEnemyHitTime = Time.time;
+                     isRespawning = true;
                 }
 
                 //Re-enable the CharacterController
@@ -93,7 +95,6 @@ public class PlayerDamageController : MonoBehaviour
     }
 
     private float lastEnemyHitTime;
-
     private void OnTriggerEnter(Collider other)
     {
         if (!isFrozen && Time.time - lastDamageTime >= damageCooldown)
@@ -105,6 +106,10 @@ public class PlayerDamageController : MonoBehaviour
             else if (other.gameObject.CompareTag("Trapper"))
             {
                 DamageEnemy(trapperDamage, other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("Skully"))
+            {
+                DamageEnemy(skullyDamage, other.gameObject);
             }
             else if (other.gameObject.CompareTag("Farmer"))
             {
@@ -122,7 +127,7 @@ public class PlayerDamageController : MonoBehaviour
         if (!thirdPersonMovement.IsInvincible())
         {
             audioSource.PlayOneShot(takenDamage);
-            
+
             //Damage the player's health using the HealthSystem
             healthSystem.damageHealth(damage);
 
@@ -140,6 +145,19 @@ public class PlayerDamageController : MonoBehaviour
 
             //Update the last damage time
             lastDamageTime = Time.time;
+
+            //Apply respawn and cooldown only for Lurkers and Trappers
+            if (enemy.CompareTag("Lurker") || enemy.CompareTag("Trapper"))
+            {
+                //Set respawn state
+                lastEnemyHitTime = Time.time;
+                isRespawning = true;
+            }
+             else
+            {
+             //For other enemies, reset the respawn state
+             isRespawning = false;
+            }
         }
     }
 

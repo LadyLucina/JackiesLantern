@@ -41,10 +41,10 @@ public class HealthBarScript : MonoBehaviour
     private void Start()
     {
         gameOverUI.SetActive(false); // Ensure the GAME OVER UI is initially hidden
-        maxHealth = 100;
+        maxHealth = 5;
         currentHealth = maxHealth;
 
-        // Set the initial sprite to full health
+        //Set the initial sprite to full health
         if (healthImage != null && healthSprites.Length > 0)
         {
             healthImage.sprite = healthSprites[healthSprites.Length - 1];
@@ -58,13 +58,13 @@ public class HealthBarScript : MonoBehaviour
 
     public void SetHealth(float health)
     {
-        // Ensure health is within the valid range
+        //Ensure health is within the valid range
         currentHealth = Mathf.Clamp(health, 0, maxHealth);
 
-        // Calculate health percentage
+        //Calculate health percentage
         float healthPercentage = currentHealth / maxHealth;
 
-        // Determine the sprite index based on health percentage
+        //Determine the sprite index based on health percentage
         if (healthImage != null && healthSprites.Length > 0)
         {
             int newSpriteIndex = Mathf.FloorToInt(healthPercentage * (healthSprites.Length - 1));
@@ -73,23 +73,23 @@ public class HealthBarScript : MonoBehaviour
             {
                 spriteIndex = newSpriteIndex;
 
-                // Update the displayed sprite
+                //Update the displayed sprite
                 healthImage.sprite = healthSprites[spriteIndex];
             }
         }
 
-        // Check if health reaches 0 or below
+        //Check if health reaches 0 or below
         if (currentHealth <= 0)
         {
-            // Pause the game
+            //Pause the game
             Time.timeScale = 0;
 
-            // Display the GAME OVER UI
+            //Display the GAME OVER UI
             gameOverUI.SetActive(true);
         }
 
-        // Check if health is between 30 and 20 and stop cycling sprites
-        if (currentHealth <= 30 && currentHealth > 20)
+        //Check if health is between 1 and 0 and stop cycling sprites
+        if (currentHealth <= 1 && currentHealth > 0)
         {
             shouldCycle = false;
         }
@@ -100,10 +100,10 @@ public class HealthBarScript : MonoBehaviour
         float previousHealth = currentHealth;
         SetHealth(currentHealth - amount);
 
-        // Check if the health decrease crossed a multiple of 20
-        if (shouldCycle && Mathf.FloorToInt(previousHealth / 20) > Mathf.FloorToInt(currentHealth / 20) && currentHealth > 0)
+        //Check if the health decrease crossed a multiple of 2
+        if (shouldCycle && Mathf.FloorToInt(previousHealth / 20) > Mathf.FloorToInt(currentHealth / 2) && currentHealth > 0)
         {
-            // Change to the next sprite (cycle through the sprites)
+            //Change to the next sprite (cycle through the sprites)
             if (healthImage != null && healthSprites.Length > 0)
             {
                 spriteIndex = (spriteIndex + 1) % healthSprites.Length;

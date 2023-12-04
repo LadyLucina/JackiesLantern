@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7958649909155204152, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
       propertyPath: currentHealth
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7958649909155204152, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}
       propertyPath: currentMaxHealth
@@ -741,7 +741,7 @@ MonoBehaviour:
   healIndicator: {fileID: 0}
   audioSource: {fileID: 0}
   eatingCandy: {fileID: 0}
-  healAmount: 15
+  healAmount: 1
 --- !u!4 &6533902359595938984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958649909155204157, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}

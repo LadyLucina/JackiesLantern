@@ -14,9 +14,10 @@ public class HealthSystem : MonoBehaviour
 {
     public HealthBarScript healthBar; //Reference to the Health Bar Script
 
-    //Serialized fields for initial health and max health values
-    [SerializeField] int initialHealth = 100;
-    [SerializeField] int initialMaxHealth = 100;
+    #region MAx Health and Initial Health Values
+    int initialHealth = 5;
+    int initialMaxHealth = 5;
+    #endregion
 
     //Initialize variables
     public int currentHealth;
@@ -40,8 +41,8 @@ public class HealthSystem : MonoBehaviour
         get { return currentMaxHealth; }
         set
         {
-            //Ensure that the max health doesn't exceed the default value (100)
-            currentMaxHealth = Mathf.Min(value, 100);
+            //Ensure that the max health doesn't exceed the default value (5)
+            currentMaxHealth = Mathf.Min(value, 5);
 
             //Update the health bar whenever max health changes
             healthBar.SetMaxHealth(currentMaxHealth);
