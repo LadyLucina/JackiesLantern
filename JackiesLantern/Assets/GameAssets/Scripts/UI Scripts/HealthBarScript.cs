@@ -92,8 +92,8 @@ public class HealthBarScript : MonoBehaviour
             gameOverUI.SetActive(true);
         }
 
-        //Check if health is between 1 and 0 and stop cycling sprites
-        if (currentHealth <= 1 && currentHealth > 0)
+        //Check if health is between 0 and -1 and stop cycling sprites
+        if (currentHealth <= 0 && currentHealth > -1)
         {
             shouldCycle = false;
         }
@@ -128,7 +128,7 @@ public class HealthBarScript : MonoBehaviour
             if (healthImage != null && healthSprites.Length > 0)
             {
                 spriteIndex = previousSpriteIndex;
-                healthImage.sprite = healthSprites[spriteIndex];
+                healthImage.sprite = healthSprites[spriteIndex]; //Update the displayed sprite
             }
         }
     }
