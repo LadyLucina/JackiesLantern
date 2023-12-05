@@ -22,7 +22,7 @@ public class PlayerDamageController : MonoBehaviour
     private int skullyDamage = 1;
     private int farmerDamage = 2;
     private int bossDamage = 3;
-    private float initialStunDuration = 1.5f;
+    private float initialStunDuration = 0.5f;
     #endregion  
 
     public bool isStunned = false; //Flag to control the player's stunned state
@@ -98,9 +98,13 @@ public class PlayerDamageController : MonoBehaviour
     {
         if (!isFrozen && Time.time - lastDamageTime >= damageCooldown)
         {
-            if (other.gameObject.CompareTag("Lurker") || other.gameObject.CompareTag("Trapper"))
+            if (other.gameObject.CompareTag("Lurker"))
             {
                 DamageEnemy(lurkerDamage, other.gameObject);
+            }
+            else if (other.gameObject.CompareTag("Trapper"))
+            {
+                DamageEnemy(trapperDamage, other.gameObject);
             }
             else if (other.gameObject.CompareTag("Skully"))
             {
