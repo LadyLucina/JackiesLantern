@@ -41,7 +41,6 @@ public class PlayerDamageController : MonoBehaviour
     [SerializeField] private float damageCooldown = 3.0f; //Damage cooldown timer
     private float lastDamageTime;
 
-
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
@@ -59,7 +58,7 @@ public class PlayerDamageController : MonoBehaviour
             {
                 isRespawning = false;
                 //Reactivate the enemy object
-                lastEnemyHit.SetActive(true);
+                //lastEnemyHit.SetActive(true);
                 //Reset the timer
                 lastEnemyHitTime = 0f;
             }
@@ -77,15 +76,15 @@ public class PlayerDamageController : MonoBehaviour
                 //Reset the stun timer
                 stunTimer = initialStunDuration;
 
-                // Restore the player's initial position
+                //Restore the players initial position
                 transform.position = initialPosition;
 
                 //Deactivate the collided enemy object
                 if (lastEnemyHit != null)
                 {
                     lastEnemyHit.SetActive(false);
-                     lastEnemyHitTime = Time.time;
-                     isRespawning = true;
+                    lastEnemyHitTime = Time.time;
+                    isRespawning = true;
                 }
 
                 //Re-enable the CharacterController
@@ -99,13 +98,9 @@ public class PlayerDamageController : MonoBehaviour
     {
         if (!isFrozen && Time.time - lastDamageTime >= damageCooldown)
         {
-            if (other.gameObject.CompareTag("Lurker"))
+            if (other.gameObject.CompareTag("Lurker") || other.gameObject.CompareTag("Trapper"))
             {
                 DamageEnemy(lurkerDamage, other.gameObject);
-            }
-            else if (other.gameObject.CompareTag("Trapper"))
-            {
-                DamageEnemy(trapperDamage, other.gameObject);
             }
             else if (other.gameObject.CompareTag("Skully"))
             {
@@ -146,18 +141,9 @@ public class PlayerDamageController : MonoBehaviour
             //Update the last damage time
             lastDamageTime = Time.time;
 
-            //Apply respawn and cooldown only for Lurkers and Trappers
-            if (enemy.CompareTag("Lurker") || enemy.CompareTag("Trapper"))
-            {
-                //Set respawn state
-                lastEnemyHitTime = Time.time;
-                isRespawning = true;
-            }
-             else
-            {
-             //For other enemies, reset the respawn state
-             isRespawning = false;
-            }
+            //Set respawn state
+            lastEnemyHitTime = Time.time;
+            isRespawning = true;
         }
     }
 
