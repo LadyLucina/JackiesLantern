@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class FarmerController : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public float standingDetectionRange = 10f;
     public float crouchedDetectionRange = 5f;
 
@@ -21,18 +21,18 @@ public class FarmerController : MonoBehaviour
     public Transform[] spawnPoints;
 
     [Header("Enemy Chase Check DEBUG ONLY")]
-    [SerializeField] public bool isChasing = false; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
+    [SerializeField] public bool isChasing; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
 
     private NavMeshAgent navMeshAgent;
     private Vector3 wanderDestination;
 
     [Header("Enemy Wander Check DEBUG ONLY")]
-    [SerializeField] public bool isWandering = true; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
+    [SerializeField] public bool isWandering; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
 
     [Tooltip("These are settings for the HINT text for the user")]
     public Text chaseText; //Reference to the UI Text component
     private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
-    private float chaseTextCooldown = 5f; //Cooldown time for displaying chase text
+    private float chaseTextCooldown; //Cooldown time for displaying chase text
 
 
     public void Start()
@@ -65,10 +65,12 @@ public class FarmerController : MonoBehaviour
 
         if (distanceToPlayer <= detectionRange)
         {
+            isWandering = false;
             ChaseJackie();
         }
         else if (isWandering)
         {
+            isChasing = false;
             IdleWandering();
         }
         else
@@ -107,8 +109,8 @@ public class FarmerController : MonoBehaviour
             chaseText.text = text;
             chaseText.gameObject.SetActive(true);
 
-            //Hide the text after 5 seconds
-            Invoke("HideChaseText", 5f);
+            //Hide the text after 20 seconds
+            Invoke("HideChaseText", 20f);
         }
     }
 
@@ -133,10 +135,10 @@ public class FarmerController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-
+        moveSpeed = 5f;
 
         //Stop the NavMeshAgent from wandering
-        navMeshAgent.isStopped = true;
+        navMeshAgent.isStopped = false;
 
         //Perform raycast to detect ground height
         RaycastHit hit;
@@ -172,6 +174,7 @@ public class FarmerController : MonoBehaviour
         //Resume wandering
         navMeshAgent.isStopped = false;
         isWandering = true;
+        moveSpeed = 2f;
 
         //Check if the enemy has reached the destination
         if (navMeshAgent.remainingDistance < 0.1f)

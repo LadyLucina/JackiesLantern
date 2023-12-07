@@ -32,12 +32,12 @@ public class FarmerAnimationController : MonoBehaviour
             myAnim.SetBool("isIdle", false);
             myAnim.SetBool("isWandering", true);
         }
-        //If idle
+       /* //If idle
         else
         {
             myAnim.SetBool("isChasing", false);
             myAnim.SetBool("isIdle", true);
             myAnim.SetBool("isWandering", false);
-        }
+        }*/
     }
 }
