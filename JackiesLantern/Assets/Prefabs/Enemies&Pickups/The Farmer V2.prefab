@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6458314142301661786}
   m_Layer: 0
   m_Name: The Farmer V2
-  m_TagString: Untagged
+  m_TagString: Farmer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,23 +130,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd262afdc8a5a344e8713dfb737f67c2, type: 3}
   m_PrefabInstance: {fileID: 2249481367739926114}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &413202363482507551
-MonoBehaviour:
+--- !u!54 &2607390283095363348
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438524818259622707}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 52
+  m_CollisionDetection: 0
+--- !u!136 &688946224859923013
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438524818259622707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3df4f9afbba5b44ba3e73fa303d80b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 3026882767150048485}
-  audioClip: {fileID: 8300000, guid: be4c283d90a45864cac37d09c29e8ec3, type: 3}
-  volume: 0
-  player: {fileID: 0}
-  maxRange: 10
+  m_Radius: 0.5
+  m_Height: 2.792947
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.4100255, z: 0}
 --- !u!82 &3026882767150048485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,20 +256,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &688946224859923013
-CapsuleCollider:
+--- !u!95 &5111070121928895099
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438524818259622707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.792947
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.4100255, z: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9fcaeea3f25ed584f87c974a6cc424be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &413202363482507551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438524818259622707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3df4f9afbba5b44ba3e73fa303d80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 3026882767150048485}
+  audioClip: {fileID: 8300000, guid: be4c283d90a45864cac37d09c29e8ec3, type: 3}
+  volume: 0
+  player: {fileID: 0}
+  maxRange: 10
 --- !u!195 &1647042945364216564
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -279,42 +315,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &2607390283095363348
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438524818259622707}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 52
-  m_CollisionDetection: 0
---- !u!95 &5111070121928895099
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438524818259622707}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fcaeea3f25ed584f87c974a6cc424be, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &4036340592831786008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +335,19 @@ MonoBehaviour:
   isChasing: 0
   isWandering: 1
   chaseText: {fileID: 0}
+--- !u!114 &4986752906515743455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438524818259622707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69476ba8c8968c0428545c810b04226d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmerController: {fileID: 4036340592831786008}
 --- !u!4 &1782715304330322313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd262afdc8a5a344e8713dfb737f67c2, type: 3}
