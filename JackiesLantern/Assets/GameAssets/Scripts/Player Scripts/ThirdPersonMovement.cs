@@ -61,34 +61,28 @@ public class ThirdPersonMovement : MonoBehaviour
         if (!damageController.isStunned) //Check if the player is not stunned
         {
             // Detect crouch input (keyboard: Left Control, controller: B button on controller)
-            bool isCrouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Crouch");
-            if (isCrouchInput && !isCrouching)
+            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("Crouch"))
             {
-                isCrouching = true;
-                speed = crouchSpeed;
-            }
-            else if (!isCrouchInput && isCrouching)
-            {
-                isCrouching = false;
-                speed = 50f;
+                isCrouching = !isCrouching;
+                speed = isCrouching ? crouchSpeed : 50f;
+                if (isCrouching)
+                {
+                    isSprinting = false;
+                }
+                Debug.Log("Crouch toggled");
             }
 
 
             //Detect sprint input (keyboard: Left Shift, controller: Right Trigger)
-            bool isSprintInput = Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Sprint");
-
-            if (isSprintInput && !isSprinting)
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Sprint"))
             {
-                isSprinting = true;
-                speed = sprintSpeed;
-            }
-            else if (!isSprintInput && isSprinting)
-            {
-                isSprinting = false;
-                if (!isCrouching)
+                isSprinting = !isSprinting;
+                speed = isSprinting ? sprintSpeed : (isCrouching ? crouchSpeed : 50f);
+                if (isSrinting)
                 {
-                    speed = 50;
+                    isCrouching = false;
                 }
+                Debug.Log("sprint toggled");
             }
             #endregion
 
