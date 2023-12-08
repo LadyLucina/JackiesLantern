@@ -61,45 +61,38 @@ public class ThirdPersonMovement : MonoBehaviour
         if (!damageController.isStunned) //Check if the player is not stunned
         {
             // Detect crouch input (keyboard: Left Control, controller: B button on controller)
-            bool isCrouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetButton("Crouch");
-            if (isCrouchInput && !isCrouching)
+            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("Crouch"))
             {
-                isCrouching = true;
-                speed = crouchSpeed;
-            }
-            else if (!isCrouchInput && isCrouching)
-            {
-                isCrouching = false;
-                speed = 50f;
-            }
-
-
-            //Detect sprint input (keyboard: Left Shift, controller: Right Trigger)
-            bool isSprintInput = Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Sprint");
-
-            if (isSprintInput && !isSprinting)
-            {
-                isSprinting = true;
-                speed = sprintSpeed;
-            }
-            else if (!isSprintInput && isSprinting)
-            {
-                isSprinting = false;
-                if (!isCrouching)
+                isCrouching = !isCrouching;
+                speed = isCrouching ? crouchSpeed : 50f;
+                if (isCrouching)
                 {
-                    speed = 50;
+                    isSprinting = false;
                 }
             }
-            #endregion
 
-            #region Cheat Key Toggles
-            /*  -----------------
-             *   CHEAT KEY BINDS
-             *  -----------------
-             */
 
-            //Toggle Invinciblity
-            if (Input.GetKeyDown(KeyCode.I))
+                //Detect sprint input (keyboard: Left Shift, controller: Right Trigger)
+                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Sprint"))
+            {
+                isSprinting = !isSprinting;
+                speed = isSprinting ? sprintSpeed : (isCrouching ? crouchSpeed : 50f);
+                if (isSprinting)
+                {
+                    isCrouching = false;
+                }
+            }
+
+                #endregion
+
+                #region Cheat Key Toggles
+                /*  -----------------
+                 *   CHEAT KEY BINDS
+                 *  -----------------
+                 */
+
+                //Toggle Invinciblity
+                if (Input.GetKeyDown(KeyCode.I))
             {
                 isInvincible = !isInvincible;
             }
