@@ -5,36 +5,41 @@ using UnityEngine;
 public class JackieAnimationStates : MonoBehaviour
 {
     private Animator myAnim;
-    // Start is called before the first frame update
+    private bool isSprinting = false;
+
     void Start()
     {
         myAnim = this.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if sprinting
-        if (Input.GetButton("Sprint") && (Input.GetAxisRaw("Horizontal") > .01f || Input.GetAxisRaw("Horizontal") < -.01f || Input.GetAxisRaw("Vertical") > .01f || Input.GetAxisRaw("Vertical") < -.01f))
+        //Check if the player wants to toggle sprint
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //Toggle sprinting state
+            isSprinting = !isSprinting;
+        }
+
+        //Set animation states based on the sprinting state and movement input
+        if (isSprinting && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0))
         {
             myAnim.SetBool("isRunning", true);
             myAnim.SetBool("isIdle", false);
             myAnim.SetBool("isWalking", false);
         }
-        //if any movement--other special movement, like crouch would go between these two
-        else if (Input.GetAxisRaw("Horizontal") > .01f || Input.GetAxisRaw("Horizontal") < -.01f || Input.GetAxisRaw("Vertical") > .01f || Input.GetAxisRaw("Vertical") < -.01f)
+        else if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             myAnim.SetBool("isRunning", false);
             myAnim.SetBool("isIdle", false);
             myAnim.SetBool("isWalking", true);
         }
-        //if no movement
+        //If no movement
         else
         {
             myAnim.SetBool("isRunning", false);
             myAnim.SetBool("isIdle", true);
             myAnim.SetBool("isWalking", false);
         }
-        
     }
 }
