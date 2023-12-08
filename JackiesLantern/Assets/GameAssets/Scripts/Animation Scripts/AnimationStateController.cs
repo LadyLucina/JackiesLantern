@@ -41,24 +41,15 @@ public class AnimationStateController : MonoBehaviour
 
 
 
-       //Toggle running state when sprint key is pressed
-        if (runPressed && Input.GetKeyDown(KeyCode.W) && !isRunning)
-        {
-            isRunning = !isRunning;
-            animator.SetBool(isRunningHash, isRunning);
-        }
-
-        //When Player is walking, sprint animation can be toggled
+        //Player is walking(not running) then presses L shift, isRunning is set to true & running animation plays
         if (!isRunning && (forwardPressed && runPressed))
         {
-            isRunning = true;
             animator.SetBool(isRunningHash, true);
         }
 
-        //Player stops running, isRunning = false
+        //Player is walking/running then stops walking/running isRunning becomes false
         if (isRunning && (!forwardPressed || !runPressed))
         {
-            isRunning = false;
             animator.SetBool(isRunningHash, false);
         }
 
@@ -70,7 +61,7 @@ public class AnimationStateController : MonoBehaviour
         }
 
         //If player stops moving isWalking is set to false & Walk animation stops
-        if (isWalking && !forwardPressed)
+        if (isWalking && forwardPressed)
         {
             animator.SetBool(isWalkingHash, false);
         }
