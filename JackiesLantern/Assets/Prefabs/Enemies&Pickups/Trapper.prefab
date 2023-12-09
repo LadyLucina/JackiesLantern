@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4162335202447401767}
   m_Layer: 0
   m_Name: Trapper
-  m_TagString: Untagged
+  m_TagString: Trapper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,6 +402,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5691467553997499668, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -4519942518965748550, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7218424
@@ -432,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
       propertyPath: m_TagString
-      value: Lurker
+      value: Trapper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974d05d74fda66c43b7c71b470ce46d3, type: 3}
