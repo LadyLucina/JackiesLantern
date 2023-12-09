@@ -165,7 +165,7 @@ public class FarmerController : MonoBehaviour
 
             if (canDisplayChaseText)
             {
-                DisplayChaseText("You've been spotted! Sprint to get away!");
+                DisplayChaseText("You've been spotted!" + "\nSprint to get away!");
 
                 //Start the cooldown timer
                 StartChaseTextCooldown();

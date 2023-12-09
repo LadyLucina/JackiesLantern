@@ -56,7 +56,7 @@ public class PlayerHealingController : MonoBehaviour
             else if (!isDisplaying)
             {
                 Debug.Log("Cannot add. Max health exceeded!");
-                ShowNotification("Too much candy! Can't eat anymore!", 5f);
+                ShowNotification("Too much candy!" + "\nCan't eat anymore!", 5f);
             }
 
         }

@@ -14,7 +14,7 @@ public class MiniMapToggle : MonoBehaviour
     private void Start()
     {
         //Start with the minimap disabled so the load into level text shows properly on screen
-        minimap.SetActive(!minimap.activeSelf);
+        minimap.SetActive(minimap.activeSelf);
     }
 
     void Update()
