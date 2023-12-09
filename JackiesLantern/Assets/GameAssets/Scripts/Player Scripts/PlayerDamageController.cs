@@ -58,7 +58,7 @@ public class PlayerDamageController : MonoBehaviour
             {
                 isRespawning = false;
                 //Reactivate the enemy object
-                lastEnemyHit.SetActive(true);
+                //lastEnemyHit.SetActive(true);
                 //Reset the timer
                 lastEnemyHitTime = 0f;
             }
