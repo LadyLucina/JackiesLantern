@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 //Author: Joshua G
@@ -18,13 +19,19 @@ public class PlayerHealingController : MonoBehaviour
 
     HealthSystem healthSystem;
     private GameObject absorbCandyCorn;
-
+    
+    public Text maxHealthText;
+    private bool isDisplaying;
+    public float displayTime = 5f;  //Time to display initial and final texts
 
     void Start()
     {
         //references HealthSystem script
         healthSystem = GetComponent<HealthSystem>();
+        isDisplaying = false;
 
+        //Set up initial display time
+        Invoke("HideNotification", displayTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,11 +53,26 @@ public class PlayerHealingController : MonoBehaviour
                 //Object destroys once passed through
                 Destroy(absorbCandyCorn);
             }
-            else
+            else if (!isDisplaying)
             {
                 Debug.Log("Cannot add. Max health exceeded!");
+                ShowNotification("Too much candy! Can't eat anymore!", 5f);
             }
 
         }
+    }
+    private void ShowNotification(string text, float displayTime)
+    {
+        maxHealthText.text = text;
+        isDisplaying = true;
+
+        //Set up final display time
+        Invoke("HideNotification", displayTime);
+    }
+
+    private void HideNotification()
+    {
+        maxHealthText.text = "";
+        isDisplaying = false;
     }
 }
