@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8365934522221119820}
   - component: {fileID: -2323408099858930830}
   - component: {fileID: 394677185975702591}
+  - component: {fileID: 6998254148566120238}
   m_Layer: 0
   m_Name: ChocoLocoBar
   m_TagString: Collectable
@@ -111,3 +112,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: {x: 0, y: 30, z: 0}
+--- !u!114 &6998254148566120238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8005492964308904089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d33e00533ce1b4a8d95bced49d24c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceHeight: 0.07
+  bounceSpeed: 5
