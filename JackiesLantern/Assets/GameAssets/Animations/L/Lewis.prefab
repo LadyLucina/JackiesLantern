@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4660968403700515314}
   m_Layer: 0
   m_Name: Lewis
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossCrawl_Animation2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
 --- !u!1 &494605939113263558 stripped
@@ -94,6 +98,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
   m_PrefabInstance: {fileID: 728554730328439959}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2221503531768960303
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494605939113263558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d1e49247fce6444dae1c736fae43201, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6212369158731473769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494605939113263558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d90095cadb2a00479257c7de44cab19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lewisController: {fileID: 7605034072820460344}
 --- !u!114 &7605034072820460344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,39 +171,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
---- !u!114 &6212369158731473769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494605939113263558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d90095cadb2a00479257c7de44cab19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lewisController: {fileID: 7605034072820460344}
---- !u!95 &2221503531768960303
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494605939113263558}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d1e49247fce6444dae1c736fae43201, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &979218285521623932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
