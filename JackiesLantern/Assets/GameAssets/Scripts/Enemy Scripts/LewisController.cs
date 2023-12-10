@@ -27,7 +27,7 @@ public class LewisController : MonoBehaviour
     private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
     private float chaseTextCooldown; //Cooldown time for displaying chase text
 
-    // Start is called before the first frame update
+
     void Start()
     {
         //Initialize NavMeshAgent
@@ -35,7 +35,7 @@ public class LewisController : MonoBehaviour
         navMeshAgent.speed = chaseSpeed;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
@@ -46,6 +46,8 @@ public class LewisController : MonoBehaviour
             ChaseJackie();
         }
     }
+
+    #region Chase Methods
 
     public void ChaseJackie()
     {
@@ -85,7 +87,6 @@ public class LewisController : MonoBehaviour
         }
     }
 
-
     private void DisplayChaseText(string text)
     {
         if (chaseText != null)
@@ -115,4 +116,5 @@ public class LewisController : MonoBehaviour
     {
         canDisplayChaseText = true;
     }
+    #endregion
 }
