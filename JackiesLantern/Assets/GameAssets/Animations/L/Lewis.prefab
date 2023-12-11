@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8231071612347033666, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
       propertyPath: m_Name
       value: BossCrawl_Animation2
@@ -91,6 +95,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 952053669994591382, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163908808735444960, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163908808735444960, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.131
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163908808735444960, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.381
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
 --- !u!1 &494605939113263558 stripped
@@ -98,19 +118,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
   m_PrefabInstance: {fileID: 728554730328439959}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6362755484004900454
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494605939113263558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.415588, y: 1, z: 7.5249863}
-  m_Center: {x: 0.5257721, y: 0, z: 1.0393333}
 --- !u!95 &2221503531768960303
 Animator:
   serializedVersion: 5
@@ -184,6 +191,42 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!1 &516233276508751873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 952053669994591382, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+  m_PrefabInstance: {fileID: 728554730328439959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6299455689080943138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516233276508751873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.868211, y: 1.2772193, z: 1}
+  m_Center: {x: -0.70016336, y: 0.13861029, z: 0.000000008914883}
+--- !u!1 &565486871516867369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8231071612347033666, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
+  m_PrefabInstance: {fileID: 728554730328439959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3253120263443867169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565486871516867369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6424882, y: 1.2741988, z: 0.89054215}
+  m_Center: {x: -0.038027216, y: 0.13709936, z: -0.054728538}
 --- !u!4 &979218285521623932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc56e6b457f52774eb55ebf9c1b218f8, type: 3}
