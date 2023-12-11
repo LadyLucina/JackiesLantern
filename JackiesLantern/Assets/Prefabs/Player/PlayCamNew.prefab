@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453630925297127591}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.99, z: -3.21}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 2.99, z: 2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4914081207353003122}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!20 &45987766949297459
 Camera:
   m_ObjectHideFlags: 0
@@ -742,6 +742,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   eatingCandy: {fileID: 0}
   healAmount: 1
+  maxHealthText: {fileID: 0}
+  displayTime: 5
 --- !u!4 &6533902359595938984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7958649909155204157, guid: 98aa11253fca0654b9f0e77a87f7d66d, type: 3}

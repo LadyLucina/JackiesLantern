@@ -1,11 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/* Author: Stephanie M.
- * Details: This camera is the new player camera for the game. 
- * It is a traditional Third Person camera. However, the player can walk towards the camera if they choose
- * and have the original camera feel with it. 
- */
 
 /* Author: Stephanie M.
  * Details: This camera is the new player camera for the game. 
