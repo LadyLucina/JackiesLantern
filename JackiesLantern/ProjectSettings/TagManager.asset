@@ -20,6 +20,7 @@ TagManager:
   - minimap
   - Skully
   - Lewis Trigger Zone
+  - LewisTriggerZone
   layers:
   - Default
   - TransparentFX
