@@ -19,6 +19,7 @@ TagManager:
   - EndOfZone
   - minimap
   - Skully
+  - Lewis Trigger Zone
   layers:
   - Default
   - TransparentFX
