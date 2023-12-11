@@ -10,9 +10,9 @@ FBXHeaderExtension:  {
 		Month: 12
 		Day: 11
 		Hour: 0
-		Minute: 26
-		Second: 23
-		Millisecond: 942
+		Minute: 40
+		Second: 20
+		Millisecond: 269
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,20 +28,21 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "C:\Users\simpl\Desktop\condensed stuff\cars\car001\Car001.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\simpl\Desktop\condensed stuff\cars\car001\Car001.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "C:\Users\simpl\Documents\GitHub\JackiesLantern\JackiesLantern\Assets\GameAssets\Models\Level1Models\Car001.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\simpl\Documents\GitHub\JackiesLantern\JackiesLantern\Assets\GameAssets\Models\Level1Models\Car001.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2023"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "11/12/2023 06:26:23.935"
-			P: "Original|FileName", "KString", "", "", "C:\Users\simpl\Desktop\condensed stuff\cars\car001\Car001.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "11/12/2023 06:40:20.267"
+			P: "Original|FileName", "KString", "", "", "C:\Users\simpl\Documents\GitHub\JackiesLantern\JackiesLantern\Assets\GameAssets\Models\Level1Models\Car001.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2023"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "11/12/2023 06:26:23.935"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "11/12/2023 06:40:20.267"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\simpl\Documents\3ds Max 2023"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\simpl\Desktop\condensed stuff\condensed stuff.max"
 		}
 	}
 }
@@ -76,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2043516842784, "", "Scene" {
+	Document: 2044536092032, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -323,7 +324,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 2045669825376, "Geometry::", "Mesh" {
+	Geometry: 2045669829696, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.450980392156863,0.450980392156863,0.450980392156863
 		}
@@ -753,21 +754,23 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2045979601376, "Model::Car001", "Mesh" {
+	Model: 2044816472416, "Model::Car001", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "PreRotation", "Vector3D", "Vector", "",-90,-0,0
 			P: "RotationActive", "bool", "", "",1
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "GeometricRotation", "Vector3D", "Vector", "",-90,-0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A+",90.0000025044781,-0,0
 			P: "UDP3DSMAX", "KString", "", "U", "MapChannel:1 = UVChannel_1&cr;&lf;"
 			P: "MaxHandle", "int", "Integer", "UH",2
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2043292954544, "Material::Material #55", "" {
+	Material: 2045355032880, "Material::Material #55", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -903,17 +906,17 @@ Objects:  {
 			P: "3dsMax|ai_standard_surface Parameters/Connections|id8.shader", "Reference", "", "A"
 		}
 	}
-	Video: 2045669811936, "Video::Map #9", "Clip" {
+	Video: 2045669846976, "Video::Map #9", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\simpl\Desktop\condensed stuff\cars\Cars_BaseColor.png"
-			P: "RelPath", "KString", "XRefUrl", "", "..\Cars_BaseColor.png"
+			P: "RelPath", "KString", "XRefUrl", "", "..\..\..\..\..\..\..\..\Desktop\condensed stuff\cars\Cars_BaseColor.png"
 		}
 		UseMipMap: 0
 		Filename: "C:\Users\simpl\Desktop\condensed stuff\cars\Cars_BaseColor.png"
-		RelativeFilename: "..\Cars_BaseColor.png"
+		RelativeFilename: "..\..\..\..\..\..\..\..\Desktop\condensed stuff\cars\Cars_BaseColor.png"
 	}
-	Texture: 2045669803296, "Texture::Map #9", "" {
+	Texture: 2045669846496, "Texture::Map #9", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #9"
@@ -923,13 +926,13 @@ Objects:  {
 		}
 		Media: "Video::Map #9"
 		FileName: "C:\Users\simpl\Desktop\condensed stuff\cars\Cars_BaseColor.png"
-		RelativeFilename: "..\Cars_BaseColor.png"
+		RelativeFilename: "..\..\..\..\..\..\..\..\Desktop\condensed stuff\cars\Cars_BaseColor.png"
 		ModelUVTranslation: 0,0
 		ModelUVScaling: 1,1
 		Texture_Alpha_Source: "Alpha_Black"
 		Cropping: 0,0,0,0
 	}
-	Implementation: 2043519277632, "Implementation::Material #55_Implementation", "" {
+	Implementation: 2045691209584, "Implementation::Material #55_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "AiOSL"
@@ -937,7 +940,7 @@ Objects:  {
 			P: "RootBindingName", "KString", "", "", "root"
 		}
 	}
-	BindingTable: 2045488138416, "BindingTable::root 3", "" {
+	BindingTable: 2045798554512, "BindingTable::root 6", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -1059,13 +1062,34 @@ Objects:  {
 		Entry: "3dsMax|ai_standard_surface Parameters/Connections|id8", "FbxPropertyEntry", "id8", "FbxSemanticEntry"
 		Entry: "3dsMax|ai_standard_surface Parameters/Connections|id8.shader", "FbxPropertyEntry", "id8.shader", "FbxSemanticEntry"
 	}
-	AnimationStack: 2043507575744, "AnimStack::Take 001", "" {
+	AnimationStack: 2046145753792, "AnimStack::Take 001", "" {
 		Properties70:  {
 			P: "LocalStop", "KTime", "Time", "",153953860000
 			P: "ReferenceStop", "KTime", "Time", "",153953860000
 		}
 	}
-	AnimationCurve: 2043292956784, "AnimCurve::", "" {
+	AnimationCurve: 2045355030160, "AnimCurve::", "" {
+		Default: 0
+		KeyVer: 4009
+		KeyTime: *1 {
+			a: 1924423250
+		} 
+		KeyValueFloat: *1 {
+			a: 90
+		} 
+		;KeyAttrFlags: Cubic|TangeantUser|WeightedRight
+		KeyAttrFlags: *1 {
+			a: 16778248
+		} 
+		;KeyAttrDataFloat: RightSlope:0, NextLeftSlope:0, RightWeight:0.333233, NextLeftWeight:0.333333, RightVelocity:0, NextLeftVelocity:0
+		KeyAttrDataFloat: *4 {
+			a: 0,0,218434820,0
+		} 
+		KeyAttrRefCount: *1 {
+			a: 1
+		} 
+	}
+	AnimationCurve: 2045355033520, "AnimCurve::", "" {
 		Default: 0
 		KeyVer: 4009
 		KeyTime: *1 {
@@ -1086,7 +1110,7 @@ Objects:  {
 			a: 1
 		} 
 	}
-	AnimationCurve: 2043292951344, "AnimCurve::", "" {
+	AnimationCurve: 2045355030320, "AnimCurve::", "" {
 		Default: 0
 		KeyVer: 4009
 		KeyTime: *1 {
@@ -1107,35 +1131,14 @@ Objects:  {
 			a: 1
 		} 
 	}
-	AnimationCurve: 2043292956944, "AnimCurve::", "" {
-		Default: 0
-		KeyVer: 4009
-		KeyTime: *1 {
-			a: 1924423250
-		} 
-		KeyValueFloat: *1 {
-			a: 0
-		} 
-		;KeyAttrFlags: Cubic|TangeantUser|WeightedRight
-		KeyAttrFlags: *1 {
-			a: 16778248
-		} 
-		;KeyAttrDataFloat: RightSlope:0, NextLeftSlope:0, RightWeight:0.333233, NextLeftWeight:0.333333, RightVelocity:0, NextLeftVelocity:0
-		KeyAttrDataFloat: *4 {
-			a: 0,0,218434820,0
-		} 
-		KeyAttrRefCount: *1 {
-			a: 1
-		} 
-	}
-	AnimationCurveNode: 2043507583648, "AnimCurveNode::R", "" {
+	AnimationCurveNode: 2046145757952, "AnimCurveNode::R", "" {
 		Properties70:  {
-			P: "d|X", "Number", "", "A",0
-			P: "d|Y", "Number", "", "A",0
+			P: "d|X", "Number", "", "A",90.0000025044781
+			P: "d|Y", "Number", "", "A",-0
 			P: "d|Z", "Number", "", "A",0
 		}
 	}
-	AnimationLayer: 2043649724304, "AnimLayer::BaseLayer", "" {
+	AnimationLayer: 2046850325328, "AnimLayer::BaseLayer", "" {
 	}
 }
 
@@ -1145,43 +1148,43 @@ Objects:  {
 Connections:  {
 	
 	;Model::Car001, Model::RootNode
-	C: "OO",2045979601376,0
+	C: "OO",2044816472416,0
 	
 	;AnimLayer::BaseLayer, AnimStack::Take 001
-	C: "OO",2043649724304,2043507575744
+	C: "OO",2046850325328,2046145753792
 	
 	;AnimCurveNode::R, AnimLayer::BaseLayer
-	C: "OO",2043507583648,2043649724304
+	C: "OO",2046145757952,2046850325328
 	
 	;Geometry::, Model::Car001
-	C: "OO",2045669825376,2045979601376
+	C: "OO",2045669829696,2044816472416
 	
 	;Material::Material #55, Model::Car001
-	C: "OO",2043292954544,2045979601376
+	C: "OO",2045355032880,2044816472416
 	
 	;AnimCurveNode::R, Model::Car001
-	C: "OP",2043507583648,2045979601376, "Lcl Rotation"
+	C: "OP",2046145757952,2044816472416, "Lcl Rotation"
 	
 	;Texture::Map #9, Material::Material #55
-	C: "OP",2045669803296,2043292954544, "3dsMax|ai_standard_surface Parameters/Connections|base_color.shader"
+	C: "OP",2045669846496,2045355032880, "3dsMax|ai_standard_surface Parameters/Connections|base_color.shader"
 	
 	;Video::Map #9, Texture::Map #9
-	C: "OO",2045669811936,2045669803296
+	C: "OO",2045669846976,2045669846496
 	
 	;Material::Material #55, Implementation::Material #55_Implementation
-	C: "OO",2043292954544,2043519277632
+	C: "OO",2045355032880,2045691209584
 	
-	;BindingTable::root 3, Implementation::Material #55_Implementation
-	C: "OO",2045488138416,2043519277632
-	
-	;AnimCurve::, AnimCurveNode::R
-	C: "OP",2043292956784,2043507583648, "d|X"
+	;BindingTable::root 6, Implementation::Material #55_Implementation
+	C: "OO",2045798554512,2045691209584
 	
 	;AnimCurve::, AnimCurveNode::R
-	C: "OP",2043292951344,2043507583648, "d|Y"
+	C: "OP",2045355030160,2046145757952, "d|X"
 	
 	;AnimCurve::, AnimCurveNode::R
-	C: "OP",2043292956944,2043507583648, "d|Z"
+	C: "OP",2045355033520,2046145757952, "d|Y"
+	
+	;AnimCurve::, AnimCurveNode::R
+	C: "OP",2045355030320,2046145757952, "d|Z"
 }
 ;Takes section
 ;----------------------------------------------------
