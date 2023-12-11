@@ -3,7 +3,27 @@ guid: 811897d1fc2a3dd4f8d6088e83e37c37
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #55
+    second: {fileID: 2100000, guid: 0cceebb1251ac184c851af5aa1061657, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rims
+    second: {fileID: 2100000, guid: 4172a18d747d57e4f99ea517b30f4a5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tires
+    second: {fileID: 2100000, guid: a061963b3577ad34bbe0ee48942070e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windows
+    second: {fileID: 2100000, guid: cf6b5d3e265c9c04082e30cfc4399176, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
