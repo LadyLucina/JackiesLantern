@@ -24,6 +24,8 @@ public class CollectableSystem : MonoBehaviour
     public GameObject TurnOn2;
     public GameObject TurnOff;
 
+    private Animator OpenGate;
+
     public bool AreAllCollectablesCollected()
     {
         return collectablesFound >= totalCollectables;
@@ -52,6 +54,8 @@ public class CollectableSystem : MonoBehaviour
                 TurnOn.SetActive(true);
                 TurnOn2.SetActive(true);
                 TurnOff.SetActive(false);
+
+                OpenGate.SetBool("openGate", true);
             }
             else
             {
