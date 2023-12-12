@@ -55,6 +55,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void HandleMovementInput()
     {
+        //Check the current scene name
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
         //Detect crouch input (keyboard: Left Control, controller: B button on controller)
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("Crouch"))
         {
@@ -94,8 +98,8 @@ public class ThirdPersonMovement : MonoBehaviour
             //Calculate the target angle based on the camera direction
             float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
 
-            //Conditionally apply rotation only if not walking backward
-            if (!isWalkingBackward)
+            //Conditionally apply rotation only if not walking backward or in Level 4
+            if (!isWalkingBackward || sceneName == "Level 4")
             {
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -112,6 +116,7 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
     }
+
 
 #if UNITY_EDITOR
     void HandleCheats()
