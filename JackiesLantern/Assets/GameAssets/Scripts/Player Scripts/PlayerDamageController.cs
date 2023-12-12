@@ -21,7 +21,7 @@ public class PlayerDamageController : MonoBehaviour
     private int trapperDamage = 1;
     private int skullyDamage = 1;
     private int farmerDamage = 2;
-    private int bossDamage = 3;
+    private int bossDamage = 2;
     #endregion  
 
     [Header("Respawn Settings")]

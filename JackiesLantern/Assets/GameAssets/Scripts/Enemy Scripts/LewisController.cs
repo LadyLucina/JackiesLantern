@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LewisController : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    private float chaseSpeed = 5f;
+    public float chaseSpeed;
     public float standingDetectionRange = 10f;
     public float crouchedDetectionRange = 5f;
 
@@ -52,7 +52,7 @@ public class LewisController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-        chaseSpeed = 5f;
+        chaseSpeed = 6.5f;
 
         //Stop the NavMeshAgent from wandering
         navMeshAgent.isStopped = false;

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Lewis Intro/Lewis Intro.unity
     guid: 5624a5da512bf7b459206e940f006b1f
   - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 944d2389975e059408a57f08ef8cd917
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/End/End.unity
     guid: e20058a23a1a60944a4335abfc79db5a
   - enabled: 0
