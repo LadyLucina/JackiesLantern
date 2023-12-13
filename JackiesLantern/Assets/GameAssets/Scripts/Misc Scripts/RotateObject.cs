@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Stephanie M
+ * Details: Apply this script to a game object and it will rotate based on the values set within the inspector
+ */
+
 public class RotateObject : MonoBehaviour
 {
     

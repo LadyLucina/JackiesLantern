@@ -90,8 +90,8 @@ public class PauseManager : MonoBehaviour
     {
         Debug.Log("Application closing...");
 
-        //Open Survey 
-        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeF2SJ41Yn9FNxXzIqnOEkkS9N3vo4Ikow5ijKuD3o6UsgtbA/viewform");
+        /*//Open Survey 
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeF2SJ41Yn9FNxXzIqnOEkkS9N3vo4Ikow5ijKuD3o6UsgtbA/viewform");*/
 
         //Quit the application
         Application.Quit();

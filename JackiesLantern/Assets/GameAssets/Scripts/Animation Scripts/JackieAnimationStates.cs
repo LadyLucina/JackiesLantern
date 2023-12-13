@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/*  Author: Mya
+ *  Edited By: Stephanie M
+ *  Details: Switches the animation state based on the players movement and keys pressed
+ */
+
 public class JackieAnimationStates : MonoBehaviour
 {
     private Animator myAnim;
@@ -11,7 +16,7 @@ public class JackieAnimationStates : MonoBehaviour
 
     void Start()
     {
-        myAnim = this.GetComponent<Animator>();
+        myAnim = this.GetComponent<Animator>(); 
     }
 
     void Update()

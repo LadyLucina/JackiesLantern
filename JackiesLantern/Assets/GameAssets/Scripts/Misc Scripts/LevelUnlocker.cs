@@ -21,6 +21,7 @@ public class LevelUnlocker : MonoBehaviour
     {
         if (messageText)
         {
+            //Set initial message text and hide it
             messageText.text = "You need to find all collectibles to unlock this area!";
             messageText.gameObject.SetActive(false);
         }
@@ -40,12 +41,15 @@ public class LevelUnlocker : MonoBehaviour
             if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
             {
                 isUnlocked = true;
+
+                //Load the next scene
                 SceneManager.LoadScene(nextSceneName);
             }
             else
             {
                 if (messageText)
                 {
+                    //Show the message if not all collectables are collected
                     messageText.gameObject.SetActive(true);
                 }
             }
@@ -56,6 +60,7 @@ public class LevelUnlocker : MonoBehaviour
     {
         if (other.CompareTag("Player") && messageText)
         {
+            //Hide the message when the player exits the trigger zone
             messageText.gameObject.SetActive(false);
         }
     }

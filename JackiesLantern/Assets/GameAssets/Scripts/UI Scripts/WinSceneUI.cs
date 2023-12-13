@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/* Author: Stephanie M
+ * Details: This script handles the functionality of the Winning scene
+ */
+
 public class WinSceneUI : MonoBehaviour
 {
     [Header("Win Scene UI")]

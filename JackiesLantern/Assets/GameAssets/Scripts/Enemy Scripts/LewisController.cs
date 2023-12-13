@@ -6,35 +6,42 @@ using UnityEngine.UI;
 
 public class LewisController : MonoBehaviour
 {
+    #region Lewis's Stats and NavMesh
     [Header("Enemy Stats")]
-    public float chaseSpeed;
-    public float standingDetectionRange = 10f;
-    public float crouchedDetectionRange = 5f;
+    public float chaseSpeed; //Speed at which the enemy chases the player
+    public float standingDetectionRange = 10f;  //Detection range while player is standing
+    public float crouchedDetectionRange = 5f;   //Detection range while player is crouched
+    private NavMeshAgent navMeshAgent;  //Reference to the NavMeshAgent component
+    #endregion
 
+    #region Player Assignment
     [Header("Player Assignment")]
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform player;  //Reference to the players transform
+    #endregion
 
+    #region Spawn Point
     [Header("Spawn Point")]
-    public Transform[] lewisSpawnPoint;
+    public Transform[] lewisSpawnPoint;  //Array of spawn points for the enemy
+    #endregion
 
+    #region Chase Variables
+    [Tooltip("Settings for the HINT text for the user")]
+    public Text chaseText; // Reference to the UI Text component
+    private bool canDisplayChaseText = true; // Flag to check if chase text can be displayed
+    #endregion
+
+    #region DEBUG ONLY
     [Header("Enemy Chase Check DEBUG ONLY")]
-    [SerializeField] public bool isChasing; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
-
-    private NavMeshAgent navMeshAgent;
-
-    [Tooltip("These are settings for the HINT text for the user")]
-    public Text chaseText; //Reference to the UI Text component
-    private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
-
+    [SerializeField] public bool isChasing; // Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
+    #endregion
 
     void Start()
     {
         //Initialize NavMeshAgent
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = chaseSpeed;
-        canDisplayChaseText = true;
+        navMeshAgent.speed = chaseSpeed; //Set the initial chase speed
+        canDisplayChaseText = true; //Enable chase text display
     }
-
 
     void Update()
     {
@@ -43,6 +50,7 @@ public class LewisController : MonoBehaviour
 
         if (distanceToPlayer <= detectionRange)
         {
+            //If player is within detection range, start chasing
             ChaseJackie();
         }
     }
@@ -52,7 +60,7 @@ public class LewisController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-        chaseSpeed = 6.8f; //CHANGE HERE
+        chaseSpeed = 6.8f; //CHANGE HERE - Adjust the chase speed as needed
 
         //Stop the NavMeshAgent from wandering
         navMeshAgent.isStopped = false;
@@ -80,6 +88,7 @@ public class LewisController : MonoBehaviour
 
         if (canDisplayChaseText)
         {
+            //Display chase text to instruct the player
             DisplayChaseText("RUN AWAY!");
 
             //Start the cooldown timer
@@ -98,7 +107,7 @@ public class LewisController : MonoBehaviour
 
     private void StartChaseTextCooldown()
     {
-        canDisplayChaseText = false;
+        canDisplayChaseText = false; //Disable chase text display temporarily
     }
 
     #endregion

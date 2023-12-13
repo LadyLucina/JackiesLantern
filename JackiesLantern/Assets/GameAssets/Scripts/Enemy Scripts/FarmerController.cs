@@ -9,33 +9,43 @@ using UnityEngine.UI;
 
 public class FarmerController : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-    private float wanderSpeed = 1.7f;
-    private float chaseSpeed = 6f;
-    public float standingDetectionRange = 10f;
-    public float crouchedDetectionRange = 5f;
+    #region Farmer Stats & NavMesh
+    [Header("Farmer Stats")]
+    private float wanderSpeed = 1.7f; //Speed during wandering
+    private float chaseSpeed = 6f;    //Speed during chasing
+    public float standingDetectionRange = 10f;  //Detection range while player is standing
+    public float crouchedDetectionRange = 5f;   //Detection range while player is crouched
+    
+    private NavMeshAgent navMeshAgent;  // Reference to the NavMeshAgent component
+    private Vector3 wanderDestination;
+    #endregion
 
+    #region Player Assignment
     [Header("Player Assignment")]
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform player;  //Reference to the players transform
+    #endregion
 
+    #region Spawn Points
     [Header("Spawn Points")]
-    public Transform[] spawnPoints;
+    public Transform[] spawnPoints;  //Array of spawn points for the enemy
+    #endregion
 
+    #region DEBUG ONLY
     [Header("Enemy Chase Check DEBUG ONLY")]
     public bool isChasing; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
 
-    private NavMeshAgent navMeshAgent;
-    private Vector3 wanderDestination;
-
     [Header("Enemy Wander Check DEBUG ONLY")]
     public bool isWandering; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
+    #endregion
 
-    [Tooltip("These are settings for the HINT text for the user")]
+    #region Chase Text Variables
+    [Tooltip("Settings for the HINT text for the user")]
     public Text chaseText; //Reference to the UI Text component
     private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
-    private float chaseTextCooldown; //Cooldown time for displaying chase text
+    private float chaseTextCooldown = 20f; //Cooldown time for displaying chase text
+    #endregion
 
-
+    //Called when the script starts
     public void Start()
     {
         //Check if spawnPoints array is empty
@@ -59,11 +69,14 @@ public class FarmerController : MonoBehaviour
         SetRandomWanderDestination();
     }
 
+    //Called every frame
     private void Update()
     {
+        //Calculate the detection range based on the player's crouch state
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
+        //Check if the player is within the detection range
         if (distanceToPlayer <= detectionRange)
         {
             isChasing = true;
@@ -93,15 +106,15 @@ public class FarmerController : MonoBehaviour
             //Move towards the player
             transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
 
+            //Display chase text if it's allowed
             if (canDisplayChaseText)
             {
-                DisplayChaseText("You've been spotted!" + "\nSprint to get away!");
+                DisplayChaseText("You've been spotted!\nSprint to get away!");
 
                 //Start the cooldown timer
                 StartChaseTextCooldown();
             }
         }
-
         else if (isWandering)
         {
             //Resume wandering
@@ -119,8 +132,8 @@ public class FarmerController : MonoBehaviour
             isChasing = false;
         }
     }
-    
-  
+
+    //Called when a collider enters the trigger zone
     private void OnTriggerEnter(Collider other)
     {
         //Check if entered trigger zone with the tag "End of Zone"
@@ -131,6 +144,7 @@ public class FarmerController : MonoBehaviour
         }
     }
 
+    //Set a random wander destination within the detection range
     private void SetRandomWanderDestination()
     {
         //Set a random point within the detection range as the wander destination
@@ -143,6 +157,7 @@ public class FarmerController : MonoBehaviour
     }
 
     #region Alert/Chase Text Methods
+    //Display the chase text on the UI
     private void DisplayChaseText(string text)
     {
         if (chaseText != null)
@@ -154,6 +169,8 @@ public class FarmerController : MonoBehaviour
             Invoke("HideChaseText", 5f);
         }
     }
+
+    //Hide the chase text on the UI
     private void HideChaseText()
     {
         if (chaseText != null)
@@ -161,16 +178,18 @@ public class FarmerController : MonoBehaviour
             chaseText.gameObject.SetActive(false);
         }
     }
+
+    //Start the cooldown for displaying chase text
     private void StartChaseTextCooldown()
     {
         canDisplayChaseText = false;
         Invoke("ResetChaseTextCooldown", chaseTextCooldown);
     }
 
+    //Reset the cooldown for displaying chase text
     private void ResetChaseTextCooldown()
     {
         canDisplayChaseText = true;
     }
     #endregion
 }
-

@@ -12,16 +12,20 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public HealthBarScript healthBar; //Reference to the Health Bar Script
+    //Reference to the Health Bar Script
+    public HealthBarScript healthBar;
 
-    #region MAx Health and Initial Health Values
+    #region Max Health and Initial Health Values
+    //Initial health value
     int initialHealth = 5;
+
+    //Initial max health value
     int initialMaxHealth = 5;
     #endregion
 
     //Initialize variables
-    public int currentHealth;
-    int currentMaxHealth;
+    public int currentHealth;  //Current health value
+    int currentMaxHealth;      //Current max health value
 
     //Properties for health value
     public int Health
@@ -41,7 +45,7 @@ public class HealthSystem : MonoBehaviour
         get { return currentMaxHealth; }
         set
         {
-            //Ensure that the max health doesn't exceed the default value (5)
+            //Ensure that the max health doesn't exceed the default value
             currentMaxHealth = Mathf.Min(value, 5);
 
             //Update the health bar whenever max health changes
@@ -52,10 +56,11 @@ public class HealthSystem : MonoBehaviour
     //Method to initialize health system
     void Start()
     {
-        currentHealth = initialHealth;
-        MaxHealth = initialMaxHealth;
+        currentHealth = initialHealth;   //Set initial health
+        MaxHealth = initialMaxHealth;    //Set initial max health
     }
 
+    //Method to damage health
     public void damageHealth(int damageAmount)
     {
         if (currentHealth > 0)
@@ -67,6 +72,7 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
+    //Method to regenerate health
     public void regenHealth(int healAmount)
     {
         if (currentHealth < currentMaxHealth)

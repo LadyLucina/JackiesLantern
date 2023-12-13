@@ -11,11 +11,16 @@ public class PickupObject : MonoBehaviour
 {
     public int objectID = 1;  //Unique Object ID for this key.
 
+    //Called when another collider enters the trigger zone of this object.
     private void OnTriggerEnter(Collider other)
     {
+        //Check if the colliding object has the "Player" tag.
         if (other.CompareTag("Player"))
         {
+            //Collect the key with the specified object ID using the InventoryManager.
             InventoryManager.CollectKey(objectID);
+
+            //Destroy this game object after the key is collected.
             Destroy(gameObject);
         }
     }

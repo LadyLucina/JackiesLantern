@@ -13,25 +13,32 @@ using UnityEngine;
 
 public class CheckpointSystem : MonoBehaviour
 {
-    //Inspector variables
-    public KeyCode respawnKey = KeyCode.R;
-    public List<Checkpoint> checkpoints;
+    #region Inspector Variables
+    public KeyCode respawnKey = KeyCode.R;   //The key used for manual respawn
+    public List<Checkpoint> checkpoints;      //List of available checkpoints
 
+    //Index to keep track of the current active checkpoint
     private int currentCheckpointIndex = -1;
+    #endregion
+
 
     private void Update()
     {
+        //Check if the player presses the respawn key
         if (Input.GetKeyDown(respawnKey))
         {
+            //Respawn the player at the last checkpoint
             RespawnAtLastCheckpoint();
         }
     }
 
+    //Method to set the active checkpoint by its ID
     public void SetCheckpoint(int checkpointID)
     {
+        //Check if the provided checkpoint ID is within the valid range
         if (checkpointID >= 0 && checkpointID < checkpoints.Count)
         {
-            //If this is the same checkpoint as the current one, no need to do anything
+            //If this is the same checkpoint as the current one, then do nothing
             if (checkpointID == currentCheckpointIndex)
             {
                 return;
@@ -43,15 +50,19 @@ public class CheckpointSystem : MonoBehaviour
                 checkpoints[currentCheckpointIndex].Disable();
             }
 
+            //Update the current checkpoint index and enable the new checkpoint
             currentCheckpointIndex = checkpointID;
             checkpoints[currentCheckpointIndex].Enable();
         }
     }
 
+    //Method to respawn the player at the last active checkpoint
     public void RespawnAtLastCheckpoint()
     {
+        //Check if there is an active checkpoint
         if (currentCheckpointIndex >= 0)
         {
+            //Respawn the player at the last active checkpoint
             checkpoints[currentCheckpointIndex].RespawnPlayer();
         }
     }

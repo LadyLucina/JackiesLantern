@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*  Author: Stephanie M
+    Details: Enables/Disables the target object based on the players collision with the trigger object.
+ */
+
 public class LewisTrigger : MonoBehaviour
 {
     //Reference to the GameObject you want to enable/disable
@@ -16,6 +20,7 @@ public class LewisTrigger : MonoBehaviour
             //Enable the targetObject
             if (targetObject != null)
             {
+                //If the target object is not null, then set true
                 targetObject.SetActive(true);
             }
         }

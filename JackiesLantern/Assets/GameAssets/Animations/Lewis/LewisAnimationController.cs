@@ -2,26 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Author: Stephanie M
+ * Details: 
+ */
+
 public class LewisAnimationController : MonoBehaviour
 {
-    private Animator myAnim;
-    public LewisController lewisController; //Reference to the FarmerController script
+    private Animator myAnim; //Reference to the Animator component.
+    public LewisController lewisController; //Reference to the FarmerController script.
 
-    //Start is called before the first frame update
     void Start()
     {
-        myAnim = GetComponent<Animator>();
-        lewisController = GetComponent<LewisController>();
+        myAnim = GetComponent<Animator>(); //Assign the Animator component of this GameObject.
+        lewisController = GetComponent<LewisController>(); //Assign the LewisController script of this GameObject.
     }
 
-    //Update is called once per frame
     void Update()
     {
-        bool isChasing = lewisController.isChasing; //State is dependent on the current state in LewisController script
+        bool isChasing = lewisController.isChasing; //Get the 'isChasing' state from the LewisController script.
 
         if (isChasing)
         {
-            myAnim.SetBool("isCrawling", true);
+            myAnim.SetBool("isCrawling", true); //Set the 'isCrawling' parameter in the Animator to true if chasing.
         }
     }
 }

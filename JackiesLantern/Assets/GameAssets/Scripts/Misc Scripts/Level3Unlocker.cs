@@ -12,19 +12,18 @@ using UnityEngine.AI;
 
 public class Level3Unlocker : MonoBehaviour
 {
-    
-    //------------------------------------------------------------------------------------------------------------------------------
     public string nextSceneName = "";  //Specify the next scene in the Unity inspector.
     public Text messageText;  //Reference to the UI Text component.
     public CollectableSystem collectableSystem;  //Reference to the CollectableSystem script.
 
     private bool isUnlocked = false;  //Show if the area is unlocked.
-    public object DestroyThis;
+    public object DestroyThis;  //Reference to an object that may be destroyed.
 
     private void Start()
     {
         if (messageText)
         {
+            //Set initial message text and hide it
             messageText.text = "You need to find all collectibles to unlock this area!";
             messageText.gameObject.SetActive(false);
         }
@@ -33,19 +32,19 @@ public class Level3Unlocker : MonoBehaviour
         if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
         {
             isUnlocked = true;
-            
         }
     }
 
-    private void Update() //Destroys Game Object after all collectables have been collected
+    private void Update()
     {
+        //Destroy the game object after all collectables have been collected
         if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
         {
             isUnlocked = true;
             Destroy(gameObject);
-
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isUnlocked)
@@ -54,12 +53,12 @@ public class Level3Unlocker : MonoBehaviour
             if (collectableSystem && collectableSystem.AreAllCollectablesCollected())
             {
                 isUnlocked = true;
-                
             }
             else
             {
                 if (messageText)
                 {
+                    //Show the message if not all collectables are collected
                     messageText.gameObject.SetActive(true);
                 }
             }
@@ -70,6 +69,7 @@ public class Level3Unlocker : MonoBehaviour
     {
         if (other.CompareTag("Player") && messageText)
         {
+            //Hide the message when the player exits the trigger zone
             messageText.gameObject.SetActive(false);
         }
     }

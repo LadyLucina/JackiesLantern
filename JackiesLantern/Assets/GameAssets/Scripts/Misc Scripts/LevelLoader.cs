@@ -11,12 +11,13 @@ public class LevelLoader : MonoBehaviour
 {
     public string nextLevelName; //Name of the next level to load
 
+    //Called when another Collider enters this object's trigger zone
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) //Checks if the object colliding has the "Player" tag
         {
             //Load the next level
             SceneManager.LoadScene(nextLevelName);
-        }    
+        }
     }
 }

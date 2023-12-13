@@ -11,12 +11,11 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    [Header("Lantern Light Settings")]
-    public GameObject player; //Reference to player object
-    public Light objectLight; //Reference to light component
-    public float detectionRange = 10.0f; //Range within the enemys presence is detected
-    public Color originalLightColor; //The original color of the light
-    public Color enemyInRangeColor; //The color the light should be when the enemy is in range
+    public GameObject player;  //Reference to player object
+    public Light objectLight;  //Reference to light component
+    public float detectionRange = 10.0f;  //Range within the enemys presence is detected
+    public Color originalLightColor;  //The original color of the light
+    public Color enemyInRangeColor;  //The color the light should be when the enemy is in range
 
     private void Start()
     {
