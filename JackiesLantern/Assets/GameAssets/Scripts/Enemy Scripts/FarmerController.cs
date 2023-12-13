@@ -11,7 +11,7 @@ public class FarmerController : MonoBehaviour
 {
     [Header("Enemy Stats")]
     private float wanderSpeed = 1.7f;
-    private float chaseSpeed = 5f;
+    private float chaseSpeed = 6f;
     public float standingDetectionRange = 10f;
     public float crouchedDetectionRange = 5f;
 
@@ -67,7 +67,7 @@ public class FarmerController : MonoBehaviour
         if (distanceToPlayer <= detectionRange)
         {
             isChasing = true;
-            chaseSpeed = 5f;
+            chaseSpeed = 6f;
 
             //Stop the NavMeshAgent from wandering
             navMeshAgent.isStopped = false;
