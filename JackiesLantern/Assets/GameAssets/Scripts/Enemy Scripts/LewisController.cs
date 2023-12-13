@@ -25,7 +25,6 @@ public class LewisController : MonoBehaviour
     [Tooltip("These are settings for the HINT text for the user")]
     public Text chaseText; //Reference to the UI Text component
     private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
-    private float chaseTextCooldown; //Cooldown time for displaying chase text
 
 
     void Start()
@@ -33,6 +32,7 @@ public class LewisController : MonoBehaviour
         //Initialize NavMeshAgent
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = chaseSpeed;
+        canDisplayChaseText = true;
     }
 
 
@@ -52,7 +52,7 @@ public class LewisController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-        chaseSpeed = 6.5f; //CHANGE HERE
+        chaseSpeed = 6.8f; //CHANGE HERE
 
         //Stop the NavMeshAgent from wandering
         navMeshAgent.isStopped = false;
@@ -80,7 +80,7 @@ public class LewisController : MonoBehaviour
 
         if (canDisplayChaseText)
         {
-            DisplayChaseText("Get to your pumpkin patch!");
+            DisplayChaseText("RUN AWAY!");
 
             //Start the cooldown timer
             StartChaseTextCooldown();
@@ -93,28 +93,13 @@ public class LewisController : MonoBehaviour
         {
             chaseText.text = text;
             chaseText.gameObject.SetActive(true);
-
-            //Hide the text after 20 seconds
-            Invoke("HideChaseText", 20f);
         }
     }
 
-    private void HideChaseText()
-    {
-        if (chaseText != null)
-        {
-            chaseText.gameObject.SetActive(false);
-        }
-    }
     private void StartChaseTextCooldown()
     {
         canDisplayChaseText = false;
-        Invoke("ResetChaseTextCooldown", chaseTextCooldown);
     }
 
-    private void ResetChaseTextCooldown()
-    {
-        canDisplayChaseText = true;
-    }
     #endregion
 }
