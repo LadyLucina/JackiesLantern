@@ -49,7 +49,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void Update()
     {
-        HandleCheats();
         HandleMovementInput();
     }
 
