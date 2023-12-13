@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0fc572d0c83e8074693ddc4d33939385
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/Intro/Intro.unity
     guid: 81c41682ed5c3274baa9612a9e993305
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: a7ca24823c9cd204e878142d365f97cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/Scene 1/TrasLVL1-LVL2.unity
     guid: 6ce1d12d83ad6ea4c9f8d23467d1a49d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: da15025c061185d4b85738cbdb3cc582
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/Scene 2/TransLVL2-LVL3.unity
     guid: 356f75a6581696b489b2d5ad91bf3650
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 230063d3a540c1440b70ad5d9d4a49e0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/Lewis Intro/Lewis Intro.unity
     guid: 5624a5da512bf7b459206e940f006b1f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: 944d2389975e059408a57f08ef8cd917
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cutscenes/End/End.unity
     guid: e20058a23a1a60944a4335abfc79db5a
   - enabled: 0
