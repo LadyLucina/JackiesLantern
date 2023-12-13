@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 5344441490713689449}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36400002, y: 0.28374276}
-  m_AnchorMax: {x: 0.6333959, y: 0.39585108}
-  m_AnchoredPosition: {x: 2.7139893, y: 47.748398}
-  m_SizeDelta: {x: 1.769989, y: 10.967499}
+  m_AnchorMin: {x: 0.36139587, y: 0.2735926}
+  m_AnchorMax: {x: 0.6333959, y: 0.43600002}
+  m_AnchoredPosition: {x: -0.8715515, y: 0.1329956}
+  m_SizeDelta: {x: -3.23, y: -1.2929993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4651282544223130195
 CanvasRenderer:
@@ -587,6 +587,86 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &720237553332676614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2840665314547785997}
+  - component: {fileID: 7531224709476452278}
+  - component: {fileID: 6685192045580680354}
+  m_Layer: 5
+  m_Name: Resume Game Hint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2840665314547785997
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720237553332676614}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5344441490713689449}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.15552084, y: 0.6943725}
+  m_AnchorMax: {x: 0.84075004, y: 0.7492593}
+  m_AnchoredPosition: {x: 6.42218, y: -4.169998}
+  m_SizeDelta: {x: -11.917, y: 5.5140076}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7531224709476452278
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720237553332676614}
+  m_CullTransparentMesh: 1
+--- !u!114 &6685192045580680354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720237553332676614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9716981, g: 0.814242, b: 0.637104, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1813debdff4fe2340bd83c5a0be02836, type: 3}
+    m_FontSize: 198
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 224
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Hint: Press ESC to resume game'
 --- !u!1 &732250255374975349
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &494142741660672061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -884,10 +964,10 @@ RectTransform:
   m_Father: {fileID: 5344441490713689449}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3676459, y: 0.4705423}
-  m_AnchorMax: {x: 0.6333959, y: 0.58900005}
-  m_AnchoredPosition: {x: -1.2583008, y: 51.4187}
-  m_SizeDelta: {x: 7.8200073, y: 0.5814018}
+  m_AnchorMin: {x: 0.36139587, y: 0.53055555}
+  m_AnchorMax: {x: 0.6333959, y: 0.6884074}
+  m_AnchoredPosition: {x: -1.3438416, y: -0.18099976}
+  m_SizeDelta: {x: -4.1800003, y: -0.7939987}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6376700561222797840
 CanvasRenderer:
@@ -2099,10 +2179,10 @@ RectTransform:
   m_Father: {fileID: 5344441490713689449}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3676459, y: 0.37355906}
-  m_AnchorMax: {x: 0.637, y: 0.4898511}
-  m_AnchoredPosition: {x: -4.2561035, y: 52.0777}
-  m_SizeDelta: {x: 1.8200073, y: 3.4880981}
+  m_AnchorMin: {x: 0.36139587, y: 0.4032585}
+  m_AnchorMax: {x: 0.6333959, y: 0.5593333}
+  m_AnchoredPosition: {x: -0.8416443, y: -0.29199982}
+  m_SizeDelta: {x: -3.1800003, y: 1.2910004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5094450076950160777
 CanvasRenderer:
@@ -2784,6 +2864,7 @@ RectTransform:
   - {fileID: 5665118207903540606}
   - {fileID: 7088425305929345626}
   - {fileID: 1505392239161115182}
+  - {fileID: 2840665314547785997}
   m_Father: {fileID: 5708245821737819138}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2933,7 +3014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5926982808944650758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2951,7 +3032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3676459, y: 0.5733231}
   m_AnchorMax: {x: 0.6333959, y: 0.6943725}
-  m_AnchoredPosition: {x: -1.1293945, y: 50.940598}
+  m_AnchoredPosition: {x: -1.1293945, y: 1.9405975}
   m_SizeDelta: {x: 7.518097, y: -1.2270012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3952278657445639015
@@ -3999,10 +4080,10 @@ RectTransform:
   m_Father: {fileID: 5344441490713689449}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3676459, y: 0.18285106}
-  m_AnchorMax: {x: 0.6333959, y: 0.2947766}
-  m_AnchoredPosition: {x: -0.9144287, y: 54}
-  m_SizeDelta: {x: 9.079987, y: 9.734901}
+  m_AnchorMin: {x: 0.36139587, y: 0.14866665}
+  m_AnchorMax: {x: 0.6333959, y: 0.30862966}
+  m_AnchoredPosition: {x: -1, y: 0.8869629}
+  m_SizeDelta: {x: -2.92, y: -0.97800064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2254708679530750756
 CanvasRenderer:
