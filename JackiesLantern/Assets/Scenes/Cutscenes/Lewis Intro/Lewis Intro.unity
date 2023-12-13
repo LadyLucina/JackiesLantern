@@ -135,8 +135,12 @@ PrefabInstance:
       value: SkipCutscene
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612772, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793976105308612772, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612772, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -144,11 +148,11 @@ PrefabInstance:
       objectReference: {fileID: 513689374}
     - target: {fileID: 6793976105308612772, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSpecificScene
+      value: LoadNextSceneOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612772, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level 4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612773, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_Pivot.x
@@ -160,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612773, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6793976105308612773, guid: 015bb3336813a3f4d8f95988d07acd6b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -270,8 +274,8 @@ RectTransform:
   m_Children:
   - {fileID: 1535696822}
   - {fileID: 557853914}
-  - {fileID: 1901644409}
   - {fileID: 659202070}
+  - {fileID: 1901644409}
   m_Father: {fileID: 1833625665}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -353,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52de8d6f551a774b9dda1c99cb6815d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
+  nextSceneName: Level 4
 --- !u!1 &547450669
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +587,7 @@ RectTransform:
   - {fileID: 2036800180}
   - {fileID: 1329666923}
   m_Father: {fileID: 513689370}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -684,6 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865259116}
   - component: {fileID: 865259115}
+  - component: {fileID: 865259117}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -768,6 +773,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &865259117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865259114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1329666919
 GameObject:
   m_ObjectHideFlags: 0
