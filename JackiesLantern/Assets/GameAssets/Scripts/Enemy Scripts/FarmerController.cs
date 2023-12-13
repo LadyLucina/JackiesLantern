@@ -151,7 +151,7 @@ public class FarmerController : MonoBehaviour
             chaseText.gameObject.SetActive(true);
 
             //Hide the text after 20 seconds
-            Invoke("HideChaseText", 20f);
+            Invoke("HideChaseText", 5f);
         }
     }
     private void HideChaseText()
