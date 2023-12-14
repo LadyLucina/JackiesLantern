@@ -802,7 +802,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "AngleOffset",
     "m_StageCapability": 3,
-    "m_Value": 100.0,
+    "m_Value": 148.8000030517578,
     "m_DefaultValue": 2.0,
     "m_Labels": []
 }
@@ -1189,10 +1189,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1933.999755859375,
-            "y": 413.99993896484377,
-            "width": 101.9998779296875,
-            "height": 34.0
+            "x": -1957.0,
+            "y": 423.0000305175781,
+            "width": 102.0,
+            "height": 33.999969482421878
         }
     },
     "m_Slots": [
@@ -2313,7 +2313,7 @@
     "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_Value": {
         "x": 8.0,
@@ -2836,10 +2836,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2437.999755859375,
-            "y": 523.9999389648438,
+            "x": -2415.0,
+            "y": 531.0000610351563,
             "width": 124.0,
-            "height": 172.9998779296875
+            "height": 173.0
         }
     },
     "m_Slots": [
@@ -3297,10 +3297,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1211.999755859375,
-            "y": 394.9999084472656,
-            "width": 208.0,
-            "height": 278.0000305175781
+            "x": -1204.0,
+            "y": 397.0,
+            "width": 207.99993896484376,
+            "height": 278.0
         }
     },
     "m_Slots": [

@@ -24,8 +24,16 @@ Material:
         m_Texture: {fileID: 8900000, guid: 796ae7445c40a82428aa59be183fd078, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleReflectedCubemap_ce8a082355914d27a342b18149992a17_Cube_1:
+        m_Texture: {fileID: 8900000, guid: 796ae7445c40a82428aa59be183fd078, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Tex:
         m_Texture: {fileID: 8900000, guid: 796ae7445c40a82428aa59be183fd078, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_23442da219d647db82624767b2397a1f_Out_0:
+        m_Texture: {fileID: 2800000, guid: f2ec5bd7c4583784ab2f50588406ad24, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -47,13 +55,14 @@ Material:
     - _QueueOffset: 0
     - _Rotation: 0
     - _gradientStrength: 0.33
-    - _starSize: 150
+    - _starSize: 100
     - _stars: 10
     - _twinkleSpeed: 0.003
     m_Colors:
+    - _Glitter_Color: {r: 0.6509434, g: 0.5926042, b: 0.5926042, a: 1}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _bottomColor: {r: 0.5330188, g: 0.8986989, b: 1, a: 1}
-    - _tiling: {r: 8, g: 4, b: 0, a: 0}
+    - _tiling: {r: 1000, g: 4, b: 0, a: 0}
     - _topColor: {r: 0.3579269, g: 0.03551085, b: 0.3962264, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4460696415157364427
