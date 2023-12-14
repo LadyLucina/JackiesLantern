@@ -794,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
       propertyPath: height
-      value: 1.8
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
       propertyPath: player
@@ -802,7 +802,11 @@ PrefabInstance:
       objectReference: {fileID: 6533902359595938984}
     - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
       propertyPath: distance
-      value: 5
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
+      propertyPath: pitchLimit
+      value: 9.88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b867e3be253ae40858713e704dfae8, type: 3}

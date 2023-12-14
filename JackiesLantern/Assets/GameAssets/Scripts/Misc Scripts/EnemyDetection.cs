@@ -42,7 +42,7 @@ public class EnemyDetection : MonoBehaviour
         float closestEnemyDistance = Mathf.Infinity;
 
         //Iterate through a list of enemy tags and find the closest enemy from each tag.
-        foreach (string enemyTag in new string[] { "Lurker", "Trapper", "Farmer", "Boss" })
+        foreach (string enemyTag in new string[] { "Lurker", "Trapper", "Farmer", "Skully", "Boss" })
         {
             //Find all game objects with the specified enemy tag.
             GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);

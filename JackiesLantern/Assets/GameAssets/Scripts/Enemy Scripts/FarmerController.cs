@@ -18,6 +18,10 @@ public class FarmerController : MonoBehaviour
     
     private NavMeshAgent navMeshAgent;  // Reference to the NavMeshAgent component
     private Vector3 wanderDestination;
+
+    private bool ignorePlayer = false;  //Flag to ignore the player temporarily
+    public float ignorePlayerCooldown = 2f;  //Cooldown period for ignoring the player
+    private float ignorePlayerTimer;  //Timer for ignoring the player
     #endregion
 
     #region Player Assignment
@@ -72,12 +76,22 @@ public class FarmerController : MonoBehaviour
     //Called every frame
     private void Update()
     {
+        //Update ignorePlayerTimer if ignorePlayer is true
+        if (ignorePlayer)
+        {
+            ignorePlayerTimer -= Time.deltaTime;
+            if (ignorePlayerTimer <= 0f)
+            {
+                ignorePlayer = false;
+            }
+        }
+
         //Calculate the detection range based on the player's crouch state
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         //Check if the player is within the detection range
-        if (distanceToPlayer <= detectionRange)
+        if (distanceToPlayer <= detectionRange && !ignorePlayer)
         {
             isChasing = true;
             chaseSpeed = 6f;
@@ -141,6 +155,14 @@ public class FarmerController : MonoBehaviour
         {
             //Turn around and set a new random wander destination
             SetRandomWanderDestination();
+        }
+
+        //Check if the collider is the player
+        if (other.CompareTag("Player"))
+        {
+            //Ignore the player for a cooldown period
+            ignorePlayer = true;
+            ignorePlayerTimer = ignorePlayerCooldown;
         }
     }
 
