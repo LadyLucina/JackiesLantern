@@ -32,10 +32,15 @@ public class ContinueMusic : MonoBehaviour
     private void Update()
     {//Stops main menu music from playing in levels 1,2,3 & 4 & the end credits
         if      
-                (SceneManager.GetActiveScene().name == "Level 1" ||
-                 SceneManager.GetActiveScene().name == "Level 2" ||
+                (SceneManager.GetActiveScene().name == "Intro" ||
+                SceneManager.GetActiveScene().name == "Level 1" ||
+                 SceneManager.GetActiveScene().name == "TrasLVL1-LVL2" ||
+                SceneManager.GetActiveScene().name == "Level 2" ||
+                SceneManager.GetActiveScene().name == "TransLVL2-LVL3" ||
                  SceneManager.GetActiveScene().name == "Level 3" ||
+                 SceneManager.GetActiveScene().name == "Lewis Intro" ||
                  SceneManager.GetActiveScene().name == "Level 4" ||
+                 SceneManager.GetActiveScene().name == "End" ||
                  SceneManager.GetActiveScene().name == "Credits")
         {
             //If audio is currently playing, stop it and update the flag

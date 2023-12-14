@@ -21083,6 +21083,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1465850997}
+    - target: {fileID: 6533902359595938985, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
+      propertyPath: isSprinting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6533902359595938986, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
       propertyPath: m_StepOffset
       value: 0.25
