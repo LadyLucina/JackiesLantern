@@ -195,7 +195,7 @@ public class EnemyController : MonoBehaviour
             chaseText.gameObject.SetActive(true);
 
             //Hide the text after 2 seconds
-            Invoke("HideChaseText", 2f);
+            Invoke("HideChaseText", 5f);
         }
     }
 
