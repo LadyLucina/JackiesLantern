@@ -60,7 +60,7 @@ public class LewisController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-        chaseSpeed = 6.8f; //CHANGE HERE - Adjust the chase speed as needed
+        chaseSpeed = 6.5f; //CHANGE HERE - Adjust the chase speed as needed  (6.8)
 
         //Stop the NavMeshAgent from wandering
         navMeshAgent.isStopped = false;

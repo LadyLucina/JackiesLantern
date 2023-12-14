@@ -163,12 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ec6ca48b4c52a4babf2bf066544b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseSpeed: 0
   standingDetectionRange: 10
   crouchedDetectionRange: 5
   player: {fileID: 0}
   lewisSpawnPoint: []
-  isChasing: 0
   chaseText: {fileID: 0}
+  isChasing: 0
 --- !u!195 &8613376553024245572
 NavMeshAgent:
   m_ObjectHideFlags: 0
