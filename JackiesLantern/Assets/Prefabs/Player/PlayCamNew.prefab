@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6533902359595938983}
   objectLight: {fileID: 577521008411128957}
-  detectionRange: 15
+  detectionRange: 13
   originalLightColor: {r: 0.49019608, g: 0.36862746, b: 0.23529412, a: 1}
   enemyInRangeColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &6382932270428399002
