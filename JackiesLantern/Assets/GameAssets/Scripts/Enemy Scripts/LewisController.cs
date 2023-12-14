@@ -80,7 +80,7 @@ public class LewisController : MonoBehaviour
 
         if (canDisplayChaseText)
         {
-            DisplayChaseText("Get to your pumpkin patch!");
+            DisplayChaseText("Run Away!");
 
             //Start the cooldown timer
             StartChaseTextCooldown();
@@ -94,8 +94,8 @@ public class LewisController : MonoBehaviour
             chaseText.text = text;
             chaseText.gameObject.SetActive(true);
 
-            //Hide the text after 20 seconds
-            Invoke("HideChaseText", 20f);
+            //Hide the text after 180 seconds
+            Invoke("HideChaseText", 180f);
         }
     }
 
