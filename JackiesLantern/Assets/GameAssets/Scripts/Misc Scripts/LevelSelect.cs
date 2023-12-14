@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* Author: Stephanie M
- * Details: Allow the player to choose between Levels 1-4
- */
-
 public class LevelSelect : MonoBehaviour
 {
 

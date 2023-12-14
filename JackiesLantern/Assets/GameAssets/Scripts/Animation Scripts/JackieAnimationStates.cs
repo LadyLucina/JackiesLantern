@@ -1,29 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-
-/*  Author: Mya
- *  Edited By: Stephanie M
- *  Details: Switches the animation state based on the players movement and keys pressed
- */
 
 public class JackieAnimationStates : MonoBehaviour
 {
     private Animator myAnim;
     private bool isSprinting = false;
 
-
     void Start()
     {
-        myAnim = this.GetComponent<Animator>(); 
+        myAnim = this.GetComponent<Animator>();
     }
 
     void Update()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-
         //Check if the player wants to toggle sprint
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -32,7 +22,7 @@ public class JackieAnimationStates : MonoBehaviour
         }
 
         //Set animation states based on the sprinting state and movement input
-        if (isSprinting && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) || sceneName == "Level 4")
+        if (isSprinting && (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0))
         {
             myAnim.SetBool("isRunning", true);
             myAnim.SetBool("isIdle", false);

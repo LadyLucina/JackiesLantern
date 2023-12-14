@@ -6,51 +6,43 @@ using UnityEngine.UI;
 
 public class LewisController : MonoBehaviour
 {
-    #region Lewis's Stats and NavMesh
     [Header("Enemy Stats")]
-    public float chaseSpeed; //Speed at which the enemy chases the player
-    public float standingDetectionRange = 10f;  //Detection range while player is standing
-    public float crouchedDetectionRange = 5f;   //Detection range while player is crouched
-    private NavMeshAgent navMeshAgent;  //Reference to the NavMeshAgent component
-    #endregion
+    public float chaseSpeed;
+    public float standingDetectionRange = 10f;
+    public float crouchedDetectionRange = 5f;
 
-    #region Player Assignment
     [Header("Player Assignment")]
-    [SerializeField] private Transform player;  //Reference to the players transform
-    #endregion
+    [SerializeField] private Transform player;
 
-    #region Spawn Point
     [Header("Spawn Point")]
-    public Transform[] lewisSpawnPoint;  //Array of spawn points for the enemy
-    #endregion
+    public Transform[] lewisSpawnPoint;
 
-    #region Chase Variables
-    [Tooltip("Settings for the HINT text for the user")]
-    public Text chaseText; // Reference to the UI Text component
-    private bool canDisplayChaseText = true; // Flag to check if chase text can be displayed
-    #endregion
-
-    #region DEBUG ONLY
     [Header("Enemy Chase Check DEBUG ONLY")]
-    [SerializeField] public bool isChasing; // Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
-    #endregion
+    [SerializeField] public bool isChasing; //Used during visual debugging. DO NOT TOUCH WITHIN INSPECTOR
+
+    private NavMeshAgent navMeshAgent;
+
+    [Tooltip("These are settings for the HINT text for the user")]
+    public Text chaseText; //Reference to the UI Text component
+    private bool canDisplayChaseText = true; //Flag to check if chase text can be displayed
+    private float chaseTextCooldown; //Cooldown time for displaying chase text
+
 
     void Start()
     {
         //Initialize NavMeshAgent
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = chaseSpeed; //Set the initial chase speed
-        canDisplayChaseText = true; //Enable chase text display
+        navMeshAgent.speed = chaseSpeed;
     }
+
 
     void Update()
     {
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        
+
         if (distanceToPlayer <= detectionRange)
         {
-            //If player is within detection range, start chasing
             ChaseJackie();
         }
     }
@@ -60,7 +52,7 @@ public class LewisController : MonoBehaviour
     public void ChaseJackie()
     {
         isChasing = true;
-        chaseSpeed = 6.5f; //CHANGE HERE - Adjust the chase speed as needed  (6.8)
+        chaseSpeed = 6.4f;
 
         //Stop the NavMeshAgent from wandering
         navMeshAgent.isStopped = false;
@@ -88,8 +80,7 @@ public class LewisController : MonoBehaviour
 
         if (canDisplayChaseText)
         {
-            //Display chase text to instruct the player
-            DisplayChaseText("RUN AWAY!");
+            DisplayChaseText("Get to your pumpkin patch!");
 
             //Start the cooldown timer
             StartChaseTextCooldown();
@@ -102,13 +93,28 @@ public class LewisController : MonoBehaviour
         {
             chaseText.text = text;
             chaseText.gameObject.SetActive(true);
+
+            //Hide the text after 20 seconds
+            Invoke("HideChaseText", 20f);
         }
     }
 
+    private void HideChaseText()
+    {
+        if (chaseText != null)
+        {
+            chaseText.gameObject.SetActive(false);
+        }
+    }
     private void StartChaseTextCooldown()
     {
-        canDisplayChaseText = false; //Disable chase text display temporarily
+        canDisplayChaseText = false;
+        Invoke("ResetChaseTextCooldown", chaseTextCooldown);
     }
 
+    private void ResetChaseTextCooldown()
+    {
+        canDisplayChaseText = true;
+    }
     #endregion
 }

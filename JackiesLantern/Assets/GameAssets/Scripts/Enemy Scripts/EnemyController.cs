@@ -12,74 +12,57 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    #region Enemy Stats
     [Header("Enemy Stats")]
-    private float wanderSpeed = 1.7f;  //Speed during wandering
-    private float chaseSpeed = 5f;     //Speed during chasing
-    public float standingDetectionRange = 10f;  //Detection range while player is standing
-    public float crouchedDetectionRange = 5f;   //Detection range while player is crouched
+    private float wanderSpeed = 1.7f;
+    private float chaseSpeed = 5f;
+    public float standingDetectionRange = 10f;
+    public float crouchedDetectionRange = 5f;
 
-    private bool ignorePlayer = false;  //Flag to ignore the player temporarily
-    public float ignorePlayerCooldown = 2f;  //Cooldown period for ignoring the player
-    private float ignorePlayerTimer;  //Timer for ignoring the player
-    #endregion
-
-    #region Player Assignment
     [Header("Player Assignment")]
-    [SerializeField] private Transform player;  //Reference to the player's transform
-    #endregion
+    [SerializeField] private Transform player;
 
-    #region Spawn Points & NavMesh
     [Header("Spawn Points")]
-    public Transform[] spawnPoints;  //Array of spawn points for the enemy
+    public Transform[] spawnPoints;
 
-
-    private NavMeshAgent navMeshAgent;  //Reference to the NavMeshAgent component
-    private Vector3 wanderDestination;   //Destination for wandering
-    #endregion
-
-    #region Chase Text
-    [Tooltip("Settings for the HINT text for the user")]
-    public Text chaseText;  //Reference to the UI text for chase hints
-    private bool canDisplayChaseText = true;  //Flag to control chase text display
-    public float chaseTextCooldown = 20f;  //Cooldown period for displaying chase text
-    #endregion
-
-    #region DEBUG ONLY
     [Header("Enemy Chase Check DEBUG ONLY")]
-    public bool isChasing;  //Debug flag indicating if the enemy is currently chasing
+    public bool isChasing;
+
+    private NavMeshAgent navMeshAgent;
+    private Vector3 wanderDestination;
 
     [Header("Enemy Wander Check DEBUG ONLY")]
-    public bool isWandering;  //Debug flag indicating if the enemy is currently wandering
-    #endregion
+    public bool isWandering;
 
+    [Tooltip("These are settings for the HINT text for the user")]
+    public Text chaseText;
+    private bool canDisplayChaseText = true;
+    public float chaseTextCooldown = 20f;
+
+    private bool ignorePlayer = false;
+    public float ignorePlayerCooldown = 2f;
+    private float ignorePlayerTimer;
 
     public void Start()
     {
-        //Check if spawn points are assigned
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
-            Debug.Log("Spawn points array is not assigned or empty. Please assign spawn points in the Inspector.");
+            Debug.LogError("Spawn points array is not assigned or empty. Please assign spawn points in the Inspector.");
             enabled = false;
             return;
         }
 
-        //Set the initial position and rotation of the enemy to a random spawn point
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
 
-        //Get the NavMeshAgent component and set the speed for wandering
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = wanderSpeed;
 
-        //Set a random wander destination
         SetRandomWanderDestination();
     }
 
     private void Update()
     {
-        //Update ignorePlayerTimer if ignorePlayer is true
         if (ignorePlayer)
         {
             ignorePlayerTimer -= Time.deltaTime;
@@ -89,16 +72,11 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        //Calculate the detection range based on the player's crouch state
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
-
-        //Calculate the distance to the player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        //Check if the player is within the detection range and not ignored
         if (distanceToPlayer <= detectionRange && !ignorePlayer)
         {
-            //Set chase mode
             isChasing = true;
             chaseSpeed = 5f;
 
@@ -126,12 +104,11 @@ public class EnemyController : MonoBehaviour
             //Move towards the player
             transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
 
-            //Display chase text if it's allowed
             if (canDisplayChaseText)
             {
                 DisplayChaseText("You've been spotted!\nSprint to get away!");
 
-                //Start the cooldown timer for chase text
+                //Start the cooldown timer
                 StartChaseTextCooldown();
             }
         }
@@ -149,31 +126,26 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            //The enemy is not chasing or wandering
             isChasing = false;
         }
     }
 
-    //Called when a collider enters the trigger zone
     private void OnTriggerEnter(Collider other)
     {
-        //Check if the collider is an "EndOfZone" trigger
         if (other.CompareTag("EndOfZone"))
         {
-            //Turn around and set a new random wander destination
+            // Turn around and set a new random wander destination
             SetRandomWanderDestination();
         }
 
-        //Check if the collider is the player
         if (other.CompareTag("Player"))
         {
-            //Ignore the player for a cooldown period
+            // Ignore the player for a cooldown period
             ignorePlayer = true;
             ignorePlayerTimer = ignorePlayerCooldown;
         }
     }
 
-    //Set a random wander destination within the detection range
     private void SetRandomWanderDestination()
     {
         //Set a random point within the detection range as the wander destination
@@ -186,7 +158,6 @@ public class EnemyController : MonoBehaviour
     }
 
     #region Alert/Chase Text Methods
-    //Display the chase text on the UI
     private void DisplayChaseText(string text)
     {
         if (chaseText != null)
@@ -194,12 +165,11 @@ public class EnemyController : MonoBehaviour
             chaseText.text = text;
             chaseText.gameObject.SetActive(true);
 
-            //Hide the text after 2 seconds
-            Invoke("HideChaseText", 5f);
+            //Hide the text after 20 seconds
+            Invoke("HideChaseText", 20f);
         }
     }
 
-    //Hide the chase text on the UI
     private void HideChaseText()
     {
         if (chaseText != null)
@@ -208,14 +178,12 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    //Start the cooldown for displaying chase text
     private void StartChaseTextCooldown()
     {
         canDisplayChaseText = false;
         Invoke("ResetChaseTextCooldown", chaseTextCooldown);
     }
 
-    //Reset the cooldown for displaying chase text
     private void ResetChaseTextCooldown()
     {
         canDisplayChaseText = true;

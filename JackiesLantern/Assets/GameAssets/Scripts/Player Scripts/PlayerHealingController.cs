@@ -22,7 +22,7 @@ public class PlayerHealingController : MonoBehaviour
     
     public Text maxHealthText;
     private bool isDisplaying;
-    public float displayTime = 1f;  //Time to display initial and final texts
+    public float displayTime = 5f;  //Time to display initial and final texts
 
     void Start()
     {
@@ -56,7 +56,7 @@ public class PlayerHealingController : MonoBehaviour
             else if (!isDisplaying)
             {
                 Debug.Log("Cannot add. Max health exceeded!");
-                ShowNotification("Too much candy!", 1f);
+                ShowNotification("Too much candy!" + "\nCan't eat anymore!", 5f);
             }
 
         }

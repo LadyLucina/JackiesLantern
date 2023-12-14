@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Author: Stephanie M
-   Details: This script will change the farmers animations based on his current state in game.
- */
-
 public class FarmerAnimationController : MonoBehaviour
 {
-    private Animator myAnim;    //Reference to the Animator component
+    private Animator myAnim;
     public FarmerController farmerController; //Reference to the FarmerController script
 
     void Start()

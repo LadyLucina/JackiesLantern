@@ -49,6 +49,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void Update()
     {
+        
         HandleMovementInput();
     }
 
@@ -57,13 +58,6 @@ public class ThirdPersonMovement : MonoBehaviour
         //Check the current scene name
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-
-        // Automatically toggle Sprint on for Level 4
-        if (sceneName == "Level 4")
-        {
-            isSprinting = true;
-            speed = sprintSpeed;
-        }
 
         //Detect crouch input (keyboard: Left Control, controller: B button on controller)
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("Crouch"))
@@ -86,7 +80,6 @@ public class ThirdPersonMovement : MonoBehaviour
                 isCrouching = false;
             }
         }
-
 
         //Sets horizontal movement using "A" and "D" and arrow keys
         float horizontal = Input.GetAxisRaw("Horizontal");

@@ -11,25 +11,16 @@ using UnityEngine;
 
 public class PlayerCheckpointController : MonoBehaviour
 {
+    public CheckpointSystem checkpointSystem;
 
-    public CheckpointSystem checkpointSystem;   //Reference to the CheckpointSystem script
-
-    //Called when a collider enters the trigger zone
     private void OnTriggerEnter(Collider other)
     {
-        //Check if the colliding object has the tag "Checkpoint"
-        if (other.CompareTag("Checkpoint"))
+        if (other.CompareTag("Checkpoint")) //Make sure the checkpoint objects have the appropriate tag
         {
-            //Get the Checkpoint component from the collided object
             Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-
-            //Check if the Checkpoint component is not null
             if (checkpoint != null)
             {
-                //Retrieve the checkpoint ID from the Checkpoint component
                 int checkpointID = checkpoint.checkpointID;
-
-                //Set the active checkpoint in the CheckpointSystem
                 checkpointSystem.SetCheckpoint(checkpointID);
             }
         }

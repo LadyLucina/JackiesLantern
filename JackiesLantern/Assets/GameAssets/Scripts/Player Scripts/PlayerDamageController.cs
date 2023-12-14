@@ -17,11 +17,11 @@ public class PlayerDamageController : MonoBehaviour
     private ThirdPersonMovement thirdPersonMovement; //Reference to the ThirdPersonMovement script
 
     #region Enemy Damage Values
-    private int lurkerDamage = 1;   //Value amount the Lurker will do for damage
-    private int trapperDamage = 1;  //Value amount the Trapper will do for damage
-    private int skullyDamage = 1;   //Value amount the Skulls will do for damage
-    private int farmerDamage = 2;   //Value amount the Farmer will do for damage
-    private int bossDamage = 2;     //Value amount the Boss wil ldo for damage
+    private int lurkerDamage = 1;
+    private int trapperDamage = 1;
+    private int skullyDamage = 1;
+    private int farmerDamage = 2;
+    private int bossDamage = 5;
     #endregion  
 
     [Header("Respawn Settings")]
@@ -30,37 +30,31 @@ public class PlayerDamageController : MonoBehaviour
 
     [Header("Damage Cooldown Setting")]
     [SerializeField] private float damageCooldown = 3.0f; //Damage cooldown timer
-    private float lastDamageTime; //Tracks the time when the player last took damage.
+    private float lastDamageTime;
 
     private void Start()
     {
-        healthSystem = GetComponent<HealthSystem>(); //Reference to the HealthSystem component on the player.
-        thirdPersonMovement = GetComponent<ThirdPersonMovement>(); //Reference to the ThirdPersonMovement component on the player.
+        healthSystem = GetComponent<HealthSystem>();
+        thirdPersonMovement = GetComponent<ThirdPersonMovement>();
     }
 
     private void Update()
     {
-        //Check if the player is currently respawning.
         if (isRespawning)
         {
-            //Check if enough time has passed since the last enemy hit for the respawn delay.
             if (Time.time - lastEnemyHitTime >= respawnDelay)
             {
-                isRespawning = false; //Stop respawning.
-                lastEnemyHitTime = 0f; //Reset the last enemy hit time.
+                isRespawning = false;
+                lastEnemyHitTime = 0f;
             }
         }
     }
 
-    private float lastEnemyHitTime; //Tracks the time when the player was last hit by an enemy.
-
-    //Called when the player enters the trigger zone of an enemy.
+    private float lastEnemyHitTime;
     private void OnTriggerEnter(Collider other)
     {
-        //Check if enough time has passed since the last damage for the damage cooldown.
         if (Time.time - lastDamageTime >= damageCooldown)
         {
-            //Check the tag of the colliding object to determine the enemy type and apply damage accordingly.
             if (other.gameObject.CompareTag("Lurker"))
             {
                 DamageEnemy(lurkerDamage, other.gameObject);
@@ -84,23 +78,22 @@ public class PlayerDamageController : MonoBehaviour
         }
     }
 
-    //Applies damage to the player based on the enemy type.
     private void DamageEnemy(int damage, GameObject enemy)
     {
         if (!thirdPersonMovement.IsInvincible())
         {
-            audioSource.PlayOneShot(takenDamage); //Play the sound effect for taking damage.
+            audioSource.PlayOneShot(takenDamage);
 
-            //Damage the player's health using the HealthSystem.
+            //Damage the player's health using the HealthSystem
             healthSystem.damageHealth(damage);
 
-            //Show the damage indicator when damage is taken.
+            //Show the damage indicator when damage is taken
             damageIndicator.ShowDamageIndicator();
 
-            //Update the last damage time.
+            //Update the last damage time
             lastDamageTime = Time.time;
 
-            //Set respawn state.
+            //Set respawn state
             lastEnemyHitTime = Time.time;
             isRespawning = true;
         }

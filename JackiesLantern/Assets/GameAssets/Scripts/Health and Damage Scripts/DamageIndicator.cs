@@ -10,19 +10,15 @@ using UnityEngine.UI;
 
 public class DamageIndicator : MonoBehaviour
 {
-    #region Damage Details
     public Image damageImage; //Reference to the UI image for the damage indicator
     private bool showingDamageIndicator = false; //Controls if the damage indicator is currently displayed
     private float damageIndicatorDuration = 0.5f; //How long the damage indicator should stay visible
     private float damageIndicatorTimer = 0.0f; //Tracks the remaining time for displaying the damage indicator
-    #endregion
 
-    #region Healing Details
     public Image healImage;  //Reference to the UI image for the heal indicator
     private bool showingHealIndicator = false; //Controls if the heal indicator is currently displayed
     private float healIndicatorDuration = 0.5f; //How long the heal indicator should stay visible
     private float healIndicatorTimer = 0.0f; //Tracks the remaining time for displaying the heal indicator
-    #endregion
 
     private void Start()
     {

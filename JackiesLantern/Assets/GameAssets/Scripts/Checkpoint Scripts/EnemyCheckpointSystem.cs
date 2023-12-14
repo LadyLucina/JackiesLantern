@@ -12,47 +12,43 @@ using UnityEngine;
 
 public class EnemyCheckpointSystem : MonoBehaviour
 {
-    #region Inspector Variables
-
-    public Checkpoint checkPoint;   //Reference to the Checkpoint script
-    public CheckpointSystem checkpointSystem;   //Reference to the CheckpointSystem script
-    private GameObject farmerEnemy;     //Reference to the player damage script
-    private int currentCheckpointIndex = -1;    //Index to keep track of the current active checkpoint
-    public List<Checkpoint> checkpoints;    //List of available checkpoints
-
-    #endregion
-
+    // Reference the Checkpoint script
+    public Checkpoint checkPoint;
+    //Reference the CheckpointSystem script
+    public CheckpointSystem checkpointSystem;
+    //references the player damage script
+    private GameObject farmerEnemy;
+    private int currentCheckpointIndex = -1;
+    public List<Checkpoint> checkpoints;
 
     private void Start()
     {
-        //Retrieve the variables from the CheckpointSystem script
+        //retrieves the variables from CheckpointSystem
         checkpointSystem = GetComponent<CheckpointSystem>();
-
-        //Retrieve the variables from the Checkpoint script
+        //rerieves the variables from Checkpoint
         checkPoint = GetComponent<Checkpoint>();
     }
 
     //These lines of code set the player back to the last checkpoint when the player touches the farmer.
+    //
+    //
+    //FOR STEPHANIE ONLY. Please check lines 36-56.
     private void OnTriggerEnter(Collider other)
     {
-        //Check if the colliding object has the tag "Farmer"
+
         if (other.gameObject.CompareTag("Farmer"))
         {
-            //Store a reference to the farmer enemy
-            farmerEnemy = other.gameObject;
-
-            //Retrieve the variables from the Checkpoint script attached to the farmer
+              farmerEnemy = other.gameObject;
+            //rerieves the variables from Checkpoint
             Checkpoint checkpoint = other.GetComponent<Checkpoint>();
-
-            //Check if the checkpoint component is not null
             if (checkpoint != null)
             {
-                //Check if there is an active checkpoint
+
                 if (currentCheckpointIndex >= 0)
                 {
-                    //Respawn the player at the last active checkpoint
                     checkpoints[currentCheckpointIndex].RespawnPlayer();
-
+                    //To make sure that this function is working
+                    Debug.Log("Farmer is attacking");
                 }
             }
         }

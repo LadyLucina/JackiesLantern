@@ -12,26 +12,15 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    #region Inspector Variables
-    //Reference for the player transform
     public Transform playerTransform;
+    public bool startEnabled = false; //Inspector option to start the checkpoint as enabled or disabled
+    public bool isEnabled = false; //Indicates if the checkpoint is currently enabled
+    public int checkpointID; //The ID of the checkpoint
 
-    //Inspector option to start the checkpoint as enabled or disabled
-    public bool startEnabled = false;
-
-    //Indicates if the checkpoint is currently enabled
-    public bool isEnabled = false;
-
-    //The ID of the checkpoint
-    public int checkpointID;
-
-    //Static variable to keep track of the most recent checkpoint across all instances
-    private static Checkpoint mostRecentCheckpoint = null;
-    #endregion
+    private static Checkpoint mostRecentCheckpoint = null; //Static variable to keep track of the most recent checkpoint
 
     private void Start()
     {
-        //Check if the checkpoint should start as enabled or disabled
         if (startEnabled)
         {
             Enable();
@@ -42,18 +31,14 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    //Called when a collider enters the trigger zone of the checkpoint
     private void OnTriggerEnter(Collider other)
     {
-        //Check if the colliding object has the "Player" tag
         if (other.CompareTag("Player"))
         {
-            //Enable the checkpoint when the player enters the trigger zone
             Enable();
         }
     }
 
-    //Method to enable the checkpoint
     public void Enable()
     {
         //Check if this is a different checkpoint from the most recent one
@@ -73,14 +58,12 @@ public class Checkpoint : MonoBehaviour
         isEnabled = true;
     }
 
-    //Method to disable the checkpoint
     public void Disable()
     {
         //Disable the checkpoint
         isEnabled = false;
     }
 
-    //Method to respawn the player at the checkpoint's position
     public void RespawnPlayer()
     {
         //Teleport the player to the checkpoint's position if this checkpoint is enabled
@@ -92,10 +75,8 @@ public class Checkpoint : MonoBehaviour
 
     private void Update()
     {
-        //Check if the checkpoint is enabled and the player presses the "R" key
         if (isEnabled && Input.GetKeyDown(KeyCode.R))
         {
-            //Respawn the player
             RespawnPlayer();
         }
     }
