@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2065454147}
-  m_IndirectSpecularColor: {r: 0.005571015, g: 0.031144494, b: 0.045548446, a: 1}
+  m_IndirectSpecularColor: {r: 0.019547882, g: 0.013030758, b: 0.07892533, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20968,6 +20968,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8073485, y: 0.6793781, z: 0.83473444}
   m_Center: {x: -0.00030410307, y: 0.34350917, z: 0.011914857}
+--- !u!114 &976172903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2057771458269017500, guid: d5e5378b4f0f1b0429eb6102c2787757, type: 3}
+  m_PrefabInstance: {fileID: 804357751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &976783213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21107,6 +21118,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 804357754}
+    - target: {fileID: 7451568340461860423, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
+      propertyPath: checkpointSystem
+      value: 
+      objectReference: {fileID: 1627870845}
     - target: {fileID: 8121077953538467174, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
       propertyPath: audioSource
       value: 
@@ -21122,7 +21137,7 @@ PrefabInstance:
     - target: {fileID: 8121077953538467174, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
       propertyPath: maxHealthText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 976172903}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b941d16c04e9abf4b8701bf7e68972c1, type: 3}
 --- !u!1001 &990067619
