@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 6533902359595938984}
     - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
       propertyPath: distance
-      value: 5.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8587055176687781872, guid: b8b867e3be253ae40858713e704dfae8, type: 3}
       propertyPath: pitchLimit
