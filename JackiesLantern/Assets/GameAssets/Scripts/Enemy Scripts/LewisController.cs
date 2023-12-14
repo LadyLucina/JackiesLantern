@@ -47,7 +47,7 @@ public class LewisController : MonoBehaviour
     {
         float detectionRange = player.GetComponent<ThirdPersonMovement>().IsCrouching() ? crouchedDetectionRange : standingDetectionRange;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
+        
         if (distanceToPlayer <= detectionRange)
         {
             //If player is within detection range, start chasing
